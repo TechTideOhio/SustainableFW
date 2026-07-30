@@ -16,7 +16,7 @@ export function FeaturesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-auto md:auto-rows-[250px]">
           {/* Card 1: Spans 2 rows */}
-          <div className="row-span-1 md:row-span-2 bg-brand-600 rounded-xl p-8 flex flex-col relative overflow-hidden group text-white shadow-sm transition-all duration-200 ease-out">
+          <div className="row-span-1 md:row-span-2 bg-brand-600 rounded-xl p-8 flex flex-col relative overflow-hidden group text-white shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
             <div className="z-10">
               <div className="w-12 h-12 bg-white/10 text-white rounded-lg flex items-center justify-center mb-6">
                 <TreePine className="w-6 h-6" />
@@ -37,7 +37,7 @@ export function FeaturesSection() {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-card border border-border shadow-sm rounded-xl p-8 flex flex-col justify-between group transition-all duration-200 ease-out overflow-hidden relative">
+          <div className="bg-card border border-border shadow-sm rounded-xl p-8 flex flex-col justify-between group transition-all duration-200 ease-out overflow-hidden relative hover:-translate-y-1 hover:shadow-lg">
             <img 
               src="/images/carbon_dashboard.jpg"
               alt="Carbon Dashboard UI"
@@ -66,7 +66,7 @@ export function FeaturesSection() {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-card border border-border shadow-sm rounded-xl p-8 flex flex-col justify-center items-center text-center group transition-all duration-200 ease-out relative overflow-hidden">
+          <div className="bg-card border border-border shadow-sm rounded-xl p-8 flex flex-col justify-center items-center text-center group transition-all duration-200 ease-out relative overflow-hidden hover:-translate-y-1 hover:shadow-lg">
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-600 to-transparent" />
             <h3 className="text-4xl font-bold text-foreground mb-2 font-display">2.1M+</h3>
             <p className="text-muted-foreground font-medium mb-6">Hectares Monitored</p>
@@ -81,7 +81,7 @@ export function FeaturesSection() {
           </div>
 
           {/* Card 4 */}
-          <div className="md:col-span-2 bg-brand-50 dark:bg-brand-600/5 border border-brand-200 dark:border-brand-600/20 rounded-xl p-8 flex flex-col md:flex-row items-center justify-between group overflow-hidden relative transition-all duration-200 ease-out">
+          <div className="md:col-span-2 bg-brand-50 dark:bg-brand-600/5 border border-brand-200 dark:border-brand-600/20 rounded-xl p-8 flex flex-col md:flex-row items-center justify-between group overflow-hidden relative transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
             <div className="z-10 mb-6 md:mb-0">
               <div className="w-12 h-12 bg-brand-100 dark:bg-brand-600/20 text-brand-600 border border-brand-200 dark:border-brand-600/30 rounded-lg flex items-center justify-center mb-4">
                 <Server className="w-6 h-6" />

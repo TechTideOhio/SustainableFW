@@ -26,7 +26,7 @@ export function FooterSection() {
                 className="bg-slate-800 border-slate-600 text-white placeholder:text-slate-400 h-12 w-full sm:w-64 rounded-xl focus-visible:ring-white"
                 aria-label="Email address"
               />
-              <Button className="bg-white text-brand-600 hover:bg-slate-100 rounded-xl h-12 px-6 font-semibold flex items-center gap-2 transition-all duration-200 ease-out active:scale-[0.97]">
+              <Button className="bg-white text-brand-600 hover:bg-slate-100 rounded-xl h-12 px-6 font-semibold flex items-center gap-2 transition-all duration-200 ease-out active:scale-[0.97] glow-brand">
                 Start Free Trial
                 <ArrowRight className="w-4 h-4" />
               </Button>
@@ -38,7 +38,7 @@ export function FooterSection() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
               {/* Logo Col */}
               <div className="col-span-1 md:col-span-1">
-                <a href="#" className="inline-flex items-center gap-3 mb-6">
+                <a href="#" className="inline-flex items-center gap-3 mb-6 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">
                   <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center shrink-0">
                     <div className="w-3 h-3 bg-brand-300 rounded-full" />
                   </div>
@@ -56,31 +56,31 @@ export function FooterSection() {
                 <div>
                   <h4 className="font-bold text-white uppercase mb-4">Platform</h4>
                   <ul className="space-y-3 font-medium text-white/70">
-                    <li><a href="#features" className="hover:text-white transition-colors">Digital Twin</a></li>
-                    <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-                    <li><a href="/integrations" className="hover:text-white transition-colors">Integrations</a></li>
-                    <li><a href="/help" className="hover:text-white transition-colors">Documentation</a></li>
+                    <li><a href="#features" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Digital Twin</a></li>
+                    <li><a href="#pricing" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Pricing</a></li>
+                    <li><a href="/integrations" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Integrations</a></li>
+                    <li><a href="/help" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Documentation</a></li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-bold text-white uppercase mb-4">Company</h4>
                   <ul className="space-y-3 font-medium text-white/70">
-                    <li><a href="/about" className="hover:text-white transition-colors">About</a></li>
-                    <li><a href="#testimonials" className="hover:text-white transition-colors">Case Studies</a></li>
-                    <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
-                    <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
+                    <li><a href="/about" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">About</a></li>
+                    <li><a href="#testimonials" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Case Studies</a></li>
+                    <li><a href="/blog" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Blog</a></li>
+                    <li><a href="/contact" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Contact</a></li>
                   </ul>
                 </div>
                 <div className="col-span-2 sm:col-span-1">
                   <h4 className="font-bold text-white uppercase mb-4">Social</h4>
                   <div className="flex gap-4">
-                    <a href="#" className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="MessageCircle">
+                    <a href="#" className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2" aria-label="MessageCircle">
                       <MessageCircle className="w-5 h-5" />
                     </a>
-                    <a href="#" className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="Code">
+                    <a href="#" className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2" aria-label="Code">
                       <Code className="w-5 h-5" />
                     </a>
-                    <a href="#" className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="Link">
+                    <a href="#" className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2" aria-label="Link">
                       <Link className="w-5 h-5" />
                     </a>
                   </div>
@@ -91,8 +91,8 @@ export function FooterSection() {
             <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-medium text-white/60 text-sm">
               <p>© {new Date().getFullYear()} ForestTwin Inc. All rights reserved.</p>
               <div className="flex gap-6">
-                <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
+                <a href="/privacy" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Privacy Policy</a>
+                <a href="/terms" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Terms of Service</a>
               </div>
             </div>
           </div>

@@ -92,7 +92,7 @@ export default function IntegrationsPage() {
           {filteredIntegrations.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {filteredIntegrations.map(integration => (
-                <Card key={integration.name} className="bg-card border-white/5 hover:border-lime/30 transition-colors glass-panel flex flex-col">
+                <Card key={integration.name} className="bg-card border-white/5 hover:border-lime/30 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg glass-panel flex flex-col">
                   <CardHeader className="pb-4">
                     <div className="flex justify-between items-start mb-4">
                       <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold font-display", integration.color)}>

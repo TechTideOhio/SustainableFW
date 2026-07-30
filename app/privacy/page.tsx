@@ -107,8 +107,8 @@ export default function PrivacyPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
           <p>&copy; {new Date().getFullYear()} ForestTwin Inc. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link href="/privacy" className="text-white">Privacy Policy</Link>
+            <Link href="/terms" className="link-underline hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 rounded-sm">Terms of Service</Link>
+            <Link href="/privacy" className="link-underline hover:text-foreground text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 rounded-sm">Privacy Policy</Link>
           </div>
         </div>
       </footer>

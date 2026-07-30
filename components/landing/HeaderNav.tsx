@@ -35,7 +35,7 @@ export function HeaderNav() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[80px] flex items-center justify-between">
         
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group">
+        <a href="#" className="flex items-center gap-3 group rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">
           <div className="w-8 h-8 rounded-full bg-brand-600 flex items-center justify-center transition-transform duration-200 ease-out group-hover:scale-105">
             <div className="w-3 h-3 bg-white rounded-full" />
           </div>
@@ -53,10 +53,10 @@ export function HeaderNav() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setActiveLink(link.label)}
-                className={`text-sm font-medium transition-all duration-200 ease-out py-1 px-3 rounded-lg ${
+                className={`text-sm font-medium transition-all duration-200 ease-out py-1 px-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 ${
                   isActive
                     ? 'text-foreground font-semibold bg-muted'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-foreground'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-foreground link-underline'
                 }`}
               >
                 {link.label}
@@ -69,7 +69,7 @@ export function HeaderNav() {
         <div className="hidden md:flex items-center gap-6">
           <a
             href="#"
-            className="text-slate-600 dark:text-slate-300 hover:text-brand-600 text-sm font-medium transition-all duration-200 ease-out active:brightness-95"
+            className="text-slate-600 dark:text-slate-300 hover:text-brand-600 text-sm font-medium transition-all duration-200 ease-out active:brightness-95 link-underline rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
           >
             Sign in
           </a>
@@ -107,10 +107,10 @@ export function HeaderNav() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className={`text-slate-600 dark:text-slate-300 text-base font-medium transition-all duration-200 ease-out py-3 px-4 rounded-lg ${
+                    className={`text-slate-600 dark:text-slate-300 text-base font-medium transition-all duration-200 ease-out py-3 px-4 rounded-lg active:bg-muted/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 ${
                       isActive
                         ? 'text-foreground font-semibold bg-muted'
-                        : 'hover:text-foreground'
+                        : 'hover:text-foreground link-underline'
                     }`}
                     onClick={() => {
                       setActiveLink(link.label);
@@ -125,7 +125,7 @@ export function HeaderNav() {
             <div className="flex flex-col gap-3 pt-4 border-t border-border">
               <a
                 href="#"
-                className="text-slate-600 dark:text-slate-300 hover:text-brand-600 text-base font-medium py-3 px-4 transition-all duration-200 ease-out active:brightness-95"
+                className="text-slate-600 dark:text-slate-300 hover:text-brand-600 text-base font-medium py-3 px-4 transition-all duration-200 ease-out active:brightness-95 active:bg-muted/50 link-underline rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Sign in

@@ -70,7 +70,7 @@ export default function SystemsPage() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {systems.map((sys) => (
-            <Card key={sys.id} className="glass-panel border-white/10 hover:border-lime/30 transition-all duration-300 group hover:-translate-y-1 bg-elevated/50 backdrop-blur-sm">
+            <Card key={sys.id} className="glass-panel border-white/10 hover:border-lime/30 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-out group bg-elevated/50 backdrop-blur-sm">
               <CardHeader>
                 <div className="w-10 h-10 rounded-lg bg-white/5 text-zinc-400 flex items-center justify-center mb-4 group-hover:bg-lime/10 group-hover:text-lime transition-colors">
                   <sys.icon className="w-5 h-5" />

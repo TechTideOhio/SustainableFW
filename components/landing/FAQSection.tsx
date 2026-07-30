@@ -44,7 +44,7 @@ export function FAQSection() {
             Still have questions? Our team is here to help.
           </p>
           <div className="flex flex-col gap-4 items-start">
-            <Button variant="default" className="rounded-full">
+            <Button variant="default" className="rounded-full glow-brand">
               Start Free Trial
             </Button>
             <Button variant="link" className="text-muted-foreground hover:text-foreground px-0">

@@ -48,7 +48,7 @@ export function PricingSection() {
             <div 
               key={plan.name}
               className={cn(
-                "relative p-8 flex flex-col transition-all duration-200 ease-out",
+                "relative p-8 flex flex-col transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-brand-300/50",
                 plan.highlight 
                   ? "border-2 border-brand-600 glow-brand bg-brand-50/50 dark:bg-brand-600/5 rounded-xl" 
                   : "bg-card border border-border shadow-sm rounded-xl"
@@ -70,7 +70,7 @@ export function PricingSection() {
               <Button 
                 variant={plan.highlight ? "default" : "outline"}
                 size="lg"
-                className="w-full mb-8 mt-auto rounded-full"
+                className={cn("w-full mb-8 mt-auto rounded-full", plan.highlight && "glow-brand")}
               >
                 {plan.buttonText}
               </Button>

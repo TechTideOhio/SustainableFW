@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -50,7 +50,7 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
           className="flex flex-col sm:flex-row gap-4 mb-16"
         >
-          <Button variant="default" size="lg" className="rounded-full px-8 h-12 text-base transition-all duration-200 ease-out active:scale-[0.97]">
+          <Button variant="default" size="lg" className="rounded-full px-8 h-12 text-base transition-all duration-200 ease-out active:scale-[0.97] glow-brand">
             Explore the Platform
           </Button>
         </motion.div>
