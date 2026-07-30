@@ -3,22 +3,13 @@
 @plugin "@tailwindcss/typography";
 
 @theme inline {
-  /* === BRAND INDIGO PALETTE === */
-  --color-brand-50: #f0f4ff;
-  --color-brand-100: #dbe4ff;
-  --color-brand-200: #bac8ff;
-  --color-brand-300: #91a7ff;
-  --color-brand-400: #748ffc;
-  --color-brand-500: #5c7cfa;
-  --color-brand-600: #3b5bdb;
-  --color-brand-700: #2d4abf;
-  --color-brand-800: #1e3a8a;
-  --color-brand-900: #172554;
-
-  /* === SEMANTIC COLORS === */
-  --color-success: #10b981;
-  --color-error: #dc2626;
-  --color-warning: #f59e0b;
+  /* === LIMÓN COLOR PALETTE === */
+  --color-black-olive: #1d0b0d;
+  --color-forest-ink: #103b15;
+  --color-lemon-zest: #f7ea48;
+  --color-warm-cream: #fcf9f0;
+  --color-sage-mist: #dbe2dc;
+  --color-pure-white: #ffffff;
 
   /* === SHADCN CSS VARIABLE BRIDGE === */
   --color-background: hsl(var(--background));
@@ -50,7 +41,7 @@
   --color-sidebar-border: hsl(var(--sidebar-border));
   --color-sidebar-ring: hsl(var(--sidebar-ring));
 
-  /* === RADIUS === */
+  /* === RADIUS (unsoftened edges) === */
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
@@ -81,72 +72,63 @@
 
 @layer base {
   :root {
-    --font-display: 'Inter', 'Geist Sans', sans-serif;
-    --font-body: 'Inter', 'Geist Sans', sans-serif;
+    --font-display: 'DM Sans', 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'DM Sans', 'Outfit', 'Plus Jakarta Sans', sans-serif;
     --font-mono: 'Geist Mono', monospace;
 
-    /* Light mode: slate surfaces, indigo accents */
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 231 58% 55%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 214 32% 91%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222 47% 11%;
+    /* Dark-first: Black Olive canvas is default */
+    --background: 350 40% 8%;
+    --foreground: 43 50% 96%;
+    --card: 350 30% 11%;
+    --card-foreground: 43 50% 96%;
+    --popover: 350 30% 11%;
+    --popover-foreground: 43 50% 96%;
+    --primary: 54 90% 63%;
+    --primary-foreground: 350 40% 8%;
+    --secondary: 145 58% 15%;
+    --secondary-foreground: 43 50% 96%;
+    --muted: 350 20% 14%;
+    --muted-foreground: 135 6% 86%;
+    --accent: 145 58% 15%;
+    --accent-foreground: 43 50% 96%;
     --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 231 58% 55%;
-    --radius: 0.75rem;
+    --destructive-foreground: 43 50% 96%;
+    --border: 135 6% 60%;
+    --input: 135 6% 30%;
+    --ring: 54 90% 63%;
+    --radius: 0.0625rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 231 58% 55%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 40% 96%;
-    --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 214 32% 91%;
-    --sidebar-ring: 231 58% 55%;
+    --sidebar-background: 350 40% 6%;
+    --sidebar-foreground: 43 50% 96%;
+    --sidebar-primary: 54 90% 63%;
+    --sidebar-primary-foreground: 350 40% 8%;
+    --sidebar-accent: 145 58% 15%;
+    --sidebar-accent-foreground: 43 50% 96%;
+    --sidebar-border: 135 6% 25%;
+    --sidebar-ring: 54 90% 63%;
   }
 
-  .dark {
-    /* Dark mode: slate-800/900 surfaces */
-    --background: 222 47% 7%;
-    --foreground: 210 40% 98%;
-    --card: 217 33% 12%;
-    --card-foreground: 210 40% 98%;
-    --popover: 217 33% 12%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 231 58% 55%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 217 33% 17%;
-    --accent-foreground: 210 40% 98%;
+  /* Light mode: Warm Cream sections */
+  .light {
+    --background: 43 50% 96%;
+    --foreground: 350 40% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 350 40% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 350 40% 8%;
+    --primary: 54 90% 63%;
+    --primary-foreground: 350 40% 8%;
+    --secondary: 135 6% 86%;
+    --secondary-foreground: 350 40% 8%;
+    --muted: 135 6% 90%;
+    --muted-foreground: 135 6% 40%;
+    --accent: 145 58% 15%;
+    --accent-foreground: 43 50% 96%;
     --destructive: 0 72% 51%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 20%;
-    --input: 217 33% 22%;
-    --ring: 231 58% 55%;
-
-    --sidebar-background: 222 47% 7%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 231 58% 55%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 217 33% 17%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217 33% 20%;
-    --sidebar-ring: 231 58% 55%;
+    --destructive-foreground: 43 50% 96%;
+    --border: 135 6% 80%;
+    --input: 135 6% 80%;
+    --ring: 145 58% 15%;
   }
 
   * {
@@ -158,7 +140,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
     min-width: 320px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -167,30 +150,37 @@
 }
 
 @layer utilities {
-  /* === FOCUS RING (applied to every interactive element on focus-visible) === */
+  /* === FOCUS RING (Lemon Zest on dark) === */
   .focus-ring {
-    @apply ring-2 ring-brand-600 ring-offset-2 ring-offset-background outline-none;
+    @apply ring-2 ring-lemon-zest ring-offset-2 ring-offset-background outline-none;
   }
 
-  /* === SKELETON LOADING PLACEHOLDER === */
+  /* === SKELETON LOADING === */
   .skeleton {
-    @apply animate-pulse bg-slate-200 dark:bg-slate-700 rounded;
+    @apply animate-pulse bg-sage-mist/20 rounded-none;
   }
 
-  /* === GLOW BRAND (selected items only) === */
-  .glow-brand {
-    box-shadow: 0 0 0 2px rgba(59, 91, 219, 0.2);
+  /* === DISPLAY TRACKING (wide-set neon sign feel) === */
+  .tracking-display {
+    letter-spacing: 0.06em;
+  }
+  .tracking-heading {
+    letter-spacing: 0.04em;
+  }
+  .tracking-body {
+    letter-spacing: 0.02em;
   }
 
-  /* === GLASS PANEL (legacy, adapted to new palette) === */
+  /* === WARM CREAM SECTION === */
+  .section-cream {
+    background-color: #fcf9f0;
+    color: #1d0b0d;
+  }
+
+  /* === GLASS PANEL (adapted to Limón palette) === */
   .glass-panel {
-    background: rgba(241, 245, 249, 0.8);
-    border: 1px solid hsl(var(--border));
+    background: rgba(29, 11, 13, 0.85);
+    border: 1px solid rgba(219, 226, 220, 0.15);
     backdrop-filter: blur(24px);
-  }
-
-  .dark .glass-panel {
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid hsl(var(--border));
   }
 }

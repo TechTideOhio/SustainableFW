@@ -54,9 +54,14 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/50">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-warm-cream">
       <div className="max-w-4xl mx-auto text-center">
         
+        {/* Section Heading */}
+        <h2 className="text-sm font-semibold uppercase text-black-olive tracking-[0.04em] mb-12">
+          Client Testimonials
+        </h2>
+
         {/* Avatars */}
         <div className="flex justify-center items-center gap-6 mb-12">
           {testimonials.map((_, index) => {
@@ -65,15 +70,15 @@ export function TestimonialsSection() {
               <button
                 key={index}
                 onClick={() => handleSelect(index)}
-                className="relative group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 rounded-full transition-all duration-200 ease-out active:scale-[0.97]"
+                className="relative group focus:outline-none focus-visible:ring-2 focus-visible:ring-forest-ink focus-visible:ring-offset-2 rounded-[1px] transition-all duration-200 ease-out active:scale-[0.97]"
                 aria-label={`View testimonial ${index + 1}`}
               >
                 <div className={cn(
-                  "w-16 h-16 rounded-full bg-slate-200 dark:bg-slate-800 border-2 overflow-hidden transition-all duration-200 ease-out relative z-10",
-                  isActive ? "border-transparent" : "border-border group-hover:border-slate-400 dark:group-hover:border-slate-600"
+                  "w-16 h-16 rounded-[1px] bg-forest-ink border-2 overflow-hidden transition-all duration-200 ease-out relative z-10",
+                  isActive ? "border-lemon-zest" : "border-sage-mist group-hover:border-forest-ink"
                 )}>
                   {/* Avatar Placeholder */}
-                  <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-600 dark:to-slate-700 flex items-center justify-center text-xl font-bold text-slate-500 dark:text-slate-300">
+                  <div className="w-full h-full bg-forest-ink flex items-center justify-center text-xl font-bold text-warm-cream/50">
                     {testimonials[index].author.charAt(0)}
                   </div>
                 </div>
@@ -86,7 +91,7 @@ export function TestimonialsSection() {
                       cy="36"
                       r="34"
                       fill="none"
-                      stroke="rgba(100,116,139,0.2)"
+                      stroke="rgba(219,226,220,0.4)"
                       strokeWidth="2"
                     />
                     <circle
@@ -94,7 +99,7 @@ export function TestimonialsSection() {
                       cy="36"
                       r="34"
                       fill="none"
-                      stroke="#3b5bdb"
+                      stroke="#f7ea48"
                       strokeWidth="2"
                       strokeDasharray="213.6" // 2 * PI * 34
                       strokeDashoffset={213.6 - (213.6 * progress) / 100}
@@ -118,26 +123,41 @@ export function TestimonialsSection() {
               transition={{ duration: 0.4 }}
               className="absolute inset-0 flex flex-col items-center"
             >
-              <p className="text-2xl md:text-3xl lg:text-4xl font-display font-medium text-foreground mb-8 leading-snug">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-display font-medium text-black-olive mb-8 leading-snug tracking-[0.02em]">
                 "{testimonials[activeIndex].quote}"
               </p>
-              <div className="text-muted-foreground">
-                <span className="font-semibold text-foreground">{testimonials[activeIndex].author}</span>
-                <span className="mx-2 text-slate-300 dark:text-slate-600">|</span>
-                <span>{testimonials[activeIndex].role}</span>
+              <div className="text-forest-ink">
+                <span className="font-semibold text-black-olive tracking-[0.02em]">{testimonials[activeIndex].author}</span>
+                <span className="mx-2 text-sage-mist">|</span>
+                <span className="text-forest-ink tracking-[0.02em]">{testimonials[activeIndex].role}</span>
               </div>
             </motion.div>
           </AnimatePresence>
         </div>
 
+        {/* Navigation Dots */}
+        <div className="mt-8 flex justify-center items-center gap-3">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => handleSelect(i)}
+              className={cn(
+                "h-2 rounded-[1px] transition-all duration-200 ease-out focus:outline-none focus-visible:ring-1 focus-visible:ring-forest-ink",
+                i === activeIndex ? "w-8 bg-lemon-zest" : "w-2 bg-sage-mist hover:bg-forest-ink/40"
+              )}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
+
         {/* Logo Row */}
-        <div className="mt-16 flex justify-center gap-8 md:gap-16 opacity-50">
+        <div className="mt-12 flex justify-center gap-8 md:gap-16 opacity-70">
           {testimonials.map((t, i) => (
             <div 
               key={i} 
               className={cn(
-                "font-display font-bold text-lg md:text-xl transition-colors duration-500",
-                i === activeIndex ? "text-brand-600 opacity-100" : "text-slate-400 dark:text-slate-500 grayscale"
+                "font-display font-bold text-lg md:text-xl transition-colors duration-500 tracking-[0.04em]",
+                i === activeIndex ? "text-black-olive opacity-100 font-bold" : "text-forest-ink/50 grayscale"
               )}
             >
               {t.company}

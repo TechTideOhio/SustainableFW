@@ -35,11 +35,11 @@ export function PricingSection() {
     <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-warm-cream tracking-[0.04em] mb-4">
             Simple, transparent pricing
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Choose the plan that fits your portfolio. <span className="text-brand-600 font-semibold">All plans include a 14-day free trial.</span>
+          <p className="text-sage-mist text-lg">
+            Choose the plan that fits your portfolio. <span className="text-lemon-zest font-semibold">All plans include a 14-day free trial.</span>
           </p>
         </div>
 
@@ -48,28 +48,28 @@ export function PricingSection() {
             <div 
               key={plan.name}
               className={cn(
-                "relative rounded-xl p-8 flex flex-col transition-all duration-200 ease-out",
+                "relative rounded-none p-8 flex flex-col transition-all duration-200 ease-out bg-black-olive border",
                 plan.highlight 
-                  ? "border-2 border-brand-600 shadow-[0_0_0_2px_rgba(59,91,219,0.2)] bg-brand-50/50 dark:bg-brand-600/5 md:-translate-y-4 md:mb-[-1rem]" 
-                  : "bg-card border border-border shadow-sm"
+                  ? "border-lemon-zest" 
+                  : "border-sage-mist/15"
               )}
             >
               {plan.highlight && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-lemon-zest text-black-olive text-xs font-bold px-3 py-1 rounded-[1px] uppercase tracking-[0.04em]">
                   Most Popular
                 </div>
               )}
               
-              <h3 className="text-xl font-medium text-foreground mb-2">{plan.name}</h3>
+              <h3 className="text-xl font-medium text-warm-cream tracking-[0.04em] uppercase mb-2">{plan.name}</h3>
               <div className="mb-4">
-                <span className="text-4xl font-display font-bold text-foreground">{plan.price}</span>
-                <span className="text-muted-foreground">/mo</span>
+                <span className={cn("text-4xl font-display font-bold", plan.highlight ? "text-lemon-zest" : "text-warm-cream")}>{plan.price}</span>
+                <span className="text-sage-mist">/mo</span>
               </div>
-              <p className="text-muted-foreground text-sm mb-8">{plan.description}</p>
+              <p className="text-sage-mist text-sm mb-8">{plan.description}</p>
               
               <Button 
                 variant={plan.highlight ? "default" : "outline"}
-                className="w-full rounded-full mb-8 mt-auto font-semibold"
+                className="w-full mb-8 mt-auto"
               >
                 {plan.buttonText}
               </Button>
@@ -77,8 +77,8 @@ export function PricingSection() {
               <div className="space-y-4">
                 {plan.features.map((feature) => (
                   <div key={feature} className="flex items-start gap-3">
-                    <Check className={cn("w-5 h-5 shrink-0", plan.highlight ? "text-brand-600" : "text-slate-400")} />
-                    <span className="text-slate-600 dark:text-slate-300 text-sm">{feature}</span>
+                    <Check className={cn("w-5 h-5 shrink-0", plan.highlight ? "text-lemon-zest" : "text-sage-mist/50")} />
+                    <span className="text-sage-mist text-sm">{feature}</span>
                   </div>
                 ))}
               </div>

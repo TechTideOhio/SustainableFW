@@ -15,7 +15,7 @@ export function BlurInHeadline() {
   return (
     <section ref={containerRef} className="py-32 lg:py-48 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-medium leading-tight text-foreground flex flex-wrap justify-center gap-x-[0.3em] gap-y-[0.2em]">
+        <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-medium leading-tight text-warm-cream tracking-[0.04em] flex flex-wrap justify-center gap-x-[0.3em] gap-y-[0.2em]">
           {words.map((word, i) => {
             const start = i / words.length;
             const end = start + (1 / words.length);

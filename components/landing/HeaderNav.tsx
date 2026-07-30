@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 
 export function HeaderNav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('Platform');
 
   const links = [
     { label: 'Platform', href: '#features' },
@@ -14,49 +15,55 @@ export function HeaderNav() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 pb-2 pointer-events-none">
-      <div className="w-full max-w-5xl rounded-full border border-border px-6 py-3 flex items-center justify-between pointer-events-auto bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black-olive h-[80px] flex items-center border-b border-sage-mist/20">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-full bg-brand-600 flex items-center justify-center">
-             <div className="w-3 h-3 bg-white rounded-full" />
-          </div>
-          <span className="font-display font-bold text-foreground text-xl tracking-tight group-hover:text-brand-600 transition-colors">
-            ForestTwin
-          </span>
+        <a href="#" className="text-warm-cream text-[36px] sm:text-[46px] font-medium tracking-[0.04em] uppercase leading-none">
+          ForestTwin
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <a 
-              key={link.label} 
-              href={link.href}
-              className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+        <nav className="hidden md:flex items-center gap-6">
+          {links.map((link) => {
+            const isActive = activeLink === link.label;
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setActiveLink(link.label)}
+                className={`text-warm-cream uppercase tracking-[0.04em] text-sm font-normal transition-colors py-1 px-2 ${
+                  isActive
+                    ? 'border border-pure-white rounded-[1px]'
+                    : 'hover:text-lemon-zest border border-transparent'
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Actions */}
-        <div className="hidden md:flex items-center gap-4">
-          <a href="#" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 transition-colors">
+        <div className="hidden md:flex items-center gap-6">
+          <a
+            href="#"
+            className="text-warm-cream uppercase tracking-[0.04em] text-sm font-normal hover:text-lemon-zest transition-colors"
+          >
             Sign in
           </a>
-          <Button className="rounded-full h-9 px-5 font-semibold text-sm">
+          <Button variant="default" className="rounded-[1px]">
             Request a Demo
           </Button>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button 
-          className="md:hidden text-foreground p-1"
+        <button
+          className="md:hidden text-warm-cream p-1 rounded-[1px]"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? <X className="w-6 h-6 text-warm-cream" /> : <Menu className="w-6 h-6 text-warm-cream" />}
         </button>
 
       </div>
@@ -65,28 +72,46 @@ export function HeaderNav() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-20 left-4 right-4 border border-border rounded-3xl p-6 bg-slate-50/95 dark:bg-slate-900/95 backdrop-blur-xl pointer-events-auto shadow-2xl flex flex-col gap-6 md:hidden"
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-[80px] left-0 right-0 bg-black-olive/95 backdrop-blur-md border-b border-sage-mist/20 p-6 flex flex-col gap-6 md:hidden"
           >
             <nav className="flex flex-col gap-4">
-              {links.map((link) => (
-                <a 
-                  key={link.label} 
-                  href={link.href}
-                  className="text-lg font-medium text-slate-600 dark:text-slate-300 hover:text-foreground transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {links.map((link) => {
+                const isActive = activeLink === link.label;
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className={`text-warm-cream uppercase tracking-[0.04em] text-sm font-normal transition-colors py-2 px-3 ${
+                      isActive
+                        ? 'border border-pure-white rounded-[1px] w-fit'
+                        : 'hover:text-lemon-zest'
+                    }`}
+                    onClick={() => {
+                      setActiveLink(link.label);
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
             </nav>
-            <div className="flex flex-col gap-3 pt-4 border-t border-border">
-              <Button variant="outline" className="w-full rounded-full">
+            <div className="flex flex-col gap-3 pt-4 border-t border-sage-mist/20">
+              <a
+                href="#"
+                className="text-warm-cream uppercase tracking-[0.04em] text-sm font-normal py-2 hover:text-lemon-zest transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 Sign in
-              </Button>
-              <Button className="w-full rounded-full font-semibold">
+              </a>
+              <Button
+                variant="default"
+                className="w-full rounded-[1px]"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 Request a Demo
               </Button>
             </div>
