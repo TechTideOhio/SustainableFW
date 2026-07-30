@@ -95,22 +95,12 @@ export function HeroSection() {
             </div>
             
             {/* Mockup Content */}
-            <div className="flex-1 flex gap-4 mt-4">
-              {/* Sidebar */}
-              <div className="w-48 hidden md:flex flex-col gap-2">
-                <div className="h-8 bg-lime/20 rounded-md border border-lime/30" />
-                <div className="h-8 bg-white/5 rounded-md" />
-                <div className="h-8 bg-white/5 rounded-md" />
-                <div className="h-8 bg-white/5 rounded-md mt-auto" />
-              </div>
-              {/* Main Area */}
-              <div className="flex-1 flex flex-col gap-4">
-                <div className="h-32 bg-gradient-to-r from-lime/10 to-transparent rounded-xl border border-lime/20" />
-                <div className="flex-1 flex gap-4">
-                  <div className="flex-[2] bg-white/5 rounded-xl" />
-                  <div className="flex-[1] bg-white/5 rounded-xl" />
-                </div>
-              </div>
+            <div className="flex-1 mt-4 relative rounded-xl overflow-hidden shadow-inner border border-white/5">
+              <img 
+                src="/images/carbon_dashboard.jpg" 
+                alt="ForestTwin Dashboard Interface" 
+                className="w-full h-full object-cover"
+              />
             </div>
             
             {/* Glow effect behind */}

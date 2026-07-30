@@ -27,26 +27,27 @@ export function FeaturesSection() {
                 Explore a living 3D replica of your forest. Tree health, canopy density, and biomass update in real time from IoT sensors and satellite feeds.
               </p>
             </div>
-            {/* Phone Mockup */}
+            {/* Phone Mockup / Image Container */}
             <div className="mt-8 flex-1 relative bg-black rounded-t-3xl border-8 border-black border-b-0 overflow-hidden shadow-2xl group-hover:-translate-y-2 transition-transform duration-500">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-4 bg-black rounded-b-xl z-20" />
-              <div className="w-full h-full bg-zinc-900 p-4">
-                <div className="h-8 w-24 bg-white/10 rounded mb-4" />
-                <div className="h-32 bg-lime/20 rounded-xl border border-lime/30 mb-4" />
-                <div className="space-y-2">
-                  <div className="h-4 bg-white/5 rounded w-full" />
-                  <div className="h-4 bg-white/5 rounded w-5/6" />
-                  <div className="h-4 bg-white/5 rounded w-4/6" />
-                </div>
-              </div>
+              <img 
+                src="/images/digital_twin_3d.jpg" 
+                alt="3D Digital Twin Visualization" 
+                className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+              />
             </div>
           </div>
 
           {/* Card 2 */}
           <div className="bg-card border border-white/5 rounded-3xl p-8 flex flex-col justify-between group hover:border-white/10 transition-colors overflow-hidden relative">
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-brand-fuchsia/10 blur-2xl rounded-full translate-y-1/2 translate-x-1/2" />
-            <div className="z-10">
-               <div className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center mb-4 text-white">
+            <img 
+              src="/images/carbon_dashboard.jpg"
+              alt="Carbon Dashboard UI"
+              className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen transition-transform duration-[2s] group-hover:scale-110"
+            />
+            <div className="absolute bottom-0 right-0 w-32 h-32 bg-brand-fuchsia/10 blur-2xl rounded-full translate-y-1/2 translate-x-1/2 z-0" />
+            <div className="z-10 relative">
+               <div className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center mb-4 text-white backdrop-blur-md">
                 <Activity className="w-5 h-5" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Live Carbon Telemetry</h3>
@@ -54,14 +55,13 @@ export function FeaturesSection() {
                 Track sequestration rates, soil moisture, and canopy cover as they change. No waiting for quarterly reports.
               </p>
             </div>
-            <div className="mt-6 flex flex-col gap-3 z-10">
-              <div className="flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-white/5">
+            <div className="mt-6 flex flex-col gap-3 z-10 relative">
+              <div className="flex items-center gap-3 bg-black/40 backdrop-blur-md p-3 rounded-lg border border-white/10">
                 <div className="w-2 h-2 rounded-full bg-lime animate-pulse" />
                 <span className="text-xs font-mono text-zinc-300">CO₂ absorbed: 12.4t</span>
-                <span className="text-xs text-zinc-500 ml-auto">Live</span>
               </div>
-               <div className="flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-white/5">
-                <div className="w-2 h-2 rounded-full bg-brand-fuchsia" />
+              <div className="flex items-center gap-3 bg-black/40 backdrop-blur-md p-3 rounded-lg border border-white/10">
+                <div className="w-2 h-2 rounded-full bg-blue-400" />
                 <span className="text-xs font-mono text-zinc-300">Sensor sync complete</span>
                 <span className="text-xs text-zinc-500 ml-auto">2m ago</span>
               </div>

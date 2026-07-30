@@ -48,9 +48,13 @@ export function HowItWorksSection() {
           <p className="text-zinc-400 text-lg mb-8">
             Three steps from raw data to verified carbon credits.
           </p>
-          <Button variant="outline" size="lg" className="rounded-full border-lime/50 text-lime hover:bg-lime/10">
+          <Button variant="outline" size="lg" className="rounded-full border-lime/50 text-lime hover:bg-lime/10 mb-12">
             Book a Walkthrough
           </Button>
+          <div className="hidden md:block w-full aspect-video rounded-2xl overflow-hidden border border-white/10 relative shadow-2xl">
+            <img src="/images/data_integration.jpg" alt="Data Integration Visualization" className="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.8)] pointer-events-none" />
+          </div>
         </div>
 
         {/* Right Timeline */}
