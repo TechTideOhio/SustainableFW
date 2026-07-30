@@ -5,28 +5,28 @@ import { cn } from '@/lib/utils';
 
 const testimonials = [
   {
-    quote: "Circular has completely transformed how our team collaborates. The speed at which we can ship new features is unprecedented.",
-    author: "Sarah Jenkins",
-    role: "CTO, TechFlow",
-    company: "TechFlow"
+    quote: "ForestTwin replaced our quarterly PDF reports with a live dashboard our board actually uses. Carbon credit verification went from weeks to hours.",
+    author: "Dr. Sarah Lindström",
+    role: "Head of Sustainability, NordicTimber",
+    company: "NordicTimber"
   },
   {
-    quote: "The lime accent isn't just a color, it's a lifestyle. But seriously, the unified system drives continuous improvement seamlessly.",
-    author: "Michael Chang",
-    role: "VP Engineering, Innovate",
-    company: "Innovate"
+    quote: "We monitor 400,000 hectares across three continents. ForestTwin is the only platform that gives us a single, consistent view of every asset.",
+    author: "Raj Patel",
+    role: "VP Carbon Markets, GreenVault Capital",
+    company: "GreenVault"
   },
   {
-    quote: "We've reduced our time-to-market by 40% since switching. The guided onboarding is the best in the industry.",
-    author: "Elena Rodriguez",
-    role: "Product Lead, Nexus",
-    company: "Nexus"
+    quote: "The scenario simulator let us model drought risk before it hit. We adjusted our offset portfolio and saved our clients millions in credit value.",
+    author: "Elena Vasquez",
+    role: "Director of Climate Risk, Meridian Re",
+    company: "Meridian Re"
   },
   {
-    quote: "Scale without the headaches. It just works, and the metrics prove it. A must-have for modern development teams.",
-    author: "David Kim",
-    role: "CEO, StartupX",
-    company: "StartupX"
+    quote: "Audit preparation used to take our team two full weeks. With ForestTwin, the data is already organized, verified, and ready to export.",
+    author: "James Okafor",
+    role: "ESG Compliance Lead, AfriCarbon",
+    company: "AfriCarbon"
   }
 ];
 

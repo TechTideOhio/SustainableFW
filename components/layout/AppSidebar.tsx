@@ -6,13 +6,13 @@ import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
   Settings,
-  FolderOpen,
+  TreePine,
   Users,
   Box,
   Server,
   Activity,
   HelpCircle,
-  Package,
+  BookOpen,
   Link as LinkIcon,
   PieChart
 } from "lucide-react";
@@ -23,9 +23,9 @@ export function AppSidebar() {
   const navItems = [
     { path: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
     { path: "/analytics", label: "Analytics", icon: PieChart },
-    { path: "/projects", label: "Projects", icon: FolderOpen },
-    { path: "/users", label: "Users", icon: Users },
-    { path: "/products", label: "Products", icon: Package },
+    { path: "/forest-assets", label: "Forest Assets", icon: TreePine },
+    { path: "/team", label: "Team", icon: Users },
+    { path: "/carbon-ledger", label: "Carbon Ledger", icon: BookOpen },
     { path: "/integrations", label: "Integrations", icon: LinkIcon },
     { path: "/components", label: "Components", icon: Box },
     { path: "/systems", label: "Systems", icon: Server },
@@ -39,9 +39,9 @@ export function AppSidebar() {
       <div className="h-16 flex items-center px-6 border-b border-white/10">
         <Link href="/" className="flex items-center gap-2 text-lime font-display font-bold text-xl">
           <div className="w-8 h-8 rounded bg-lime flex items-center justify-center text-app">
-            UX
+            FT
           </div>
-          Template3
+          ForestTwin
         </Link>
       </div>
 

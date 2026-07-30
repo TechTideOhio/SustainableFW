@@ -29,10 +29,10 @@ export default function AuthPage() {
       <div className="w-full max-w-md z-10">
         <div className="flex flex-col items-center mb-8">
           <div className="w-12 h-12 rounded-xl bg-lime flex items-center justify-center text-app font-display font-bold text-2xl mb-4 shadow-[0_0_20px_rgba(168,217,70,0.3)]">
-            UX
+            FT
           </div>
-          <h1 className="text-2xl font-display font-bold text-white tracking-tight">Welcome to Template3</h1>
-          <p className="text-zinc-400 mt-2 text-sm">Sign in to your account or create a new one.</p>
+          <h1 className="text-2xl font-display font-bold text-white tracking-tight">Welcome to ForestTwin</h1>
+          <p className="text-zinc-400 mt-2 text-sm">Sign in to access your carbon dashboard.</p>
         </div>
 
         <Tabs defaultValue="signin" className="w-full">
@@ -46,7 +46,7 @@ export default function AuthPage() {
               <CardHeader>
                 <CardTitle>Sign In</CardTitle>
                 <CardDescription className="text-zinc-400">
-                  Enter your email below to log into your account
+                  Enter your credentials to access your dashboard
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -124,7 +124,7 @@ export default function AuthPage() {
               <CardHeader>
                 <CardTitle>Create an account</CardTitle>
                 <CardDescription className="text-zinc-400">
-                  Enter your details below to get started
+                  Set up your ForestTwin account
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -156,7 +156,7 @@ export default function AuthPage() {
                 <div className="flex items-start space-x-2 py-2">
                   <Checkbox id="terms" className="border-white/20 data-[state=checked]:bg-lime data-[state=checked]:text-app mt-1" />
                   <Label htmlFor="terms" className="text-sm font-normal text-zinc-400 leading-snug">
-                    I agree to the <a href="#" className="text-lime hover:underline">Terms of Service</a> and <a href="#" className="text-lime hover:underline">Privacy Policy</a>
+                    I agree to the <a href="/terms" className="text-lime hover:underline">Terms of Service</a> and <a href="/privacy" className="text-lime hover:underline">Privacy Policy</a>
                   </Label>
                 </div>
                 
@@ -170,11 +170,11 @@ export default function AuthPage() {
 
         <p className="px-8 text-center text-sm text-zinc-500 mt-8">
           By clicking continue, you agree to our{" "}
-          <a href="#" className="underline underline-offset-4 hover:text-white">
+          <a href="/terms" className="underline underline-offset-4 hover:text-white">
             Terms of Service
           </a>{" "}
           and{" "}
-          <a href="#" className="underline underline-offset-4 hover:text-white">
+          <a href="/privacy" className="underline underline-offset-4 hover:text-white">
             Privacy Policy
           </a>
           .

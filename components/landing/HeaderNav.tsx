@@ -8,8 +8,8 @@ export function HeaderNav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const links = [
-    { label: 'Products', href: '#' },
-    { label: 'Resources', href: '#' },
+    { label: 'Platform', href: '#features' },
+    { label: 'Case Studies', href: '#testimonials' },
     { label: 'Pricing', href: '#pricing' },
   ];
 
@@ -23,7 +23,7 @@ export function HeaderNav() {
              <div className="w-3 h-3 bg-black rounded-full" />
           </div>
           <span className="font-display font-bold text-white text-xl tracking-tight group-hover:text-lime transition-colors">
-            Circular
+            ForestTwin
           </span>
         </a>
 
@@ -46,7 +46,7 @@ export function HeaderNav() {
             Sign in
           </a>
           <Button className="bg-lime text-black hover:bg-lime/90 rounded-full h-9 px-5 font-semibold text-sm">
-            Try for free
+            Request a Demo
           </Button>
         </div>
 
@@ -87,7 +87,7 @@ export function HeaderNav() {
                 Sign in
               </Button>
               <Button className="w-full bg-lime text-black hover:bg-lime/90 rounded-full font-semibold">
-                Try for free
+                Request a Demo
               </Button>
             </div>
           </motion.div>

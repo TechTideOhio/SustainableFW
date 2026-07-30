@@ -3,8 +3,8 @@ import './globals.css';
 import { ThemeProvider } from 'next-themes';
 
 export const metadata: Metadata = {
-  title: 'SustainableFW | Operate',
-  description: 'Digital Twin and ESG tracking.',
+  title: 'ForestTwin | Carbon Asset Intelligence',
+  description: 'Interactive 3D digital twin platform for corporate carbon asset management, ESG reporting, and verified credit tracking.',
 };
 
 export default function RootLayout({

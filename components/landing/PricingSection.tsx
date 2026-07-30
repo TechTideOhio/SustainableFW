@@ -6,26 +6,26 @@ import { cn } from '@/lib/utils';
 export function PricingSection() {
   const plans = [
     {
-      name: "Starter",
-      price: "$24",
-      description: "Perfect for individuals and small projects.",
-      features: ["Up to 3 projects", "Basic analytics", "24-hour support response time", "Community access"],
+      name: "Monitor",
+      price: "$49",
+      description: "For single-site projects and pilot programs.",
+      features: ["1 forest site (up to 500 ha)", "Basic carbon metrics", "24-hour email support", "Community forum access"],
       buttonText: "Start free trial",
       highlight: false
     },
     {
-      name: "Premium",
-      price: "$99",
-      description: "Everything you need for a growing team.",
-      features: ["Unlimited projects", "Advanced analytics", "1-hour support response time", "Custom domain", "Team collaboration"],
+      name: "Portfolio",
+      price: "$299",
+      description: "For multi-site portfolios and growing teams.",
+      features: ["Up to 25 forest sites", "Advanced analytics and scenario modeling", "4-hour priority support", "Custom branding and reports", "Team collaboration (up to 10 seats)"],
       buttonText: "Start free trial",
       highlight: true
     },
     {
       name: "Enterprise",
-      price: "$125",
-      description: "For large scale organizations and needs.",
-      features: ["Unlimited everything", "Custom reporting", "Dedicated account manager", "SSO & SAML", "On-premise option"],
+      price: "Custom",
+      description: "For global programs with custom compliance needs.",
+      features: ["Unlimited sites and hectares", "Custom API integrations", "Dedicated success manager", "SSO, SAML, and SOC 2", "On-premise deployment option"],
       buttonText: "Contact sales",
       highlight: false
     }
@@ -39,7 +39,7 @@ export function PricingSection() {
             Simple, transparent pricing
           </h2>
           <p className="text-zinc-400 text-lg">
-            Start for free, then upgrade when you need to. <span className="text-lime">14-day free trial on all plans.</span>
+            Choose the plan that fits your portfolio. <span className="text-lime">All plans include a 14-day free trial.</span>
           </p>
         </div>
 

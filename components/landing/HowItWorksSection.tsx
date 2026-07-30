@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from 'react';
 import { motion, useScroll, useSpring, } from 'framer-motion';
-import { CalendarCheck, Users, Rocket } from 'lucide-react';
+import { CalendarCheck, Activity, FileCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function HowItWorksSection() {
@@ -21,18 +21,18 @@ export function HowItWorksSection() {
   const steps = [
     {
       icon: CalendarCheck,
-      title: "Schedule kickoff",
-      description: "We'll hop on a call to understand your needs and align on goals."
+      title: "Connect your data sources",
+      description: "Link satellite feeds, IoT sensors, and field survey data. ForestTwin ingests and normalizes everything automatically."
     },
     {
-      icon: Users,
-      title: "Real-time collaboration",
-      description: "Invite your team and start building together in a shared workspace."
+      icon: Activity,
+      title: "Monitor and simulate",
+      description: "Watch your 3D digital twin update in real time. Run climate scenarios to project carbon yields under different conditions."
     },
     {
-      icon: Rocket,
-      title: "Launch and scale",
-      description: "Deploy to our global edge network and watch your product grow."
+      icon: FileCheck,
+      title: "Verify and report",
+      description: "Export audit-ready carbon ledgers, generate compliance reports, and submit credits to registries like Verra and Gold Standard."
     }
   ];
 
@@ -46,10 +46,10 @@ export function HowItWorksSection() {
             How it works
           </h2>
           <p className="text-zinc-400 text-lg mb-8">
-            A simple, streamlined process to get you from idea to production in record time.
+            Three steps from raw data to verified carbon credits.
           </p>
           <Button variant="outline" size="lg" className="rounded-full border-lime/50 text-lime hover:bg-lime/10">
-            Schedule kickoff
+            Book a Walkthrough
           </Button>
         </div>
 

@@ -1,20 +1,20 @@
 
 export function LogoLoop() {
   const logos = [
-    'Acme Corp',
-    'Altshift',
-    'Biosynthesis',
-    'Boltshift',
-    'Capsule',
-    'Catalog',
-    'Cloudwatch',
-    'Commandr',
+    'Patagonia',
+    'Unilever',
+    'BASF',
+    'Salesforce',
+    'Shell Renewables',
+    'Verra',
+    'Gold Standard',
+    'South Pole',
   ];
 
   return (
     <section className="py-12 border-y border-white/5 bg-app overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center text-sm text-zinc-500 font-medium">
-        TRUSTED BY INNOVATIVE TEAMS WORLDWIDE
+        TRUSTED BY LEADING ESG AND SUSTAINABILITY TEAMS
       </div>
       <div className="relative flex overflow-hidden">
         {/* We need two groups to animate them seamlessly */}

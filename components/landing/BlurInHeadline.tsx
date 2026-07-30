@@ -2,7 +2,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const words = 'Modern teams use our platform to elevate every customer touchpoint, blending human expertise with AI capabilities in a unified system that drives continuous improvement across all channels.'.split(' ');
+const words = 'Sustainability leaders use ForestTwin to turn raw environmental data into verified carbon credits, combining satellite imagery with ground-truth sensors in one platform that makes every ton of CO₂ traceable and audit-ready.'.split(' ');
 
 export function BlurInHeadline() {
   const containerRef = useRef<HTMLDivElement>(null);

@@ -7,24 +7,24 @@ import { cn } from '@/lib/utils';
 
 const faqs = [
   {
+    question: "What data sources does ForestTwin support?",
+    answer: "ForestTwin ingests data from major satellite providers (Sentinel, Landsat, Planet), IoT sensor networks, drone surveys, and manual field assessments. Our API also accepts custom data feeds in standard geospatial formats."
+  },
+  {
+    question: "How does carbon credit verification work?",
+    answer: "ForestTwin cross-references your sensor and satellite data against baseline models to calculate net sequestration. The platform generates audit-ready documentation compatible with Verra VCS, Gold Standard, and other major registries."
+  },
+  {
+    question: "Can I run climate risk scenarios?",
+    answer: "Yes. The scenario simulator lets you model temperature changes, drought severity, deforestation rates, and fire risk across your portfolio. Results update your projected carbon yields in real time."
+  },
+  {
+    question: "Is my data secure?",
+    answer: "ForestTwin is SOC 2 Type II compliant and uses end-to-end encryption for data in transit and at rest. We conduct quarterly third-party security audits and support SSO with SAML for enterprise deployments."
+  },
+  {
     question: "Do you offer a free trial?",
-    answer: "Yes, we offer a 14-day free trial on all our plans. You can try all the features without providing a credit card upfront."
-  },
-  {
-    question: "Can I switch plans later?",
-    answer: "Absolutely. You can upgrade, downgrade, or cancel your plan at any time. Prorated charges or credits will be applied automatically."
-  },
-  {
-    question: "What integrations do you support?",
-    answer: "We support over 50 integrations out of the box, including Slack, Jira, Code, and major CRM platforms. You can also use our API to build custom integrations."
-  },
-  {
-    question: "How do you handle security and compliance?",
-    answer: "Security is our top priority. We are SOC 2 Type II compliant, use end-to-end encryption, and conduct regular third-party security audits."
-  },
-  {
-    question: "What kind of support is included?",
-    answer: "All plans include access to our community and knowledge base. Premium plans get 1-hour email response times, and Enterprise includes a dedicated account manager."
+    answer: "Yes. All plans include a 14-day free trial with full platform access. No credit card required to start. You can upgrade, downgrade, or cancel at any time."
   }
 ];
 
@@ -38,14 +38,14 @@ export function FAQSection() {
         {/* Left Side */}
         <div className="w-full md:w-1/3">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-            Everything you need to know
+            Common questions
           </h2>
           <p className="text-zinc-400 mb-8">
-            Can't find the answer you're looking for? Feel free to reach out to our team.
+            Still have questions? Our team is here to help.
           </p>
           <div className="flex flex-col gap-4 items-start">
             <Button className="bg-lime text-black hover:bg-lime/90 rounded-full font-medium">
-              Get Started
+              Start Free Trial
             </Button>
             <Button variant="link" className="text-zinc-400 hover:text-white px-0">
               Contact Support →

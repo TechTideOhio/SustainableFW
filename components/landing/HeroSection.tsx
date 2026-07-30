@@ -37,7 +37,7 @@ export function HeroSection() {
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-lime/30 bg-lime/10 text-lime mb-8 text-sm font-medium"
         >
           <Star className="w-4 h-4 fill-current" />
-          <span>Now Available ✦</span>
+          <span>Carbon Intelligence Platform</span>
         </motion.div>
 
         <motion.h1
@@ -46,7 +46,7 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-5xl md:text-7xl font-display font-bold tracking-tight text-white mb-6 max-w-4xl"
         >
-          Build Faster / Ship with <span className="font-serif italic text-lime font-normal">Confidence</span>
+          See Your Forest. Know Your Carbon. Prove Your <span className="font-serif italic text-lime font-normal">Impact</span>.
         </motion.h1>
 
         <motion.p
@@ -55,7 +55,7 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-10"
         >
-          The modern platform for teams who want to move fast without breaking things.
+          ForestTwin turns satellite imagery and IoT sensor data into a living 3D replica of your forest assets, so every carbon credit is traceable, verifiable, and audit-ready.
         </motion.p>
 
         <motion.div
@@ -65,7 +65,7 @@ export function HeroSection() {
           className="flex flex-col sm:flex-row gap-4 mb-20"
         >
           <Button size="lg" className="bg-lime text-black hover:bg-lime/90 rounded-full font-semibold px-8 h-14 text-base">
-            Get Started
+            Explore the Platform
           </Button>
         </motion.div>
 

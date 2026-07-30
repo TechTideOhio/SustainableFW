@@ -11,13 +11,13 @@ export default function DashboardPage() {
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
         <div>
           <h1 className="text-3xl font-display font-bold">Overview</h1>
-          <p className="text-zinc-400 mt-1">Welcome back, here's what's happening today.</p>
+          <p className="text-zinc-400 mt-1">Your carbon portfolio at a glance.</p>
         </div>
         <div className="flex items-center gap-3">
-          <Button variant="outline" className="border-white/10 hover:bg-white/5 text-white">Download</Button>
+          <Button variant="outline" className="border-white/10 hover:bg-white/5 text-white">Export Report</Button>
           <Button className="bg-lime text-app hover:bg-lime/90 font-medium">
             <Plus className="w-4 h-4 mr-2" />
-            New Project
+            Add Forest Site
           </Button>
         </div>
       </div>
