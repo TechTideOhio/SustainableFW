@@ -28,7 +28,7 @@ export default function HelpPage() {
     <div className="container max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8 space-y-16">
       {/* Hero Search Section */}
       <div className="text-center space-y-8 py-12">
-        <h1 className="text-5xl font-display font-bold text-white tracking-tight">How can we help?</h1>
+        <h1 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">How can we help?</h1>
         <p className="text-xl text-zinc-400">Search our knowledge base or browse categories below.</p>
         <div className="max-w-2xl mx-auto relative">
           <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">

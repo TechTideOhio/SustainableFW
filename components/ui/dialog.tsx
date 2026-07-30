@@ -58,7 +58,9 @@ const DialogContent = React.forwardRef<
       ref={ref}
       className={cn(
         // Base positioning & sizing
-        "fixed left-[50%] top-[50%] z-50 w-full max-w-md translate-x-[-50%] translate-y-[-50%]",
+        "fixed z-50 w-full max-w-md",
+        "max-sm:inset-0 max-sm:translate-x-0 max-sm:translate-y-0 max-sm:max-w-none max-sm:h-[100dvh] max-sm:rounded-none max-sm:overflow-y-auto",
+        "sm:left-[50%] sm:top-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%] sm:max-h-[90dvh] sm:overflow-y-auto",
         // Unified modal styling
         "bg-[#0a0a0a]/95 rounded-2xl border border-white/10 shadow-2xl overflow-hidden",
         // Animation
@@ -73,7 +75,7 @@ const DialogContent = React.forwardRef<
     >
       {children}
       {!hideCloseButton && (
-        <DialogPrimitive.Close className="absolute right-4 top-4 p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2 focus:ring-offset-[#0e0e10]">
+        <DialogPrimitive.Close className="absolute right-3 top-3 p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-lime focus:ring-offset-2 focus:ring-offset-[#0e0e10]">
           <X className="h-4 w-4 text-zinc-400 hover:text-white transition-colors" />
           <span className="sr-only">Close</span>
         </DialogPrimitive.Close>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { TreePine, Activity, Users, Server } from 'lucide-react';
 
 export function FeaturesSection() {
@@ -14,7 +14,7 @@ export function FeaturesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-[250px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-auto md:auto-rows-[250px]">
           {/* Card 1: Spans 2 rows */}
           <div className="row-span-1 md:row-span-2 bg-brand-600 rounded-xl p-8 flex flex-col relative overflow-hidden group text-white shadow-sm transition-all duration-200 ease-out">
             <div className="z-10">
@@ -55,7 +55,7 @@ export function FeaturesSection() {
             <div className="mt-6 flex flex-col gap-3 z-10 relative">
               <div className="flex items-center gap-3 bg-muted/80 backdrop-blur-md p-3 rounded-lg border border-border">
                 <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-xs font-mono text-foreground">COâ‚‚ absorbed: 12.4t</span>
+                <span className="text-xs font-mono text-foreground">CO₂ absorbed: 12.4t</span>
               </div>
               <div className="flex items-center gap-3 bg-muted/80 backdrop-blur-md p-3 rounded-lg border border-border">
                 <div className="w-2 h-2 rounded-full bg-emerald-500" />

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -69,6 +69,7 @@ export function PricingSection() {
               
               <Button 
                 variant={plan.highlight ? "default" : "outline"}
+                size="lg"
                 className="w-full mb-8 mt-auto rounded-full"
               >
                 {plan.buttonText}

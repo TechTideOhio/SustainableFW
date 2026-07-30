@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 const testimonials = [
   {
     quote: "ForestTwin replaced our quarterly PDF reports with a live dashboard our board actually uses. Carbon credit verification went from weeks to hours.",
-    author: "Dr. Sarah LindstrÃ¶m",
+    author: "Dr. Sarah Lindström",
     role: "Head of Sustainability, NordicTimber",
     company: "NordicTimber"
   },
@@ -111,7 +111,7 @@ export function TestimonialsSection() {
         </div>
 
         {/* Quote */}
-        <div className="min-h-[200px] relative">
+        <div className="min-h-[280px] sm:min-h-[240px] relative">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
@@ -134,22 +134,26 @@ export function TestimonialsSection() {
         </div>
 
         {/* Navigation Dots */}
-        <div className="mt-8 flex justify-center items-center gap-3">
+        <div className="mt-8 flex justify-center items-center gap-1">
           {testimonials.map((_, i) => (
             <button
               key={i}
               onClick={() => handleSelect(i)}
-              className={cn(
-                "h-2 rounded-full transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2",
-                i === activeIndex ? "w-8 bg-brand-600" : "w-2 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"
-              )}
+              className="p-3 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 rounded-full"
               aria-label={`Go to slide ${i + 1}`}
-            />
+            >
+              <span
+                className={cn(
+                  "h-2 rounded-full transition-all duration-200 ease-out",
+                  i === activeIndex ? "w-8 bg-brand-600" : "w-2 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"
+                )}
+              />
+            </button>
           ))}
         </div>
 
         {/* Logo Row */}
-        <div className="mt-12 flex justify-center gap-8 md:gap-16">
+        <div className="mt-12 flex flex-wrap justify-center gap-4 sm:gap-8 md:gap-16">
           {testimonials.map((t, i) => (
             <div 
               key={i} 

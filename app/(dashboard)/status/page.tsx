@@ -35,7 +35,7 @@ export default function StatusPage() {
     <div className="container max-w-5xl mx-auto py-12 px-4 sm:px-6 lg:px-8 space-y-12">
       {/* Header Banner */}
       <div className={cn(
-        "rounded-xl p-6 flex items-center justify-between border",
+        "rounded-xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border",
         isDegraded 
           ? "bg-amber-500/10 border-amber-500/30 text-amber-500" 
           : "bg-lime/10 border-lime/30 text-lime"
@@ -100,24 +100,26 @@ export default function StatusPage() {
           <CardDescription>Overall platform availability over the last 90 days.</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex gap-1 h-12 mb-2 items-end">
-            {historyData.map((status, i) => (
-              <div 
-                key={i} 
-                className={cn(
-                  "flex-1 rounded-sm min-w-[2px]",
-                  status === 'operational' ? "bg-lime h-full" : 
-                  status === 'degraded' ? "bg-amber-500 h-3/4" : 
-                  "bg-red-500 h-1/2"
-                )}
-                title={`Day ${i + 1}: ${status}`}
-              />
-            ))}
-          </div>
-          <div className="flex justify-between text-xs text-zinc-500 mt-2">
-            <span>90 days ago</span>
-            <span>99.98% uptime</span>
-            <span>Today</span>
+          <div className="overflow-x-auto">
+            <div className="flex gap-1 h-12 mb-2 items-end min-w-[500px]">
+              {historyData.map((status, i) => (
+                <div 
+                  key={i} 
+                  className={cn(
+                    "flex-1 rounded-sm min-w-[2px]",
+                    status === 'operational' ? "bg-lime h-full" : 
+                    status === 'degraded' ? "bg-amber-500 h-3/4" : 
+                    "bg-red-500 h-1/2"
+                  )}
+                  title={`Day ${i + 1}: ${status}`}
+                />
+              ))}
+            </div>
+            <div className="flex justify-between text-xs text-zinc-500 mt-2 min-w-[500px]">
+              <span>90 days ago</span>
+              <span>99.98% uptime</span>
+              <span>Today</span>
+            </div>
           </div>
         </CardContent>
       </Card>

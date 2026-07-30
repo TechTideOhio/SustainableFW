@@ -17,7 +17,7 @@ export default function AnalyticsPage() {
           <p className="text-zinc-400">Track your application's performance and user engagement.</p>
         </div>
         
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <div className="flex bg-surface rounded-lg p-1 border border-white/10">
             {['7d', '30d', '90d', '1y'].map((preset) => (
               <Button 

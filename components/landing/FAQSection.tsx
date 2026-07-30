@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
@@ -48,7 +48,7 @@ export function FAQSection() {
               Start Free Trial
             </Button>
             <Button variant="link" className="text-muted-foreground hover:text-foreground px-0">
-              Contact Support â†’
+              Contact Support →
             </Button>
           </div>
         </div>

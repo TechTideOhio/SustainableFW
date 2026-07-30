@@ -97,7 +97,7 @@ export default function ProductsPage() {
           <p className="text-zinc-400">Find the right plan for your team size and needs.</p>
         </div>
         
-        <div className="rounded-xl border border-white/10 overflow-hidden bg-card/50 backdrop-blur-sm">
+        <div className="rounded-xl border border-white/10 overflow-hidden overflow-x-auto bg-card/50 backdrop-blur-sm">
           <Table>
             <TableHeader className="bg-white/5">
               <TableRow className="border-white/10">

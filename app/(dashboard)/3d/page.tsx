@@ -83,18 +83,18 @@ export default function ThreeDPage() {
                   </div>
                 </div>
               </div>
-              <div className="p-4 border-t border-white/5 bg-elevated/30 flex items-center gap-6">
+              <div className="p-4 border-t border-white/5 bg-elevated/30 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
                 <div className="flex items-center gap-2 text-sm text-zinc-400">
                   <SlidersHorizontal className="w-4 h-4" />
                   Controls
                 </div>
-                <div className="flex-1 flex items-center gap-4">
+                <div className="flex-1 flex items-center gap-4 w-full">
                   <span className="text-xs text-zinc-500">Speed</span>
-                  <Slider defaultValue={[50]} max={100} step={1} className="w-[100px]" />
+                  <Slider defaultValue={[50]} max={100} step={1} className="w-full sm:w-[100px]" />
                 </div>
-                <div className="flex-1 flex items-center gap-4">
+                <div className="flex-1 flex items-center gap-4 w-full">
                   <span className="text-xs text-zinc-500">Intensity</span>
-                  <Slider defaultValue={[75]} max={100} step={1} className="w-[100px]" />
+                  <Slider defaultValue={[75]} max={100} step={1} className="w-full sm:w-[100px]" />
                 </div>
               </div>
             </CardContent>

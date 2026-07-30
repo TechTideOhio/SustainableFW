@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ArrowRight, MessageCircle, Code, Link } from 'lucide-react';
@@ -74,13 +74,13 @@ export function FooterSection() {
                 <div className="col-span-2 sm:col-span-1">
                   <h4 className="font-bold text-white uppercase mb-4">Social</h4>
                   <div className="flex gap-4">
-                    <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="MessageCircle">
+                    <a href="#" className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="MessageCircle">
                       <MessageCircle className="w-5 h-5" />
                     </a>
-                    <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="Code">
+                    <a href="#" className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="Code">
                       <Code className="w-5 h-5" />
                     </a>
-                    <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="Link">
+                    <a href="#" className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="Link">
                       <Link className="w-5 h-5" />
                     </a>
                   </div>
@@ -89,7 +89,7 @@ export function FooterSection() {
             </div>
 
             <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-medium text-white/60 text-sm">
-              <p>Â© {new Date().getFullYear()} ForestTwin Inc. All rights reserved.</p>
+              <p>© {new Date().getFullYear()} ForestTwin Inc. All rights reserved.</p>
               <div className="flex gap-6">
                 <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>

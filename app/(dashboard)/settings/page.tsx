@@ -259,7 +259,7 @@ export default function SettingsPage() {
               <CardHeader>
                 <CardTitle>Invoice History</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="overflow-x-auto">
                 <Table>
                   <TableHeader>
                     <TableRow className="border-white/10 hover:bg-transparent">
@@ -307,7 +307,7 @@ export default function SettingsPage() {
                 <Button className="bg-lime text-app hover:bg-lime/90 font-medium">
                   <Plus className="w-4 h-4 mr-2" /> Create </Button>
               </CardHeader>
-              <CardContent>
+              <CardContent className="overflow-x-auto">
                 <Table>
                   <TableHeader>
                     <TableRow className="border-white/10 hover:bg-transparent">
@@ -358,12 +358,12 @@ export default function SettingsPage() {
                 <CardDescription className="text-zinc-400">Manage who has access to this workspace.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <Input placeholder="Email address" className="bg-elevated border-white/10 text-white focus-visible:ring-lime max-w-sm" />
                   <Button className="bg-lime text-app hover:bg-lime/90 font-medium">Invite Member</Button>
                 </div>
                 
-                <div className="rounded-md border border-white/10">
+                <div className="rounded-md border border-white/10 overflow-x-auto">
                   <Table>
                     <TableHeader>
                       <TableRow className="border-white/10 hover:bg-transparent">

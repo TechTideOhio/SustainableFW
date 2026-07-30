@@ -13,7 +13,7 @@ export default function DashboardPage() {
           <h1 className="text-3xl font-display font-bold">Overview</h1>
           <p className="text-zinc-400 mt-1">Your carbon portfolio at a glance.</p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <Button variant="outline" className="border-white/10 hover:bg-white/5 text-white">Export Report</Button>
           <Button className="bg-lime text-app hover:bg-lime/90 font-medium">
             <Plus className="w-4 h-4 mr-2" />

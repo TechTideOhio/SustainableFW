@@ -1,6 +1,6 @@
-﻿"use client";
+"use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -8,6 +8,21 @@ import { Button } from '@/components/ui/button';
 export function HeaderNav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('Platform');
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMobileMenuOpen(false);
+    };
+    if (isMobileMenuOpen) window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [isMobileMenuOpen]);
 
   const links = [
     { label: 'Platform', href: '#features' },
@@ -65,8 +80,9 @@ export function HeaderNav() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-slate-600 dark:text-slate-300 hover:text-foreground p-2 rounded-lg transition-all duration-200 ease-out focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
+          className="md:hidden text-slate-600 dark:text-slate-300 hover:text-foreground p-2.5 rounded-lg transition-all duration-200 ease-out focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-expanded={isMobileMenuOpen}
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -82,7 +98,7 @@ export function HeaderNav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="absolute top-[80px] left-0 right-0 bg-slate-50/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-border p-6 flex flex-col gap-6 md:hidden shadow-md"
+            className="absolute top-[80px] left-0 right-0 bg-slate-50/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-border p-6 flex flex-col gap-6 md:hidden shadow-md max-h-[calc(100dvh-80px)] overflow-y-auto"
           >
             <nav className="flex flex-col gap-4">
               {links.map((link) => {
@@ -91,7 +107,7 @@ export function HeaderNav() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className={`text-slate-600 dark:text-slate-300 text-sm font-medium transition-all duration-200 ease-out py-2 px-3 rounded-lg ${
+                    className={`text-slate-600 dark:text-slate-300 text-base font-medium transition-all duration-200 ease-out py-3 px-4 rounded-lg ${
                       isActive
                         ? 'text-foreground font-semibold bg-muted'
                         : 'hover:text-foreground'
@@ -109,13 +125,14 @@ export function HeaderNav() {
             <div className="flex flex-col gap-3 pt-4 border-t border-border">
               <a
                 href="#"
-                className="text-slate-600 dark:text-slate-300 hover:text-brand-600 text-sm font-medium py-2 px-3 transition-all duration-200 ease-out active:brightness-95"
+                className="text-slate-600 dark:text-slate-300 hover:text-brand-600 text-base font-medium py-3 px-4 transition-all duration-200 ease-out active:brightness-95"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Sign in
               </a>
               <Button
                 variant="default"
+                size="lg"
                 className="w-full rounded-full transition-all duration-200 ease-out active:scale-[0.97]"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
