@@ -5,7 +5,12 @@ const nextConfig = {
   
   // Image optimization configuration
   images: {
-    domains: ['images.unsplash.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
     formats: ['image/webp'],
   },
   
@@ -15,10 +20,7 @@ const nextConfig = {
   // Enable static exports if needed
   // output: 'export',
   
-  // ESLint: only lint our app code, not vendored lib/
-  eslint: {
-    dirs: ['app', 'components', 'hooks'],
-  },
+  turbopack: {},
   
   // Configure webpack if needed
   webpack: (config) => {
