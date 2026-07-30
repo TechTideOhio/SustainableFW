@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
+import { SageCard, OperateButton, PillTag } from '@/components/ui/OperateUI';
 
 export function ScenarioSimulator() {
   const [tempIncrease, setTempIncrease] = useState(0);
@@ -36,7 +37,7 @@ export function ScenarioSimulator() {
 
       setResults({ change, status, recommendations });
       setIsSimulating(false);
-    }, 1000);
+    }, 800);
   };
 
   interface SliderProps {
@@ -51,9 +52,9 @@ export function ScenarioSimulator() {
 
   const Slider = ({ label, value, min, max, step, unit, onChange }: SliderProps) => (
     <div className="mb-4">
-      <div className="flex justify-between mb-1">
-        <label className="text-sm text-gray-300">{label}</label>
-        <span className="text-sm text-emerald-400 font-mono">
+      <div className="flex justify-between items-end mb-1">
+        <label className="font-muoto text-[12px] font-medium text-forest-ink/70">[{label}]</label>
+        <span className="font-denim text-[14px] text-forest-ink font-medium">
           {value}{unit}
         </span>
       </div>
@@ -64,38 +65,37 @@ export function ScenarioSimulator() {
         step={step}
         value={value}
         onChange={(e) => onChange(parseFloat(e.target.value))}
-        className="w-full h-2 bg-green-900/40 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+        className="w-full h-1 bg-lichen rounded-none appearance-none cursor-pointer accent-forest-ink"
         aria-label={label}
       />
     </div>
   );
 
   return (
-    <div className="p-6 rounded-xl bg-[#102a1c99] border border-[#22543d4d] backdrop-blur-md shadow-lg" role="region" aria-label="Scenario Simulator">
-      <div className="flex items-center gap-2 mb-6 border-b border-green-900/30 pb-4">
-        <span className="text-xl">🧪</span>
-        <h2 className="text-lg font-semibold text-emerald-50">Scenario Simulator</h2>
+    <SageCard padding="md" className="flex flex-col h-full" role="region" aria-label="Scenario Simulator">
+      <div className="flex items-center gap-2 mb-4 pb-3 border-b border-lichen">
+        <h2 className="font-denim text-[16px] font-medium text-forest-ink">Simulation Engine</h2>
       </div>
 
-      <div className="space-y-2">
-        <Slider label="Temperature Increase" value={tempIncrease} min={0} max={5} step={0.1} unit="°C" onChange={setTempIncrease} />
-        <Slider label="Drought Severity" value={droughtSeverity} min={0} max={100} step={1} unit="%" onChange={setDroughtSeverity} />
-        <Slider label="Deforestation Rate" value={deforestationRate} min={0} max={10} step={0.1} unit="%" onChange={setDeforestationRate} />
-        <Slider label="Reforestation Rate" value={reforestationRate} min={0} max={10} step={0.1} unit="%" onChange={setReforestationRate} />
-        <Slider label="Time Horizon" value={timeHorizon} min={5} max={50} step={5} unit=" yrs" onChange={setTimeHorizon} />
+      <div className="space-y-1 flex-1 overflow-y-auto pr-2">
+        <Slider label="Temp Delta" value={tempIncrease} min={0} max={5} step={0.1} unit="°C" onChange={setTempIncrease} />
+        <Slider label="Drought Idx" value={droughtSeverity} min={0} max={100} step={1} unit="%" onChange={setDroughtSeverity} />
+        <Slider label="Loss Rate" value={deforestationRate} min={0} max={10} step={0.1} unit="%" onChange={setDeforestationRate} />
+        <Slider label="Recovery Rate" value={reforestationRate} min={0} max={10} step={0.1} unit="%" onChange={setReforestationRate} />
+        <Slider label="Horizon" value={timeHorizon} min={5} max={50} step={5} unit="y" onChange={setTimeHorizon} />
       </div>
 
-      <button
+      <OperateButton
         onClick={handleSimulate}
         disabled={isSimulating}
-        className="w-full mt-6 bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-lg font-medium transition-colors flex justify-center items-center gap-2 disabled:opacity-50"
+        className="w-full mt-4 flex justify-center items-center h-10"
       >
         {isSimulating ? (
-          <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: 'linear' }} className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full" />
+          <span className="font-cinetype text-[12px] tracking-cinetype uppercase animate-pulse">Computing...</span>
         ) : (
-          'Run Simulation'
+          'Execute Scenario'
         )}
-      </button>
+      </OperateButton>
 
       <AnimatePresence>
         {results && !isSimulating && (
@@ -103,34 +103,29 @@ export function ScenarioSimulator() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="mt-6 pt-6 border-t border-green-900/30 overflow-hidden"
+            className="mt-4 pt-4 border-t border-lichen overflow-hidden"
           >
-            <h3 className="text-sm text-gray-400 uppercase tracking-wider mb-4">Simulation Results</h3>
-            
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="bg-black/20 p-4 rounded-lg">
-                <p className="text-xs text-gray-400 mb-1">Projected Carbon Change</p>
-                <p className={`text-2xl font-bold ${results.change >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+            <div className="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <p className="font-cinetype text-[11px] text-slate-smoke tracking-cinetype uppercase mb-1">Yield Delta</p>
+                <p className="font-denim text-[20px] font-bold text-forest-ink">
                   {results.change > 0 ? '+' : ''}{results.change.toFixed(1)}%
                 </p>
               </div>
-              <div className="bg-black/20 p-4 rounded-lg">
-                <p className="text-xs text-gray-400 mb-1">Risk Assessment</p>
-                <p className={`text-xl font-bold ${
-                  results.status === 'Stable' ? 'text-green-400' : 
-                  results.status === 'Declining' ? 'text-amber-400' : 'text-red-400'
-                }`}>
+              <div>
+                <p className="font-cinetype text-[11px] text-slate-smoke tracking-cinetype uppercase mb-1">Status</p>
+                <PillTag variant={results.status === 'Stable' ? 'outline' : 'filled'} className={results.status !== 'Stable' ? 'bg-forest-ink text-bone-white' : ''}>
                   {results.status}
-                </p>
+                </PillTag>
               </div>
             </div>
 
             <div>
-              <p className="text-xs text-gray-400 mb-2">Recommendations:</p>
-              <ul className="space-y-2">
+              <p className="font-cinetype text-[11px] text-slate-smoke tracking-cinetype uppercase mb-1">Directives</p>
+              <ul className="space-y-1">
                 {results.recommendations.map((rec, i) => (
-                  <li key={i} className="flex gap-2 text-sm text-gray-300">
-                    <span className="text-emerald-500">•</span> {rec}
+                  <li key={i} className="flex gap-2 font-denim text-[12px] leading-tight text-forest-ink/80">
+                    <span className="text-forest-ink">-</span> {rec}
                   </li>
                 ))}
               </ul>
@@ -138,6 +133,6 @@ export function ScenarioSimulator() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </SageCard>
   );
 }

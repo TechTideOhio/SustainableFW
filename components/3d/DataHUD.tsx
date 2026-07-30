@@ -56,7 +56,7 @@ export default function DataHUD({
 
   const itemVariants = {
     hidden: { opacity: 0, scale: 0.8 },
-    show: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 200, damping: 20 } }
+    show: { opacity: 1, scale: 1, transition: { type: "spring" as const, stiffness: 300, damping: 24 } }
   };
 
   const pillClass = "bg-black/50 backdrop-blur-sm border border-emerald-500/30 rounded-full px-4 py-2 flex items-center gap-2 text-white font-mono text-sm";

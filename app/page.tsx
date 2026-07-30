@@ -1,171 +1,167 @@
 'use client';
 
-import React, { useEffect } from 'react';
-import { useLenis } from '@/hooks/useLenis';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import Navbar from '@/components/layout/NavbarWithSmoothScroll';
-import HeroSection from '@/components/ui/HeroSection';
-import ParallaxSection from '@/components/ui/ParallaxSection';
-import AnimatedButton from '@/components/ui/AnimatedButton';
+import React from 'react';
+import { motion } from 'motion/react';
+import Link from 'next/link';
+import { GhostLink, OperateButton, AxisLabel, FloatingChip, PillTag, SageCard, HairlineDivider } from '@/components/ui/OperateUI';
+import { Activity, Leaf, ShieldAlert } from 'lucide-react';
 
-// Register GSAP plugins
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
+const container = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
+const item = { hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } };
 
 export default function Home() {
-  // Initialize Lenis smooth scroll
-  const lenis = useLenis();
-  
-  // Set up GSAP ScrollTrigger integration with Lenis
-  useEffect(() => {
-    if (!lenis) return;
-    
-    function raf(time: number) {
-      lenis?.raf(time);
-      requestAnimationFrame(raf);
-    }
-    
-    requestAnimationFrame(raf);
-    
-    // Connect Lenis to ScrollTrigger
-    lenis.on('scroll', ScrollTrigger.update);
-    
-    // Set up a ticker for GSAP animations
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-    
-    return () => {
-      gsap.ticker.remove((time) => {
-        lenis.raf(time * 1000);
-      });
-    };
-  }, [lenis]);
-  
+  // Generate random scatter points for the background data-as-illustration
+  const scatterPoints = Array.from({ length: 60 }).map((_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    isFilled: Math.random() > 0.85,
+    isHighlight: Math.random() > 0.95,
+  }));
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-green-950 to-green-900 text-white overflow-x-hidden">
+    <main className="min-h-screen bg-sage-paper text-forest-ink selection:bg-moss selection:text-forest-ink font-denim overflow-x-hidden">
       {/* Navigation */}
-      <Navbar />
-      
-      {/* Hero Section with 3D Forest */}
-      <HeroSection />
-      
-      {/* Parallax Sections */}
-      <ParallaxSection
-        id="about"
-        title="Real-Time Carbon Intelligence"
-        description="Monitor your forest assets with satellite-grade precision. Our platform translates complex ecological data into actionable carbon metrics in real-time."
-        imageSrc="/images/forest_sunlight.webp"
-        imageAlt="Sunlight streaming through a dense forest"
-        factNumber="99%"
-        factText="Accuracy in biomass estimation using our proprietary digital twin algorithms."
-      />
-      
-      <ParallaxSection
-        id="sustainability"
-        title="Audit-Ready Compliance"
-        description="Every carbon credit verified against VCS and Gold Standard. Maintain perfect traceability from physical tree to retired credit on the ledger."
-        imageSrc="/images/forest_green.webp"
-        imageAlt="Lush green forest canopy"
-        reverse={true}
-        factNumber="100%"
-        factText="Traceable carbon credits on our immutable ledger system."
-      />
-      
-      <ParallaxSection
-        id="gallery"
-        title="Predictive Risk Modeling"
-        description="Simulate climate scenarios to protect your portfolio. Our ML models predict wildfire, disease, and drought risks years before they impact your assets."
-        imageSrc="/images/forest_aerial.webp"
-        imageAlt="Aerial view of a vast forest"
-        factNumber="24/7"
-        factText="Continuous monitoring of your entire portfolio's health and risk factors."
-      />
-      
-      {/* Contact Section */}
-      <section id="contact" className="min-h-screen flex items-center justify-center py-20 px-4">
-        <div className="max-w-4xl w-full bg-green-800/30 backdrop-blur-sm p-8 md:p-12 rounded-xl border border-green-700/50 shadow-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">Ready to Optimize?</h2>
-          <p className="text-lg md:text-xl text-center mb-8">
-            Join forward-thinking enterprises managing their nature-based solutions with ForestTwin.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-green-900/50 p-6 rounded-lg border border-green-800/50">
-              <h3 className="text-2xl font-semibold mb-4">Enterprise Dashboard</h3>
-              <p className="mb-6">Access your customized digital twin interface and manage your carbon assets.</p>
-              <AnimatedButton 
-                variant="primary" 
-                size="lg" 
-                className="w-full"
-                href="/dashboard"
-              >
-                Go to Dashboard
-              </AnimatedButton>
-            </div>
-            
-            <div className="bg-green-900/50 p-6 rounded-lg border border-green-800/50">
-              <h3 className="text-2xl font-semibold mb-4">Request Demo</h3>
-              <p className="mb-6">See how our platform can transform your carbon portfolio management.</p>
-              <AnimatedButton 
-                variant="secondary" 
-                size="lg" 
-                className="w-full"
-                href="#"
-              >
-                Schedule Demo
-              </AnimatedButton>
-            </div>
+      <header className="w-full px-6 py-4 flex justify-between items-center z-50 relative border-b border-lichen shadow-subtle-3">
+        <div className="flex items-center gap-6">
+          <Link href="/" className="font-muoto font-medium tracking-muoto text-[14px]">
+            [ ForestTwin ]
+          </Link>
+          <div className="hidden md:flex gap-4 ml-8">
+            <GhostLink href="#platform">Platform</GhostLink>
+            <GhostLink href="#compliance">Compliance</GhostLink>
+            <GhostLink href="#risk">Risk Models</GhostLink>
           </div>
         </div>
-      </section>
+        <div className="flex items-center gap-4">
+          <GhostLink href="/login">Sign In</GhostLink>
+          <OperateButton href="/dashboard" variant="primary">Access Dashboard</OperateButton>
+        </div>
+      </header>
       
+      {/* Hero Section */}
+      <section className="relative w-full h-[80vh] min-h-[600px] flex flex-col items-center justify-center border-b border-lichen overflow-hidden">
+        {/* Scatter Plot Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
+          {scatterPoints.map((point) => (
+            <div
+              key={point.id}
+              className={`absolute rounded-full border border-forest-ink ${point.isFilled ? 'bg-bone-white' : 'bg-transparent'} ${point.isHighlight ? 'w-3 h-3 bg-emerald border-none' : 'w-2 h-2'}`}
+              style={{ top: `${point.y}%`, left: `${point.x}%` }}
+            />
+          ))}
+          
+          <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <line x1="20%" y1="100%" x2="80%" y2="0%" stroke="#cad3d2" strokeWidth="1" strokeDasharray="4 4" />
+            <line x1="10%" y1="60%" x2="90%" y2="40%" stroke="#cad3d2" strokeWidth="1" strokeDasharray="4 4" />
+          </svg>
+        </div>
+
+        {/* Axis Labels */}
+        <div className="absolute top-6 left-6 z-10">
+          <AxisLabel align="left">Carbon Yield</AxisLabel>
+        </div>
+        <div className="absolute top-6 right-6 z-10">
+          <AxisLabel align="right">Time Variance</AxisLabel>
+        </div>
+
+        <FloatingChip className="bottom-12 left-12">System Online: Nominal</FloatingChip>
+
+        {/* Content */}
+        <motion.div 
+          className="relative z-10 max-w-3xl px-6 flex flex-col items-center text-center mt-[-5%]"
+          variants={container}
+          initial="hidden"
+          animate="show"
+        >
+          <motion.div variants={item}>
+            <PillTag className="mb-6 border-forest-ink">v0.1.0-STABLE</PillTag>
+          </motion.div>
+          <motion.h1 variants={item} className="font-denim font-medium text-[48px] leading-[1.11] mb-6">
+            Your Forest Assets, <br />
+            <span className="text-deep-fern">Quantified.</span>
+          </motion.h1>
+          <motion.p variants={item} className="font-denim text-[18px] leading-[1.4] text-slate-smoke max-w-xl mb-10">
+            A real-time, audit-ready data instrument for corporate ESG managers. Monitor high-frequency telemetry on forest health, biomass, and carbon offset compliance.
+          </motion.p>
+          <motion.div variants={item} className="flex gap-4">
+            <OperateButton href="/dashboard" variant="primary">Launch Terminal</OperateButton>
+            <OperateButton href="#documentation" variant="outline">Read Specification</OperateButton>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Problem / Solution Section */}
+      <section id="platform" className="relative w-full py-24 px-6 border-b border-lichen">
+        <div className="absolute top-6 left-6 z-10">
+          <AxisLabel align="left">Architecture</AxisLabel>
+        </div>
+        <div className="max-w-page mx-auto">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div variants={item}>
+              <SageCard padding="lg" className="h-full">
+                <Activity className="w-5 h-5 mb-4 text-deep-fern" />
+                <h3 className="font-denim font-medium text-[20px] mb-2">Real-Time Telemetry</h3>
+                <p className="font-denim text-[14px] leading-[1.5] text-slate-smoke">
+                  Stop relying on annual PDF reports. We aggregate satellite multispectral data to deliver daily biomass estimates and exact carbon yield metrics.
+                </p>
+              </SageCard>
+            </motion.div>
+            
+            <motion.div variants={item}>
+              <SageCard padding="lg" className="h-full">
+                <ShieldAlert className="w-5 h-5 mb-4 text-deep-fern" />
+                <h3 className="font-denim font-medium text-[20px] mb-2">Predictive Risk</h3>
+                <p className="font-denim text-[14px] leading-[1.5] text-slate-smoke">
+                  Simulate climate scenarios directly against your physical assets. ML models predict wildfire, disease, and drought risks before they impact your natural capital.
+                </p>
+              </SageCard>
+            </motion.div>
+            
+            <motion.div variants={item}>
+              <SageCard padding="lg" className="h-full">
+                <Leaf className="w-5 h-5 mb-4 text-deep-fern" />
+                <h3 className="font-denim font-medium text-[20px] mb-2">Immutable Ledger</h3>
+                <p className="font-denim text-[14px] leading-[1.5] text-slate-smoke">
+                  Every metric is cryptographically signed and stored. Ensure your carbon offsets meet strict VCS and Gold Standard verification criteria with zero friction.
+                </p>
+              </SageCard>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="bg-green-950 py-12 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">
-              <span className="text-green-400">Forest</span>Twin
-            </h3>
-            <p className="text-gray-300">
-              The enterprise standard for digital twin carbon asset management.
-            </p>
+      <footer className="w-full py-12 px-6 bg-ash-gray border-t border-lichen flex flex-col md:flex-row justify-between items-start md:items-center">
+        <div className="flex flex-col gap-2 mb-8 md:mb-0">
+          <span className="font-muoto font-medium tracking-muoto text-[12px]">[ ForestTwin Digital Asset Dashboard ]</span>
+          <span className="font-cinetype text-[11px] text-slate-smoke tracking-cinetype uppercase">© {new Date().getFullYear()} ForestTwin Inc.</span>
+        </div>
+        
+        <div className="flex gap-8">
+          <div className="flex flex-col gap-2">
+            <span className="font-cinetype text-[11px] text-slate-smoke tracking-cinetype uppercase mb-2">Platform</span>
+            <GhostLink href="/dashboard" className="text-[12px]">Dashboard</GhostLink>
+            <GhostLink href="#models" className="text-[12px]">Risk Models</GhostLink>
+            <GhostLink href="#ledger" className="text-[12px]">Ledger</GhostLink>
           </div>
-          
-          <div>
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {['Home', 'Platform', 'Security', 'Compliance', 'Contact'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="text-gray-300 hover:text-white transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
-            <div className="flex space-x-4">
-              {['Twitter', 'LinkedIn'].map((social) => (
-                <a 
-                  key={social} 
-                  href="#" 
-                  className="w-10 h-10 rounded-full bg-green-800 flex items-center justify-center hover:bg-green-700 transition-colors"
-                  aria-label={social}
-                >
-                  <span className="text-sm">{social[0]}</span>
-                </a>
-              ))}
-            </div>
+          <div className="flex flex-col gap-2">
+            <span className="font-cinetype text-[11px] text-slate-smoke tracking-cinetype uppercase mb-2">Company</span>
+            <GhostLink href="#about" className="text-[12px]">About</GhostLink>
+            <GhostLink href="#security" className="text-[12px]">Security</GhostLink>
+            <GhostLink href="#contact" className="text-[12px]">Contact</GhostLink>
           </div>
         </div>
         
-        <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-green-800 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} ForestTwin. All rights reserved.</p>
+        {/* Vertical Version Stamp */}
+        <div className="hidden md:block absolute right-2 bottom-24 origin-bottom-right -rotate-90 font-muoto text-[11px] text-slate-smoke">
+          BUILD: 2026.07.29 // STABLE
         </div>
       </footer>
     </main>

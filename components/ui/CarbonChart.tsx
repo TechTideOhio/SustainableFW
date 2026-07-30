@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
+import { SageCard, PillTag } from '@/components/ui/OperateUI';
 
 export interface CarbonChartProps {
   data: { date: string; value: number }[];
@@ -54,37 +55,37 @@ export function CarbonChart({ data, title = 'Carbon Sequestration' }: CarbonChar
 
   if (!data || data.length === 0) {
     return (
-      <div className="p-6 rounded-xl bg-[#102a1c99] border border-[#22543d4d] backdrop-blur-md shadow-lg flex items-center justify-center min-h-[400px]">
-        <p className="text-gray-400">No data available for {title}</p>
-      </div>
+      <SageCard padding="md" className="flex items-center justify-center h-full">
+        <p className="font-denim text-[14px] text-slate-smoke">No data available</p>
+      </SageCard>
     );
   }
 
   return (
-    <div className="p-6 rounded-xl bg-[#102a1c99] border border-[#22543d4d] backdrop-blur-md shadow-lg" role="region" aria-label={title}>
-      <div className="flex justify-between items-center mb-6 border-b border-green-900/30 pb-4">
-        <h2 className="text-lg font-semibold text-emerald-50">{title}</h2>
-        <div className="flex gap-1 bg-black/30 p-1 rounded-full">
+    <SageCard padding="md" className="h-full flex flex-col" role="region" aria-label={title}>
+      <div className="flex justify-between items-center mb-6 border-b border-lichen pb-3">
+        <h2 className="font-denim text-[16px] font-medium text-forest-ink">{title}</h2>
+        <div className="flex gap-2">
           {(['Daily', 'Monthly', 'Yearly'] as Timeframe[]).map((tf) => (
             <button
               key={tf}
               onClick={() => setTimeframe(tf)}
-              className={`px-3 py-1 text-xs font-medium rounded-full transition-colors ${
-                timeframe === tf ? 'bg-emerald-600 text-white' : 'text-gray-400 hover:text-gray-200 hover:bg-white/5'
-              }`}
+              className="focus:outline-none"
             >
-              {tf}
+              <PillTag variant={timeframe === tf ? 'filled' : 'outline'} className={timeframe === tf ? 'bg-forest-ink text-bone-white cursor-default' : 'cursor-pointer hover:bg-forest-ink/5'}>
+                {tf}
+              </PillTag>
             </button>
           ))}
         </div>
       </div>
 
-      <div className="relative w-full aspect-[2/1] overflow-hidden" onMouseLeave={() => setHoveredPoint(null)}>
-        <svg viewBox={`0 0 ${chartWidth} ${chartHeight}`} className="w-full h-full overflow-visible">
+      <div className="relative w-full flex-1 min-h-0 overflow-hidden" onMouseLeave={() => setHoveredPoint(null)}>
+        <svg viewBox={`0 0 ${chartWidth} ${chartHeight}`} className="w-full h-full overflow-visible preserve-aspect-ratio-none">
           <defs>
             <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="rgba(16, 185, 129, 0.3)" />
-              <stop offset="100%" stopColor="rgba(16, 185, 129, 0)" />
+              <stop offset="0%" stopColor="var(--color-moss)" stopOpacity="0.2" />
+              <stop offset="100%" stopColor="var(--color-moss)" stopOpacity="0" />
             </linearGradient>
           </defs>
 
@@ -95,8 +96,9 @@ export function CarbonChart({ data, title = 'Carbon Sequestration' }: CarbonChar
               y1={padding.top + innerHeight * tick}
               x2={chartWidth - padding.right}
               y2={padding.top + innerHeight * tick}
-              stroke="rgba(20, 83, 45, 0.2)"
+              stroke="var(--color-lichen)"
               strokeWidth="1"
+              strokeDasharray="4 4"
             />
           ))}
 
@@ -111,8 +113,8 @@ export function CarbonChart({ data, title = 'Carbon Sequestration' }: CarbonChar
           <motion.path
             d={pathD}
             fill="none"
-            stroke="#34d399"
-            strokeWidth="2"
+            stroke="var(--color-forest-ink)"
+            strokeWidth="1.5"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -131,23 +133,23 @@ export function CarbonChart({ data, title = 'Carbon Sequestration' }: CarbonChar
           ))}
           
           {hoveredPoint && (
-            <circle cx={hoveredPoint.x} cy={hoveredPoint.y} r={4} fill="#fff" stroke="#34d399" strokeWidth="2" />
+            <circle cx={hoveredPoint.x} cy={hoveredPoint.y} r={4} fill="var(--color-bone-white)" stroke="var(--color-forest-ink)" strokeWidth="1.5" />
           )}
 
-          <text x={padding.left} y={chartHeight - 10} fill="#9ca3af" fontSize="10">{points[0]?.date}</text>
-          <text x={chartWidth - padding.right} y={chartHeight - 10} fill="#9ca3af" fontSize="10" textAnchor="end">{points[points.length - 1]?.date}</text>
+          <text x={padding.left} y={chartHeight - 10} fill="var(--color-slate-smoke)" fontSize="10" className="font-cinetype uppercase tracking-cinetype">{points[0]?.date}</text>
+          <text x={chartWidth - padding.right} y={chartHeight - 10} fill="var(--color-slate-smoke)" fontSize="10" textAnchor="end" className="font-cinetype uppercase tracking-cinetype">{points[points.length - 1]?.date}</text>
         </svg>
 
         {hoveredPoint && (
           <div 
-            className="absolute bg-[#0f2418] border border-emerald-900/50 p-2 rounded shadow-xl pointer-events-none transform -translate-x-1/2 -translate-y-full"
+            className="absolute bg-bone-white border border-lichen p-2 rounded shadow-sm-2 pointer-events-none transform -translate-x-1/2 -translate-y-full"
             style={{ left: `${(hoveredPoint.x / chartWidth) * 100}%`, top: `${(hoveredPoint.y / chartHeight) * 100}%`, marginTop: '-10px' }}
           >
-            <p className="text-xs text-gray-400 mb-1">{hoveredPoint.date}</p>
-            <p className="text-sm font-bold text-emerald-400">{hoveredPoint.value.toLocaleString()}</p>
+            <p className="font-cinetype text-[10px] text-slate-smoke uppercase tracking-cinetype mb-1">{hoveredPoint.date}</p>
+            <p className="font-denim text-[14px] font-medium text-forest-ink">{hoveredPoint.value.toLocaleString()}</p>
           </div>
         )}
       </div>
-    </div>
+    </SageCard>
   );
 }

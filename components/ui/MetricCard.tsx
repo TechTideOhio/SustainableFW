@@ -1,11 +1,14 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
+import { SageCard } from '@/components/ui/OperateUI';
+import { NumberTicker } from '@/components/ui/NumberTicker';
 
 interface MetricCardProps {
   title: string;
-  value: string | number;
+  value: number;
+  unit?: string;
   subtitle?: string;
   change?: number;
   icon?: React.ReactNode;
@@ -16,47 +19,54 @@ interface MetricCardProps {
 export function MetricCard({
   title,
   value,
+  unit = '',
   subtitle,
   change,
   icon,
   color = 'emerald',
   index = 0,
 }: MetricCardProps) {
-  const colorMap = {
-    green: 'text-green-400',
-    emerald: 'text-emerald-400',
-    red: 'text-red-400',
-    amber: 'text-amber-400',
-  };
-
-  const valColor = colorMap[color] || colorMap.emerald;
   const isPositive = change !== undefined && change >= 0;
-  const changeColor = isPositive ? 'text-green-400' : 'text-red-400';
+  const changeColor = isPositive ? 'text-moss' : 'text-slate-smoke';
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="relative flex flex-col p-6 rounded-xl bg-[#102a1c99] border border-[#22543d4d] backdrop-blur-md shadow-lg transition-all duration-300 hover:border-emerald-500/50 hover:shadow-[0_0_15px_rgba(16,185,129,0.15)] group"
+      transition={{ duration: 0.4, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      className="group"
       role="region"
       aria-label={`${title} Metric`}
     >
-      <div className="flex justify-between items-start mb-4">
-        <h3 className="text-sm text-gray-400 uppercase tracking-wider font-semibold">{title}</h3>
-        {icon && <div className="text-gray-400 group-hover:text-emerald-400 transition-colors">{icon}</div>}
-      </div>
+      <SageCard padding="md" className="h-full flex flex-col justify-between">
+        <div className="flex justify-between items-start mb-6">
+          <h3 className="font-muoto text-[12px] tracking-muoto font-medium text-forest-ink/70">
+            [{title}]
+          </h3>
+          {icon && <div className="text-forest-ink/50 group-hover:text-forest-ink transition-colors">{icon}</div>}
+        </div>
 
-      <div className="flex items-baseline gap-2 mb-2">
-        <span className={`text-3xl font-bold ${valColor}`}>{value}</span>
-        {change !== undefined && (
-          <span className={`flex items-center text-sm font-medium ${changeColor}`} aria-label={`Change: ${change}%`}>
-            {isPositive ? '↑' : '↓'} {Math.abs(change)}%
-          </span>
-        )}
-      </div>
+        <div>
+          <div className="flex items-baseline gap-1 mb-1">
+            <span className="font-denim text-[32px] font-medium leading-[1.17] text-forest-ink">
+              <NumberTicker value={value} />
+            </span>
+            {unit && <span className="font-denim text-[14px] text-slate-smoke">{unit}</span>}
+          </div>
 
-      {subtitle && <p className="text-sm text-gray-500">{subtitle}</p>}
+          {change !== undefined && (
+            <div className={`flex items-center gap-1 font-muoto text-[12px] ${changeColor}`} aria-label={`Change: ${change}%`}>
+              <span>{isPositive ? '↑' : '↓'}</span>
+              <NumberTicker value={Math.abs(change)} decimalPlaces={1} />%
+              <span className="text-slate-smoke ml-1">vs last period</span>
+            </div>
+          )}
+          
+          {subtitle && !change && (
+            <p className="font-denim text-[12px] text-slate-smoke mt-1">{subtitle}</p>
+          )}
+        </div>
+      </SageCard>
     </motion.div>
   );
 }

@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
+import { SageCard, PillTag } from '@/components/ui/OperateUI';
 
 export interface Alert {
   id: string;
@@ -17,19 +18,19 @@ export interface AlertFeedProps {
   alerts: Alert[];
 }
 
-const typeIcons: Record<Alert['type'], string> = {
-  deforestation: '🌲',
-  fire: '🔥',
-  drought: '☀️',
-  pest: '🐛',
-  flood: '🌊',
-  illegal_logging: '🪓',
+const typeTags: Record<Alert['type'], string> = {
+  deforestation: 'DEFOREST',
+  fire: 'FIRE',
+  drought: 'DROUGHT',
+  pest: 'PEST',
+  flood: 'FLOOD',
+  illegal_logging: 'LOGGING',
 };
 
 const severityColors: Record<Alert['severity'], string> = {
-  info: 'bg-blue-500',
-  warning: 'bg-amber-500',
-  critical: 'bg-red-500',
+  info: 'bg-moss',
+  warning: 'bg-amber-400',
+  critical: 'bg-red-400',
 };
 
 export function AlertFeed({ alerts }: AlertFeedProps) {
@@ -43,65 +44,53 @@ export function AlertFeed({ alerts }: AlertFeedProps) {
   const unresolvedCount = alerts.filter(a => !a.resolved).length;
 
   return (
-    <div className="flex flex-col h-full max-h-[600px] p-6 rounded-xl bg-[#102a1c99] border border-[#22543d4d] backdrop-blur-md shadow-lg" role="region" aria-label="Environmental Alerts">
-      <div className="flex justify-between items-center mb-4 pb-4 border-b border-green-900/30">
-        <h2 className="text-lg font-semibold text-emerald-50">Environmental Alerts</h2>
+    <SageCard padding="md" className="flex flex-col h-full max-h-[600px]" role="region" aria-label="System Alerts">
+      <div className="flex justify-between items-center mb-4 pb-3 border-b border-lichen">
+        <h2 className="font-denim text-[16px] font-medium text-forest-ink">System Alerts</h2>
         {unresolvedCount > 0 && (
-          <span className="bg-red-500/20 text-red-400 px-2 py-1 rounded-full text-xs font-bold border border-red-500/30">
-            {unresolvedCount} New
-          </span>
+          <PillTag variant="filled" className="bg-forest-ink text-bone-white">
+            {unresolvedCount} OPEN
+          </PillTag>
         )}
       </div>
 
-      <div className="flex-1 overflow-y-auto pr-2 space-y-3 custom-scrollbar">
+      <div className="flex-1 overflow-y-auto pr-2 space-y-3 no-scrollbar">
         {sortedAlerts.length === 0 ? (
-          <p className="text-gray-400 text-sm text-center py-8">No alerts at this time.</p>
+          <p className="font-denim text-[14px] text-slate-smoke text-center py-8">No alerts at this time.</p>
         ) : (
           sortedAlerts.map((alert, index) => (
             <motion.div
               key={alert.id}
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
-              className={`relative flex gap-3 p-4 rounded-lg bg-black/20 border border-white/5 overflow-hidden transition-all hover:bg-black/30 ${alert.resolved ? 'opacity-60 grayscale-[0.5]' : ''}`}
+              className={`relative flex flex-col gap-2 p-4 rounded-md border border-lichen bg-ash-gray/30 transition-all ${alert.resolved ? 'opacity-50' : ''}`}
             >
               <div className={`absolute left-0 top-0 bottom-0 w-1 ${severityColors[alert.severity]}`} />
               
-              <div className="text-2xl mt-1">{typeIcons[alert.type] || '⚠️'}</div>
-              
-              <div className="flex-1 min-w-0">
-                <div className="flex justify-between items-start mb-1">
-                  <h4 className="font-semibold text-gray-200 truncate pr-2">{alert.title}</h4>
-                  <span className="text-xs text-gray-500 whitespace-nowrap">{alert.timestamp}</span>
+              <div className="flex justify-between items-start">
+                <div className="flex items-center gap-2">
+                  <PillTag className="text-[10px] py-0.5 px-1.5">{typeTags[alert.type]}</PillTag>
+                  <h4 className="font-denim text-[14px] font-medium text-forest-ink truncate">{alert.title}</h4>
                 </div>
-                <p className="text-sm text-gray-400 line-clamp-2 mb-2">{alert.description}</p>
-                
-                {alert.resolved && (
-                  <span className="inline-block px-2 py-0.5 rounded text-xs bg-green-500/20 text-green-400 border border-green-500/20">
-                    Resolved
-                  </span>
-                )}
+                <span className="font-cinetype text-[10px] text-slate-smoke uppercase tracking-cinetype whitespace-nowrap">{alert.timestamp}</span>
               </div>
+              
+              <p className="font-denim text-[13px] text-slate-smoke line-clamp-2 leading-relaxed ml-1 pl-1">
+                {alert.description}
+              </p>
+              
+              {alert.resolved && (
+                <div className="mt-1 flex">
+                  <span className="font-cinetype text-[10px] text-slate-smoke uppercase tracking-cinetype">
+                    [ Resolved ]
+                  </span>
+                </div>
+              )}
             </motion.div>
           ))
         )}
       </div>
-      <style dangerouslySetInnerHTML={{__html: `
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(0, 0, 0, 0.2);
-          border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(16, 185, 129, 0.3);
-          border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: rgba(16, 185, 129, 0.5);
-        }
-      `}} />
-    </div>
+    </SageCard>
   );
 }
