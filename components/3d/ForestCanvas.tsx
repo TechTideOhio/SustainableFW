@@ -1,3 +1,4 @@
+"use client";
 import React, { Suspense, useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';

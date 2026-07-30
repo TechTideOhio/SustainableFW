@@ -1,8 +1,10 @@
+"use client";
 import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
+import Link from 'next/link';
 import ForestCanvas from '../3d/ForestCanvas';
-import Button from './Button';
+import { Button } from './button';
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -55,11 +57,11 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Button href="/dashboard" size="lg">
-              Enter Dashboard
+            <Button asChild size="lg">
+              <Link href="/dashboard">Enter Dashboard</Link>
             </Button>
-            <Button href="/dashboard" variant="outline" size="lg">
-              View Demo
+            <Button asChild variant="outline" size="lg">
+              <Link href="/dashboard">View Demo</Link>
             </Button>
           </motion.div>
         </div>
@@ -72,19 +74,12 @@ export default function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
       >
-        <div className="flex flex-col items-center">
-          <span className="text-white text-sm mb-2">Scroll Down</span>
+        <div className="w-[30px] h-[50px] rounded-full border-2 border-white/30 flex justify-center p-2">
           <motion.div 
-            className="w-6 h-10 border-2 border-white rounded-full flex justify-center p-1"
-            animate={{ y: [0, 10, 0] }}
+            className="w-1 h-3 bg-white rounded-full"
+            animate={{ y: [0, 15, 0] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          >
-            <motion.div 
-              className="w-1.5 h-3 bg-white rounded-full"
-              animate={{ y: [0, 15, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-            />
-          </motion.div>
+          />
         </div>
       </motion.div>
     </section>

@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { ThemeProvider } from 'next-themes';
 
 export const metadata: Metadata = {
-  title: 'ForestTwin | Corporate ESG Digital Twin',
-  description: 'Digital Twin Carbon Asset Dashboard for Corporate ESG.',
+  title: 'SustainableFW | Operate',
+  description: 'Digital Twin and ESG tracking.',
 };
 
 export default function RootLayout({
@@ -12,9 +13,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`font-sans tracking-denim antialiased`}>
-        {children}
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
+      <body className="font-sans antialiased bg-app text-foreground min-h-screen">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
