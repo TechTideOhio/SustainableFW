@@ -43,14 +43,14 @@ export function PricingSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {plans.map((plan) => (
             <div 
               key={plan.name}
               className={cn(
                 "relative rounded-3xl p-8 bg-card flex flex-col",
                 plan.highlight 
-                  ? "border-2 border-lime lime-edge shadow-[0_0_30px_rgba(168,217,70,0.15)] md:-mt-8 md:mb-8 bg-zinc-900/80" 
+                  ? "border-2 border-lime lime-edge shadow-[0_0_30px_rgba(168,217,70,0.15)] bg-zinc-900/80 md:-translate-y-4 md:mb-[-1rem]" 
                   : "border border-white/10"
               )}
             >
@@ -70,14 +70,14 @@ export function PricingSection() {
               <Button 
                 variant={plan.highlight ? "default" : "outline"}
                 className={cn(
-                  "w-full rounded-full mb-8",
+                  "w-full rounded-full mb-8 mt-auto",
                   plan.highlight ? "bg-lime text-black hover:bg-lime/90 font-semibold" : "border-white/20 text-white hover:bg-white/10"
                 )}
               >
                 {plan.buttonText}
               </Button>
               
-              <div className="space-y-4 flex-1">
+              <div className="space-y-4">
                 {plan.features.map((feature) => (
                   <div key={feature} className="flex items-start gap-3">
                     <Check className={cn("w-5 h-5 shrink-0", plan.highlight ? "text-lime" : "text-zinc-500")} />
