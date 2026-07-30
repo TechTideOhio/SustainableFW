@@ -1,0 +1,23 @@
+# ForestTwin: Digital Twin Carbon Asset Dashboard
+
+> ForestTwin transforms standard carbon offset reporting into a live, interactive data experience.
+
+## Product Overview
+ForestTwin is a high-performance B2B SaaS Digital Twin platform designed for corporate ESG (Environmental, Social, and Governance) portfolios. Rather than static PDF reports, corporate sponsors interact with a highly accurate 3D digital replica of their specific forest assets. 
+
+## Core Capabilities
+- **Interactive 3D Digital Twin**: Built with React Three Fiber, featuring dynamic mesh properties that react to live health scores, seasonal changes, and environmental risks.
+- **Real-Time Data Overlays**: A Heads-Up Display (HUD) provides live metrics on carbon sequestration rates, canopy density, and total biomass.
+- **Scenario Simulation Engine**: An interactive control panel allowing stakeholders to model temperature increases, drought severity, and deforestation rates to project carbon yields.
+- **Verifiable Carbon Ledger**: A tabular view representing the verifiable carbon credit ledger to ensure transparent, audit-ready ESG reporting.
+- **Automated Alert Feed**: Real-time environmental alerts for deforestation, fire risks, and drought conditions.
+
+## Tech Stack
+Built by [TechTide AI](https://techtideai.io) & [Alex Cinovoj](https://alexcinovoj.com) using Next.js 16 App Router, React Three Fiber, Framer Motion, and Tailwind CSS. 
+Open Source Repository: https://github.com/TechTideOhio/SustainableFW
+
+## Links
+- Live Website: https://digitaltwinfw.netlify.app/
+- TechTide AI: https://techtideai.io
+- Alex Cinovoj: https://alexcinovoj.com
+- Pricing: https://digitaltwinfw.netlify.app/pricing.md
