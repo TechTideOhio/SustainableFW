@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -51,10 +50,10 @@ export default function Button({
       button.style.setProperty('--y', `${y}px`);
     };
 
-    button.addEventListener('mousemove', handleMouseMove);
+    button.addEventListener('mousemove', handleMouseMove as EventListener);
     
     return () => {
-      button.removeEventListener('mousemove', handleMouseMove);
+      button.removeEventListener('mousemove', handleMouseMove as EventListener);
     };
   }, []);
 

@@ -15,8 +15,10 @@ const nextConfig = {
   // Enable static exports if needed
   // output: 'export',
   
-  // Improve build performance
-  swcMinify: true,
+  // ESLint: only lint our app code, not vendored lib/
+  eslint: {
+    dirs: ['app', 'components', 'hooks'],
+  },
   
   // Configure webpack if needed
   webpack: (config) => {

@@ -98,3 +98,33 @@ html {
     scroll-behavior: auto !important;
   }
 }
+
+/* Dashboard design tokens */
+:root {
+  --dashboard-bg: #0d1f15;
+  --sidebar-bg: #0a1a12;
+  --card-bg: rgba(16, 42, 28, 0.6);
+  --card-border: rgba(34, 84, 61, 0.3);
+  --accent-green: #4ade80;
+  --accent-emerald: #34d399;
+  --text-primary: #f0fdf4;
+  --text-secondary: #86efac;
+  --text-muted: #6b7280;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+}
+
+.glass-card-hover {
+  transition: all 0.3s ease;
+}
+.glass-card-hover:hover {
+  border-color: rgba(74, 222, 128, 0.3);
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.05);
+}

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { motion, useAnimation, AnimatePresence } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 
 interface AnimatedButtonProps {
   children: React.ReactNode;
@@ -59,10 +59,10 @@ export default function AnimatedButton({
       button.style.setProperty('--y', `${y}px`);
     };
 
-    button.addEventListener('mousemove', handleMouseMove);
+    button.addEventListener('mousemove', handleMouseMove as EventListener);
     
     return () => {
-      button.removeEventListener('mousemove', handleMouseMove);
+      button.removeEventListener('mousemove', handleMouseMove as EventListener);
     };
   }, [disabled]);
 

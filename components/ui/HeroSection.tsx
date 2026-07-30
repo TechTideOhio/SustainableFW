@@ -37,7 +37,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Preserving Our <span className="text-green-400">Forests</span> For Future Generations
+            Your Forest Assets, <span className="text-green-400">Reimagined</span>
           </motion.h1>
           
           <motion.p 
@@ -46,7 +46,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Discover the beauty and importance of sustainable forest management through an immersive journey
+            Real-time Digital Twin monitoring for corporate carbon portfolios
           </motion.p>
           
           <motion.div 
@@ -55,11 +55,11 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Button href="#about" size="lg">
-              Explore
+            <Button href="/dashboard" size="lg">
+              Enter Dashboard
             </Button>
-            <Button href="#sustainability" variant="outline" size="lg">
-              Learn More
+            <Button href="/dashboard" variant="outline" size="lg">
+              View Demo
             </Button>
           </motion.div>
         </div>
