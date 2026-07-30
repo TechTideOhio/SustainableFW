@@ -35,11 +35,11 @@ export function PricingSection() {
     <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
             Simple, transparent pricing
           </h2>
-          <p className="text-zinc-400 text-lg">
-            Choose the plan that fits your portfolio. <span className="text-lime">All plans include a 14-day free trial.</span>
+          <p className="text-muted-foreground text-lg">
+            Choose the plan that fits your portfolio. <span className="text-brand-600 font-semibold">All plans include a 14-day free trial.</span>
           </p>
         </div>
 
@@ -48,31 +48,28 @@ export function PricingSection() {
             <div 
               key={plan.name}
               className={cn(
-                "relative rounded-3xl p-8 bg-card flex flex-col",
+                "relative rounded-xl p-8 flex flex-col transition-all duration-200 ease-out",
                 plan.highlight 
-                  ? "border-2 border-lime lime-edge shadow-[0_0_30px_rgba(168,217,70,0.15)] bg-zinc-900/80 md:-translate-y-4 md:mb-[-1rem]" 
-                  : "border border-white/10"
+                  ? "border-2 border-brand-600 shadow-[0_0_0_2px_rgba(59,91,219,0.2)] bg-brand-50/50 dark:bg-brand-600/5 md:-translate-y-4 md:mb-[-1rem]" 
+                  : "bg-card border border-border shadow-sm"
               )}
             >
               {plan.highlight && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-lime text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                   Most Popular
                 </div>
               )}
               
-              <h3 className="text-xl font-medium text-white mb-2">{plan.name}</h3>
+              <h3 className="text-xl font-medium text-foreground mb-2">{plan.name}</h3>
               <div className="mb-4">
-                <span className="text-4xl font-display font-bold text-white">{plan.price}</span>
-                <span className="text-zinc-500">/mo</span>
+                <span className="text-4xl font-display font-bold text-foreground">{plan.price}</span>
+                <span className="text-muted-foreground">/mo</span>
               </div>
-              <p className="text-zinc-400 text-sm mb-8">{plan.description}</p>
+              <p className="text-muted-foreground text-sm mb-8">{plan.description}</p>
               
               <Button 
                 variant={plan.highlight ? "default" : "outline"}
-                className={cn(
-                  "w-full rounded-full mb-8 mt-auto",
-                  plan.highlight ? "bg-lime text-black hover:bg-lime/90 font-semibold" : "border-white/20 text-white hover:bg-white/10"
-                )}
+                className="w-full rounded-full mb-8 mt-auto font-semibold"
               >
                 {plan.buttonText}
               </Button>
@@ -80,8 +77,8 @@ export function PricingSection() {
               <div className="space-y-4">
                 {plan.features.map((feature) => (
                   <div key={feature} className="flex items-start gap-3">
-                    <Check className={cn("w-5 h-5 shrink-0", plan.highlight ? "text-lime" : "text-zinc-500")} />
-                    <span className="text-zinc-300 text-sm">{feature}</span>
+                    <Check className={cn("w-5 h-5 shrink-0", plan.highlight ? "text-brand-600" : "text-slate-400")} />
+                    <span className="text-slate-600 dark:text-slate-300 text-sm">{feature}</span>
                   </div>
                 ))}
               </div>

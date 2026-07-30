@@ -54,7 +54,7 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-elevated/30">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/50">
       <div className="max-w-4xl mx-auto text-center">
         
         {/* Avatars */}
@@ -65,15 +65,15 @@ export function TestimonialsSection() {
               <button
                 key={index}
                 onClick={() => handleSelect(index)}
-                className="relative group focus:outline-none"
+                className="relative group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 rounded-full transition-all duration-200 ease-out active:scale-[0.97]"
                 aria-label={`View testimonial ${index + 1}`}
               >
                 <div className={cn(
-                  "w-16 h-16 rounded-full bg-zinc-800 border-2 overflow-hidden transition-colors relative z-10",
-                  isActive ? "border-transparent" : "border-white/10 group-hover:border-white/30"
+                  "w-16 h-16 rounded-full bg-slate-200 dark:bg-slate-800 border-2 overflow-hidden transition-all duration-200 ease-out relative z-10",
+                  isActive ? "border-transparent" : "border-border group-hover:border-slate-400 dark:group-hover:border-slate-600"
                 )}>
                   {/* Avatar Placeholder */}
-                  <div className="w-full h-full bg-gradient-to-br from-zinc-700 to-zinc-900 flex items-center justify-center text-xl font-bold text-white/50">
+                  <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-600 dark:to-slate-700 flex items-center justify-center text-xl font-bold text-slate-500 dark:text-slate-300">
                     {testimonials[index].author.charAt(0)}
                   </div>
                 </div>
@@ -86,7 +86,7 @@ export function TestimonialsSection() {
                       cy="36"
                       r="34"
                       fill="none"
-                      stroke="rgba(255,255,255,0.1)"
+                      stroke="rgba(100,116,139,0.2)"
                       strokeWidth="2"
                     />
                     <circle
@@ -94,7 +94,7 @@ export function TestimonialsSection() {
                       cy="36"
                       r="34"
                       fill="none"
-                      stroke="#a8d946" // lime
+                      stroke="#3b5bdb"
                       strokeWidth="2"
                       strokeDasharray="213.6" // 2 * PI * 34
                       strokeDashoffset={213.6 - (213.6 * progress) / 100}
@@ -118,12 +118,12 @@ export function TestimonialsSection() {
               transition={{ duration: 0.4 }}
               className="absolute inset-0 flex flex-col items-center"
             >
-              <p className="text-2xl md:text-3xl lg:text-4xl font-display font-medium text-white mb-8 leading-snug">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-display font-medium text-foreground mb-8 leading-snug">
                 "{testimonials[activeIndex].quote}"
               </p>
-              <div className="text-zinc-400">
-                <span className="font-semibold text-white">{testimonials[activeIndex].author}</span>
-                <span className="mx-2 text-zinc-600">|</span>
+              <div className="text-muted-foreground">
+                <span className="font-semibold text-foreground">{testimonials[activeIndex].author}</span>
+                <span className="mx-2 text-slate-300 dark:text-slate-600">|</span>
                 <span>{testimonials[activeIndex].role}</span>
               </div>
             </motion.div>
@@ -137,7 +137,7 @@ export function TestimonialsSection() {
               key={i} 
               className={cn(
                 "font-display font-bold text-lg md:text-xl transition-colors duration-500",
-                i === activeIndex ? "text-lime opacity-100" : "text-zinc-500 grayscale"
+                i === activeIndex ? "text-brand-600 opacity-100" : "text-slate-400 dark:text-slate-500 grayscale"
               )}
             >
               {t.company}

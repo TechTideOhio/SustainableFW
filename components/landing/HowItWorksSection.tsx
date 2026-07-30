@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from 'react';
-import { motion, useScroll, useSpring, } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { CalendarCheck, Activity, FileCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -42,43 +42,42 @@ export function HowItWorksSection() {
         
         {/* Left Sticky Panel */}
         <div className="w-full md:w-1/3 md:sticky md:top-32 h-fit">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
             How it works
           </h2>
-          <p className="text-zinc-400 text-lg mb-8">
+          <p className="text-muted-foreground text-lg mb-8">
             Three steps from raw data to verified carbon credits.
           </p>
-          <Button variant="outline" size="lg" className="rounded-full border-lime/50 text-lime hover:bg-lime/10 mb-12">
+          <Button variant="outline" size="lg" className="rounded-full mb-12">
             Book a Walkthrough
           </Button>
-          <div className="hidden md:block w-full aspect-video rounded-2xl overflow-hidden border border-white/10 relative shadow-2xl">
+          <div className="hidden md:block w-full aspect-video rounded-xl overflow-hidden border border-border relative shadow-sm">
             <img src="/images/data_integration.jpg" alt="Data Integration Visualization" className="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.8)] pointer-events-none" />
+            <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.2)] pointer-events-none" />
           </div>
         </div>
 
         {/* Right Timeline */}
-        <div className="w-full md:w-2/3 relative pl-8 md:pl-16">
-          {/* Background Line */}
-          <div className="absolute left-[39px] md:left-[71px] top-0 bottom-0 w-0.5 bg-white/10 rounded-full" />
-          
-          {/* Animated Progress Line */}
-          <motion.div 
-            className="absolute left-[39px] md:left-[71px] top-0 bottom-0 w-0.5 bg-lime rounded-full origin-top"
-            style={{ scaleY: smoothProgress }}
-          />
-
-          <div className="space-y-32 relative">
+        <div className="w-full md:w-2/3">
+          <div className="space-y-24 md:space-y-32">
             {steps.map((step, i) => (
-              <div key={i} className="relative">
-                {/* Circle Icon Badge */}
-                <div className="absolute -left-10 md:-left-20 w-12 h-12 rounded-full bg-black border-2 border-lime flex items-center justify-center z-10 text-lime shadow-[0_0_15px_rgba(168,217,70,0.3)]">
-                  <step.icon className="w-5 h-5" />
+              <div key={i} className="flex gap-6 md:gap-8">
+                {/* Timeline column: badge + line segment */}
+                <div className="relative flex flex-col items-center shrink-0">
+                  {/* Circle Icon Badge */}
+                  <div className="w-12 h-12 rounded-full bg-background border-2 border-brand-600 flex items-center justify-center z-10 text-brand-600 shrink-0">
+                    <step.icon className="w-5 h-5" />
+                  </div>
+                  {/* Line extending down from badge (hidden on last item) */}
+                  {i < steps.length - 1 && (
+                    <div className="w-0.5 flex-1 bg-slate-200 dark:bg-slate-700 mt-0" />
+                  )}
                 </div>
-                
-                <div className="pt-2">
-                  <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-zinc-400 text-lg">{step.description}</p>
+
+                {/* Content column */}
+                <div className="pt-2 pb-4 min-w-0">
+                  <h3 className="text-2xl font-bold text-foreground mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground text-lg">{step.description}</p>
                 </div>
               </div>
             ))}

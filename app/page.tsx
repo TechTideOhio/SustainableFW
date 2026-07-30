@@ -13,7 +13,7 @@ import {
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-app font-body text-white selection:bg-lime selection:text-black">
+    <div className="min-h-screen bg-background font-sans text-foreground selection:bg-brand-600 selection:text-white">
       <HeaderNav />
       <main>
         <HeroSection />

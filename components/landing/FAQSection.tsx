@@ -32,22 +32,22 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 border-t border-white/5">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 border-t border-border">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16">
         
         {/* Left Side */}
         <div className="w-full md:w-1/3">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
             Common questions
           </h2>
-          <p className="text-zinc-400 mb-8">
+          <p className="text-muted-foreground mb-8">
             Still have questions? Our team is here to help.
           </p>
           <div className="flex flex-col gap-4 items-start">
-            <Button className="bg-lime text-black hover:bg-lime/90 rounded-full font-medium">
+            <Button className="rounded-full font-medium">
               Start Free Trial
             </Button>
-            <Button variant="link" className="text-zinc-400 hover:text-white px-0">
+            <Button variant="link" className="text-muted-foreground hover:text-foreground px-0">
               Contact Support →
             </Button>
           </div>
@@ -62,8 +62,8 @@ export function FAQSection() {
                 <div 
                   key={index} 
                   className={cn(
-                    "border border-white/10 rounded-2xl overflow-hidden transition-colors",
-                    isOpen ? "bg-white/5 border-white/20" : "bg-transparent hover:bg-white/[0.02]"
+                    "border border-border rounded-2xl overflow-hidden transition-colors",
+                    isOpen ? "bg-muted/50 border-border" : "bg-transparent hover:bg-muted/30"
                   )}
                 >
                   <button
@@ -71,11 +71,11 @@ export function FAQSection() {
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                     aria-expanded={isOpen}
                   >
-                    <span className="font-medium text-white text-lg">{faq.question}</span>
+                    <span className="font-medium text-foreground text-lg">{faq.question}</span>
                     <motion.div
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
-                      className={cn("shrink-0 ml-4 p-1 rounded-full", isOpen ? "bg-lime/20 text-lime" : "text-zinc-500")}
+                      className={cn("shrink-0 ml-4 p-1 rounded-full", isOpen ? "bg-brand-50 dark:bg-brand-600/10 text-brand-600" : "text-slate-400")}
                     >
                       <ChevronDown className="w-5 h-5" />
                     </motion.div>
@@ -88,7 +88,7 @@ export function FAQSection() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <div className="px-6 pb-5 text-zinc-400">
+                        <div className="px-6 pb-5 text-muted-foreground">
                           {faq.answer}
                         </div>
                       </motion.div>
