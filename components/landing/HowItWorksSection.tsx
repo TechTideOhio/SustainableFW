@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { CalendarCheck, Activity, FileCheck } from 'lucide-react';
@@ -37,25 +37,25 @@ export function HowItWorksSection() {
   ];
 
   return (
-    <section ref={containerRef} className="py-32 px-4 sm:px-6 lg:px-8 bg-black-olive">
+    <section ref={containerRef} className="py-32 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 md:gap-8">
         
         {/* Left Sticky Panel */}
         <div className="w-full md:w-1/3 md:sticky md:top-32 h-fit">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-warm-cream tracking-[0.04em] mb-6">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
             How it works
           </h2>
-          <p className="text-sage-mist tracking-[0.02em] text-lg mb-8">
+          <p className="text-muted-foreground text-lg mb-8">
             Three steps from raw data to verified carbon credits.
           </p>
-          <Button variant="default" size="lg" className="rounded-[1px] mb-12">
+          <Button variant="outline" size="lg" className="rounded-full mb-12">
             Book a Walkthrough
           </Button>
-          <div className="hidden md:block w-full aspect-video rounded-none overflow-hidden border border-sage-mist/15 relative">
+          <div className="hidden md:block w-full aspect-video rounded-xl border border-border shadow-sm overflow-hidden relative">
             <img 
               src="/images/data_integration.jpg" 
               alt="Data Integration Visualization" 
-              className="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700" 
+              className="w-full h-full object-cover opacity-90 hover:scale-105 transition-all duration-700 ease-out" 
             />
           </div>
         </div>
@@ -74,15 +74,15 @@ export function HowItWorksSection() {
               >
                 {/* Timeline column: badge + line segment */}
                 <div className="relative flex flex-col items-center shrink-0">
-                  {/* Square Badge */}
-                  <div className="w-12 h-12 rounded-[1px] bg-black-olive border-2 border-lemon-zest text-lemon-zest flex items-center justify-center z-10 shrink-0">
+                  {/* Circular Badge */}
+                  <div className="w-12 h-12 rounded-full bg-background border-2 border-brand-600 text-brand-600 flex items-center justify-center z-10 shrink-0">
                     <step.icon className="w-5 h-5" />
                   </div>
                   {/* Line extending down from badge (hidden on last item) */}
                   {i < steps.length - 1 && (
-                    <div className="w-0.5 flex-1 bg-sage-mist/20 mt-0 relative overflow-hidden">
+                    <div className="w-0.5 flex-1 bg-slate-200 dark:bg-slate-700 mt-0 relative overflow-hidden">
                       <motion.div 
-                        className="absolute top-0 left-0 w-full bg-lemon-zest origin-top"
+                        className="absolute top-0 left-0 w-full h-full bg-brand-600 origin-top"
                         style={{ scaleY: smoothProgress }}
                       />
                     </div>
@@ -91,8 +91,8 @@ export function HowItWorksSection() {
 
                 {/* Content column */}
                 <div className="pt-2 pb-4 min-w-0">
-                  <h3 className="text-2xl font-bold text-warm-cream tracking-[0.04em] mb-3">{step.title}</h3>
-                  <p className="text-sage-mist text-lg">{step.description}</p>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground text-lg">{step.description}</p>
                 </div>
               </motion.div>
             ))}

@@ -3,13 +3,17 @@
 @plugin "@tailwindcss/typography";
 
 @theme inline {
-  /* === LIMÓN COLOR PALETTE === */
-  --color-black-olive: #1d0b0d;
-  --color-forest-ink: #103b15;
-  --color-lemon-zest: #f7ea48;
-  --color-warm-cream: #fcf9f0;
-  --color-sage-mist: #dbe2dc;
-  --color-pure-white: #ffffff;
+  /* === INDIGO/SLATE BRAND PALETTE === */
+  --color-brand-50: #f0f4ff;
+  --color-brand-100: #dbe4ff;
+  --color-brand-200: #bac8ff;
+  --color-brand-300: #91a7ff;
+  --color-brand-400: #748ffc;
+  --color-brand-500: #5c7cfa;
+  --color-brand-600: #3b5bdb;
+  --color-brand-700: #2d4abf;
+  --color-brand-800: #1e3a8a;
+  --color-brand-900: #172554;
 
   /* === SHADCN CSS VARIABLE BRIDGE === */
   --color-background: hsl(var(--background));
@@ -41,7 +45,7 @@
   --color-sidebar-border: hsl(var(--sidebar-border));
   --color-sidebar-ring: hsl(var(--sidebar-ring));
 
-  /* === RADIUS (unsoftened edges) === */
+  /* === RADIUS === */
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
@@ -72,63 +76,72 @@
 
 @layer base {
   :root {
-    --font-display: 'DM Sans', 'Outfit', 'Plus Jakarta Sans', sans-serif;
-    --font-body: 'DM Sans', 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    --font-display: 'Inter', 'DM Sans', system-ui, sans-serif;
+    --font-body: 'Inter', 'DM Sans', system-ui, sans-serif;
     --font-mono: 'Geist Mono', monospace;
 
-    /* Dark-first: Black Olive canvas is default */
-    --background: 350 40% 8%;
-    --foreground: 43 50% 96%;
-    --card: 350 30% 11%;
-    --card-foreground: 43 50% 96%;
-    --popover: 350 30% 11%;
-    --popover-foreground: 43 50% 96%;
-    --primary: 54 90% 63%;
-    --primary-foreground: 350 40% 8%;
-    --secondary: 145 58% 15%;
-    --secondary-foreground: 43 50% 96%;
-    --muted: 350 20% 14%;
-    --muted-foreground: 135 6% 86%;
-    --accent: 145 58% 15%;
-    --accent-foreground: 43 50% 96%;
+    /* Light mode: clean white/slate */
+    --background: 0 0% 100%;
+    --foreground: 215 28% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+    --primary: 231 48% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 28% 17%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 215 28% 17%;
     --destructive: 0 72% 51%;
-    --destructive-foreground: 43 50% 96%;
-    --border: 135 6% 60%;
-    --input: 135 6% 30%;
-    --ring: 54 90% 63%;
-    --radius: 0.0625rem;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 231 48% 55%;
+    --radius: 0.75rem;
 
-    --sidebar-background: 350 40% 6%;
-    --sidebar-foreground: 43 50% 96%;
-    --sidebar-primary: 54 90% 63%;
-    --sidebar-primary-foreground: 350 40% 8%;
-    --sidebar-accent: 145 58% 15%;
-    --sidebar-accent-foreground: 43 50% 96%;
-    --sidebar-border: 135 6% 25%;
-    --sidebar-ring: 54 90% 63%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 215 28% 17%;
+    --sidebar-primary: 231 48% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 215 28% 17%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 231 48% 55%;
   }
 
-  /* Light mode: Warm Cream sections */
-  .light {
-    --background: 43 50% 96%;
-    --foreground: 350 40% 8%;
-    --card: 0 0% 100%;
-    --card-foreground: 350 40% 8%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 350 40% 8%;
-    --primary: 54 90% 63%;
-    --primary-foreground: 350 40% 8%;
-    --secondary: 135 6% 86%;
-    --secondary-foreground: 350 40% 8%;
-    --muted: 135 6% 90%;
-    --muted-foreground: 135 6% 40%;
-    --accent: 145 58% 15%;
-    --accent-foreground: 43 50% 96%;
+  /* Dark mode: slate-800/900 surfaces */
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
+    --popover: 217 33% 17%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 231 48% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 72% 51%;
-    --destructive-foreground: 43 50% 96%;
-    --border: 135 6% 80%;
-    --input: 135 6% 80%;
-    --ring: 145 58% 15%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 33% 25%;
+    --input: 217 33% 25%;
+    --ring: 231 48% 55%;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 231 48% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 25%;
+    --sidebar-ring: 231 48% 55%;
   }
 
   * {
@@ -150,37 +163,29 @@
 }
 
 @layer utilities {
-  /* === FOCUS RING (Lemon Zest on dark) === */
+  /* === FOCUS RING (brand-600) === */
   .focus-ring {
-    @apply ring-2 ring-lemon-zest ring-offset-2 ring-offset-background outline-none;
+    @apply ring-2 ring-brand-600 ring-offset-2 ring-offset-background outline-none;
+  }
+
+  /* === GLOW EFFECT (selected items only) === */
+  .glow-brand {
+    box-shadow: 0 0 0 2px rgba(59, 91, 219, 0.2);
   }
 
   /* === SKELETON LOADING === */
   .skeleton {
-    @apply animate-pulse bg-sage-mist/20 rounded-none;
+    @apply animate-pulse bg-slate-200 dark:bg-slate-700 rounded;
   }
 
-  /* === DISPLAY TRACKING (wide-set neon sign feel) === */
-  .tracking-display {
-    letter-spacing: 0.06em;
-  }
-  .tracking-heading {
-    letter-spacing: 0.04em;
-  }
-  .tracking-body {
-    letter-spacing: 0.02em;
-  }
-
-  /* === WARM CREAM SECTION === */
-  .section-cream {
-    background-color: #fcf9f0;
-    color: #1d0b0d;
-  }
-
-  /* === GLASS PANEL (adapted to Limón palette) === */
+  /* === GLASS PANEL === */
   .glass-panel {
-    background: rgba(29, 11, 13, 0.85);
-    border: 1px solid rgba(219, 226, 220, 0.15);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(226, 232, 240, 0.6);
     backdrop-filter: blur(24px);
+  }
+  .dark .glass-panel {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(51, 65, 85, 0.6);
   }
 }

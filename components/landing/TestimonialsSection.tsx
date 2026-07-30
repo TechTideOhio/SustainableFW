@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 const testimonials = [
   {
     quote: "ForestTwin replaced our quarterly PDF reports with a live dashboard our board actually uses. Carbon credit verification went from weeks to hours.",
-    author: "Dr. Sarah Lindström",
+    author: "Dr. Sarah LindstrÃ¶m",
     role: "Head of Sustainability, NordicTimber",
     company: "NordicTimber"
   },
@@ -54,11 +54,11 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-warm-cream">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/50">
       <div className="max-w-4xl mx-auto text-center">
         
         {/* Section Heading */}
-        <h2 className="text-sm font-semibold uppercase text-black-olive tracking-[0.04em] mb-12">
+        <h2 className="text-sm font-semibold uppercase text-muted-foreground tracking-wider mb-12">
           Client Testimonials
         </h2>
 
@@ -70,17 +70,15 @@ export function TestimonialsSection() {
               <button
                 key={index}
                 onClick={() => handleSelect(index)}
-                className="relative group focus:outline-none focus-visible:ring-2 focus-visible:ring-forest-ink focus-visible:ring-offset-2 rounded-[1px] transition-all duration-200 ease-out active:scale-[0.97]"
+                className="relative group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 rounded-full transition-all duration-200 ease-out active:scale-[0.97]"
                 aria-label={`View testimonial ${index + 1}`}
               >
                 <div className={cn(
-                  "w-16 h-16 rounded-[1px] bg-forest-ink border-2 overflow-hidden transition-all duration-200 ease-out relative z-10",
-                  isActive ? "border-lemon-zest" : "border-sage-mist group-hover:border-forest-ink"
+                  "w-16 h-16 rounded-full bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-600 dark:to-slate-700 border-2 overflow-hidden transition-all duration-200 ease-out relative z-10 flex items-center justify-center text-xl font-bold text-slate-500 dark:text-slate-300",
+                  isActive ? "border-transparent" : "border-border group-hover:border-brand-600"
                 )}>
                   {/* Avatar Placeholder */}
-                  <div className="w-full h-full bg-forest-ink flex items-center justify-center text-xl font-bold text-warm-cream/50">
-                    {testimonials[index].author.charAt(0)}
-                  </div>
+                  {testimonials[index].author.charAt(0)}
                 </div>
                 
                 {/* Progress Ring */}
@@ -91,7 +89,7 @@ export function TestimonialsSection() {
                       cy="36"
                       r="34"
                       fill="none"
-                      stroke="rgba(219,226,220,0.4)"
+                      stroke="rgba(100,116,139,0.2)"
                       strokeWidth="2"
                     />
                     <circle
@@ -99,7 +97,7 @@ export function TestimonialsSection() {
                       cy="36"
                       r="34"
                       fill="none"
-                      stroke="#f7ea48"
+                      stroke="#3b5bdb"
                       strokeWidth="2"
                       strokeDasharray="213.6" // 2 * PI * 34
                       strokeDashoffset={213.6 - (213.6 * progress) / 100}
@@ -123,13 +121,13 @@ export function TestimonialsSection() {
               transition={{ duration: 0.4 }}
               className="absolute inset-0 flex flex-col items-center"
             >
-              <p className="text-2xl md:text-3xl lg:text-4xl font-display font-medium text-black-olive mb-8 leading-snug tracking-[0.02em]">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-display font-medium text-foreground mb-8 leading-snug">
                 "{testimonials[activeIndex].quote}"
               </p>
-              <div className="text-forest-ink">
-                <span className="font-semibold text-black-olive tracking-[0.02em]">{testimonials[activeIndex].author}</span>
-                <span className="mx-2 text-sage-mist">|</span>
-                <span className="text-forest-ink tracking-[0.02em]">{testimonials[activeIndex].role}</span>
+              <div className="flex items-center justify-center gap-2">
+                <span className="font-semibold text-foreground">{testimonials[activeIndex].author}</span>
+                <span className="text-muted-foreground/40">|</span>
+                <span className="text-muted-foreground">{testimonials[activeIndex].role}</span>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -142,8 +140,8 @@ export function TestimonialsSection() {
               key={i}
               onClick={() => handleSelect(i)}
               className={cn(
-                "h-2 rounded-[1px] transition-all duration-200 ease-out focus:outline-none focus-visible:ring-1 focus-visible:ring-forest-ink",
-                i === activeIndex ? "w-8 bg-lemon-zest" : "w-2 bg-sage-mist hover:bg-forest-ink/40"
+                "h-2 rounded-full transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2",
+                i === activeIndex ? "w-8 bg-brand-600" : "w-2 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"
               )}
               aria-label={`Go to slide ${i + 1}`}
             />
@@ -151,13 +149,13 @@ export function TestimonialsSection() {
         </div>
 
         {/* Logo Row */}
-        <div className="mt-12 flex justify-center gap-8 md:gap-16 opacity-70">
+        <div className="mt-12 flex justify-center gap-8 md:gap-16">
           {testimonials.map((t, i) => (
             <div 
               key={i} 
               className={cn(
-                "font-display font-bold text-lg md:text-xl transition-colors duration-500 tracking-[0.04em]",
-                i === activeIndex ? "text-black-olive opacity-100 font-bold" : "text-forest-ink/50 grayscale"
+                "font-display font-bold text-lg md:text-xl transition-colors duration-500",
+                i === activeIndex ? "text-brand-600 font-bold" : "text-slate-400 dark:text-slate-500"
               )}
             >
               {t.company}
