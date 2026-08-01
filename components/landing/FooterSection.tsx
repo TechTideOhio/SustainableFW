@@ -75,9 +75,11 @@ export function FooterSection() {
                 className="bg-slate-800 border-slate-600 text-white placeholder:text-slate-400 h-12 w-full sm:w-64 rounded-xl focus-visible:ring-white"
                 aria-label="Email address"
               />
-              <Button className="bg-white text-brand-600 hover:bg-slate-100 rounded-xl h-12 px-6 font-semibold flex items-center gap-2 transition-all duration-200 ease-out active:scale-[0.97] glow-brand">
+              <Button className="bg-white text-brand-600 hover:bg-slate-100 rounded-xl h-12 px-6 font-semibold flex items-center gap-2 transition-all duration-200 ease-out active:scale-[0.97] glow-brand group">
                 Start Free Trial
-                <ArrowRight className="w-4 h-4" />
+                <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+                  <svg width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='currentColor' strokeWidth='2'><path d='M3 8h10M9 4l4 4-4 4'/></svg>
+                </span>
               </Button>
             </div>
           </div>

@@ -18,7 +18,7 @@ export function FeaturesSection() {
           {/* Card 1: Spans 2 rows */}
           <div className="row-span-1 md:row-span-2 bg-brand-600 rounded-xl p-8 flex flex-col relative overflow-hidden group text-white shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
             <div className="z-10">
-              <div className="w-12 h-12 bg-white/10 text-white rounded-lg flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-white/10 text-white rounded-lg flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
                 <TreePine className="w-6 h-6" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">Interactive 3D Digital Twin</h3>
@@ -44,7 +44,7 @@ export function FeaturesSection() {
               className="absolute inset-0 w-full h-full object-cover opacity-20 transition-transform duration-[2s] group-hover:scale-110"
             />
             <div className="z-10 relative">
-              <div className="w-10 h-10 bg-muted text-foreground rounded-lg flex items-center justify-center mb-4 backdrop-blur-md">
+              <div className="w-10 h-10 bg-muted text-foreground rounded-lg flex items-center justify-center mb-4 backdrop-blur-md transition-transform duration-300 group-hover:scale-110">
                 <Activity className="w-5 h-5" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">Live Carbon Telemetry</h3>
@@ -71,7 +71,7 @@ export function FeaturesSection() {
             <h3 className="text-4xl font-bold text-foreground mb-2 font-display">2.1M+</h3>
             <p className="text-muted-foreground font-medium mb-6">Hectares Monitored</p>
             
-            <div className="flex -space-x-4">
+            <div className="flex -space-x-4 transition-transform duration-300 group-hover:scale-110">
               {[1, 2, 3, 4, 5].map((i) => (
                 <div key={i} className="w-12 h-12 border-2 border-card bg-muted text-muted-foreground rounded-full overflow-hidden flex items-center justify-center">
                   <Users className="w-5 h-5 text-muted-foreground" />
@@ -83,7 +83,7 @@ export function FeaturesSection() {
           {/* Card 4 */}
           <div className="md:col-span-2 bg-brand-50 dark:bg-brand-600/5 border border-brand-200 dark:border-brand-600/20 rounded-xl p-8 flex flex-col md:flex-row items-center justify-between group overflow-hidden relative transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
             <div className="z-10 mb-6 md:mb-0">
-              <div className="w-12 h-12 bg-brand-100 dark:bg-brand-600/20 text-brand-600 border border-brand-200 dark:border-brand-600/30 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-brand-100 dark:bg-brand-600/20 text-brand-600 border border-brand-200 dark:border-brand-600/30 rounded-lg flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
                 <Server className="w-6 h-6" />
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-2">Enterprise Grade Infrastructure</h3>

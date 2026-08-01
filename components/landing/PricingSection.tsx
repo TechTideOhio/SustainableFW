@@ -70,9 +70,15 @@ export function PricingSection() {
               <Button 
                 variant={plan.highlight ? "default" : "outline"}
                 size="lg"
-                className={cn("w-full mb-8 mt-auto rounded-full", plan.highlight && "glow-brand")}
+                className={cn(
+                  "w-full mb-8 mt-auto rounded-full group transition-all duration-200 hover:-translate-y-1 hover:shadow-md",
+                  plan.highlight && "glow-brand"
+                )}
               >
                 {plan.buttonText}
+                <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 ml-2">
+                  <svg width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='currentColor' strokeWidth='2'><path d='M3 8h10M9 4l4 4-4 4'/></svg>
+                </span>
               </Button>
               
               <div className="space-y-4">

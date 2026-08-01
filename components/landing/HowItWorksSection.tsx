@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { CalendarCheck, Activity, FileCheck } from 'lucide-react';
@@ -48,8 +48,11 @@ export function HowItWorksSection() {
           <p className="text-muted-foreground text-lg mb-8">
             Three steps from raw data to verified carbon credits.
           </p>
-          <Button variant="outline" size="lg" className="rounded-full mb-12">
+          <Button variant="outline" size="lg" className="rounded-full mb-12 group">
             Book a Walkthrough
+            <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 ml-2">
+              <svg width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='currentColor' strokeWidth='2'><path d='M3 8h10M9 4l4 4-4 4'/></svg>
+            </span>
           </Button>
           <div className="hidden md:block w-full aspect-video rounded-xl border border-border shadow-sm overflow-hidden relative">
             <img 

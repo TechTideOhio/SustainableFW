@@ -44,11 +44,17 @@ export function FAQSection() {
             Still have questions? Our team is here to help.
           </p>
           <div className="flex flex-col gap-4 items-start">
-            <Button variant="default" className="rounded-full glow-brand">
+            <Button variant="default" className="rounded-full glow-brand group">
               Start Free Trial
+              <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 ml-2">
+                <svg width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='currentColor' strokeWidth='2'><path d='M3 8h10M9 4l4 4-4 4'/></svg>
+              </span>
             </Button>
-            <Button variant="link" className="text-muted-foreground hover:text-foreground px-0">
-              Contact Support →
+            <Button variant="link" className="text-muted-foreground hover:text-foreground px-0 group">
+              Contact Support
+              <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 ml-2">
+                <svg width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='currentColor' strokeWidth='2'><path d='M3 8h10M9 4l4 4-4 4'/></svg>
+              </span>
             </Button>
           </div>
         </div>
