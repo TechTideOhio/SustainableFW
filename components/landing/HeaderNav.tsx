@@ -48,7 +48,7 @@ export function HeaderNav() {
           pillColor="#ffffff"
           hoveredPillTextColor="#ffffff"
           pillTextColor="var(--color-brand-600)"
-          className="shadow-2xl border border-border rounded-full"
+          className="shadow-2xl rounded-full"
         />
       </div>
     </header>
