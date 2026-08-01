@@ -18,6 +18,7 @@ Open Source Repository: https://github.com/TechTideOhio/SustainableFW
 
 ## Links
 - Live Website: https://digitaltwinfw.netlify.app/
+- Blog: https://digitaltwinfw.netlify.app/blog
 - TechTide AI: https://techtideai.io
 - Alex Cinovoj: https://alexcinovoj.com
 - Pricing: https://digitaltwinfw.netlify.app/pricing.md

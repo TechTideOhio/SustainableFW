@@ -45,6 +45,7 @@ export function HeaderNav() {
   const links = [
     { label: 'Platform', href: '#features' },
     { label: 'Case Studies', href: '#testimonials' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Pricing', href: '#pricing' },
   ];
 
