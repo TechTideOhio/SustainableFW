@@ -31,44 +31,26 @@ export function HeaderNav() {
     { label: 'Case Studies', href: isHome ? '#testimonials' : '/#testimonials' },
     { label: 'Blog', href: '/blog' },
     { label: 'Pricing', href: isHome ? '#pricing' : '/#pricing' },
-    // Add mobile-only CTAs to the PillNav items so they show in the mobile popover
+    { label: 'GitHub', href: 'https://github.com/TechTideOhio/SustainableFW' },
     { label: 'Sign in', href: 'https://digitaltwinfw.netlify.app/' },
+    { label: 'Request Demo', href: 'https://digitaltwinfw.netlify.app/' },
   ];
 
   return (
-    <>
-      <PillNav
-        logo="/images/foresttwin-logo.jpg"
-        logoAlt="ForestTwin Logo"
-        items={links}
-        activeHref={pathname}
-        baseColor="var(--background)"
-        pillColor="var(--brand-600)"
-        hoveredPillTextColor="#ffffff"
-        pillTextColor="var(--foreground)"
-      />
-      
-      {/* Desktop Actions - Positioned opposite to PillNav */}
-      <div className="hidden md:flex fixed top-4 right-8 z-[99] items-center gap-4 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md rounded-full px-5 py-2 border border-border shadow-sm">
-        <a
-          href="https://github.com/TechTideOhio/SustainableFW"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-slate-600 dark:text-slate-300 hover:text-brand-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 rounded-full"
-          aria-label="GitHub"
-        >
-          <GithubIcon className="w-5 h-5" />
-        </a>
-        <a
-          href="https://digitaltwinfw.netlify.app/"
-          className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-foreground transition-colors"
-        >
-          Sign in
-        </a>
-        <Button variant="default" size="sm" className="rounded-full glow-brand ml-2">
-          Request a Demo
-        </Button>
+    <header className="fixed top-6 left-0 right-0 z-[99] flex justify-center w-full pointer-events-none">
+      <div className="pointer-events-auto">
+        <PillNav
+          logo="/images/foresttwin-logo.jpg"
+          logoAlt="ForestTwin Logo"
+          items={links}
+          activeHref={pathname}
+          baseColor="hsl(var(--background))"
+          pillColor="var(--brand-600)"
+          hoveredPillTextColor="#ffffff"
+          pillTextColor="hsl(var(--foreground))"
+          className="shadow-2xl border border-border rounded-full"
+        />
       </div>
-    </>
+    </header>
   );
 }
