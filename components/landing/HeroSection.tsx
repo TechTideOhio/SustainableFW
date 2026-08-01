@@ -80,7 +80,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
-          className="w-full max-w-5xl border border-border bg-card rounded-xl shadow-md overflow-hidden"
+          className="w-full max-w-5xl border border-border bg-card rounded-xl shadow-lg overflow-hidden relative"
         >
           {/* Fake Browser Chrome */}
           <div className="flex items-center px-4 py-3 border-b border-border bg-muted/50 gap-2">
@@ -102,6 +102,8 @@ export function HeroSection() {
             />
           </div>
         </motion.div>
+        {/* Glow beneath mockup */}
+        <div className="w-[80%] max-w-3xl h-[60px] bg-brand-600/20 blur-[40px] rounded-full mx-auto -mt-6 pointer-events-none" />
 
       </div>
     </section>

@@ -74,10 +74,11 @@ export function TestimonialsSection() {
                 aria-label={`View testimonial ${index + 1}`}
               >
                 <div className={cn(
-                  "w-16 h-16 rounded-full bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-600 dark:to-slate-700 border-2 overflow-hidden transition-all duration-200 ease-out relative z-10 flex items-center justify-center text-xl font-bold text-slate-500 dark:text-slate-300",
-                  isActive ? "border-transparent" : "border-border group-hover:border-brand-600"
+                  "w-16 h-16 rounded-full overflow-hidden transition-all duration-200 ease-out relative z-10 flex items-center justify-center text-xl font-bold border-2",
+                  isActive 
+                    ? "bg-brand-600 text-white border-transparent shadow-lg shadow-brand-600/30" 
+                    : "bg-muted text-muted-foreground border-border group-hover:border-brand-600"
                 )}>
-                  {/* Avatar Placeholder */}
                   {testimonials[index].author.charAt(0)}
                 </div>
                 

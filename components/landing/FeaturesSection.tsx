@@ -1,7 +1,40 @@
 "use client";
+import { useRef, useEffect, useState } from 'react';
 import { TreePine, Activity, Users, Server } from 'lucide-react';
 
 export function FeaturesSection() {
+  const [count, setCount] = useState(0);
+  const counterRef = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const el = counterRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          const target = 2.1;
+          const duration = 1500;
+          const steps = 60;
+          const increment = target / steps;
+          let current = 0;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              setCount(target);
+              clearInterval(timer);
+            } else {
+              setCount(parseFloat(current.toFixed(1)));
+            }
+          }, duration / steps);
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -66,9 +99,9 @@ export function FeaturesSection() {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-card border border-border shadow-sm rounded-xl p-8 flex flex-col justify-center items-center text-center group transition-all duration-200 ease-out relative overflow-hidden hover:-translate-y-1 hover:shadow-lg">
+          <div ref={counterRef} className="bg-card border border-border shadow-sm rounded-xl p-8 flex flex-col justify-center items-center text-center group transition-all duration-200 ease-out relative overflow-hidden hover:-translate-y-1 hover:shadow-lg">
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-600 to-transparent" />
-            <h3 className="text-4xl font-bold text-foreground mb-2 font-display">2.1M+</h3>
+            <h3 className="text-4xl font-bold text-foreground mb-2 font-display tabular-nums">{count}M+</h3>
             <p className="text-muted-foreground font-medium mb-6">Hectares Monitored</p>
             
             <div className="flex -space-x-4 transition-transform duration-300 group-hover:scale-110">
