@@ -124,3 +124,15 @@ No manual configuration is required. The `netlify.toml` file acts as the configu
 <div align="center">
   <p>Built with ❤️ by <a href="https://techtideai.io">TechTide AI</a></p>
 </div>
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guide](.github/CONTRIBUTING.md) and [Code of Conduct](.github/CODE_OF_CONDUCT.md) before submitting a pull request.
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+<p align="center">Built with 🌲 by <a href="https://techtideai.io">TechTide AI</a></p>

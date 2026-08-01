@@ -1,0 +1,16 @@
+{
+  "name": "ForestTwin | Carbon Asset Intelligence",
+  "short_name": "ForestTwin",
+  "description": "Interactive 3D digital twin platform for corporate carbon asset management, ESG reporting, and verified credit tracking.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b5bdb",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
