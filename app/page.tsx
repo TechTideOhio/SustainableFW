@@ -1,6 +1,5 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import {
-  HeaderNav,
   HeroSection,
   LogoLoop,
   BlurInHeadline,
@@ -9,7 +8,6 @@ import {
   HowItWorksSection,
   PricingSection,
   FAQSection,
-  FooterSection,
 } from '@/components/landing';
 
 export const metadata: Metadata = {
@@ -76,7 +74,6 @@ export default function LandingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <HeaderNav />
       <main>
         <HeroSection />
         <LogoLoop />
@@ -87,7 +84,6 @@ export default function LandingPage() {
         <PricingSection />
         <FAQSection />
       </main>
-      <FooterSection />
     </div>
   );
 }

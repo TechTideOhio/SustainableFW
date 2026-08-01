@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { ThemeProvider } from 'next-themes';
+import { HeaderNav, FooterSection } from '@/components/landing';
 
 const siteUrl = 'https://digitaltwinfw.netlify.app';
 
@@ -91,7 +92,9 @@ export default function RootLayout({
     <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <body className="font-sans antialiased bg-background text-foreground min-h-[100dvh]">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+          <HeaderNav />
           {children}
+          <FooterSection />
         </ThemeProvider>
       </body>
     </html>

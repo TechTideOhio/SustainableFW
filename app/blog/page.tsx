@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Calendar, Clock, User } from 'lucide-react';
-import { HeaderNav, FooterSection } from '@/components/landing';
 import { blogPosts } from '@/lib/blog-posts';
 
 export const metadata: Metadata = {
@@ -17,7 +16,6 @@ export default function BlogListingPage() {
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground selection:bg-brand-600 selection:text-white">
-      <HeaderNav />
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-border">
@@ -125,7 +123,6 @@ export default function BlogListingPage() {
           </div>
         </section>
       </main>
-      <FooterSection />
     </div>
   );
 }

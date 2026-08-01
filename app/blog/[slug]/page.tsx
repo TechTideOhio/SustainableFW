@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, Clock, User, Tag } from 'lucide-react';
-import { HeaderNav, FooterSection } from '@/components/landing';
 import { blogPosts } from '@/lib/blog-posts';
 import { Button } from '@/components/ui/button';
 
@@ -77,7 +76,6 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <HeaderNav />
       <main>
         {/* Header */}
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
@@ -217,7 +215,6 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </article>
       </main>
-      <FooterSection />
     </div>
   );
 }
