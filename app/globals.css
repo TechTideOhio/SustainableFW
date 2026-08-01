@@ -110,6 +110,8 @@
     --sidebar-accent-foreground: 215 28% 17%;
     --sidebar-border: 214 32% 91%;
     --sidebar-ring: 231 48% 55%;
+
+    --dot-color: rgba(0, 0, 0, 0.07);
   }
 
   /* Dark mode: slate-800/900 surfaces */
@@ -142,6 +144,8 @@
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 217 33% 25%;
     --sidebar-ring: 231 48% 55%;
+
+    --dot-color: rgba(255, 255, 255, 0.04);
   }
 
   * {
@@ -161,6 +165,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    background-image: radial-gradient(circle at center, var(--dot-color) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-attachment: fixed;
   }
 
   /* Respect motion preferences */

@@ -1,4 +1,4 @@
-﻿export function LogoLoop() {
+export function LogoLoop() {
   const logos = [
     'React',
     'Node.js',
@@ -11,7 +11,7 @@
   ];
 
   return (
-    <section className="py-12 bg-muted/30 border-y border-border overflow-hidden">
+    <section className="py-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center text-muted-foreground text-sm font-medium tracking-widest uppercase">
         Built With Open Source Technologies
       </div>

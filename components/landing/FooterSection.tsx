@@ -24,7 +24,7 @@ const GithubIcon = ({ className }: { className?: string }) => (
 export function FooterSection() {
   return (
     <footer className="pt-24 pb-8 px-4 sm:px-6 lg:px-8">
-      <div className="bg-brand-600 rounded-[3rem] shadow-2xl pt-12 md:pt-16 pb-12 px-4 sm:px-6 lg:px-8 relative">
+      <div className="pt-12 md:pt-16 pb-12 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto">
           
           {/* Industry Authority Section */}
@@ -141,7 +141,7 @@ export function FooterSection() {
               </div>
             </div>
 
-            <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-medium text-white/60 text-sm">
+            <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-medium text-white/60 text-sm">
               <p>© {new Date().getFullYear()} ForestTwin Inc. All rights reserved.</p>
               <div className="flex gap-6">
                 <a href="/privacy" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Privacy Policy</a>

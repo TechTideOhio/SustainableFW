@@ -54,7 +54,7 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/50">
+    <section className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
         
         {/* Section Heading */}
