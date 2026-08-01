@@ -1,4 +1,4 @@
-﻿import { BlogPost, authors } from './blog-types';
+import { BlogPost, authors } from './blog-types';
 
 export const batch3: BlogPost[] = [
   {
@@ -246,6 +246,9 @@ export const batch3: BlogPost[] = [
       <h2>Securing Your Assets with ForestTwin</h2>
       <p>ForestTwin was engineered to directly address the permanence crisis. Our platform does not just measure carbon once and issue a PDF; it creates a living 3D digital twin of the forest that is updated continuously. If a fire breaks out, or if illegal logging begins on the perimeter of a project area, our system flags the anomaly in real-time.</p>
       <p>For corporate buyers, this continuous monitoring acts as the ultimate permanence insurance. You are no longer blind to the state of your assets. If a reversal does occur, it is quantified immediately and transparently, allowing for instant remediation. To learn how we protect your carbon investments from reversal risks, explore our <a href="/#features">monitoring capabilities</a> and <a href="/#pricing">enterprise plans</a>.</p>
+      <hr/>
+      <h3>About the Author</h3>
+      <p><strong><a href="https://alexcinovoj.com/">Alex Cinovoj</a></strong> is the founder of <a href="https://techtideai.io/">TechTide AI</a>, where he builds AI-powered tools for sustainability teams and carbon market operators. ForestTwin is TechTide AI's flagship carbon asset intelligence platform, helping organizations turn satellite imagery and IoT sensor data into verifiable, audit-ready environmental impact data. Connect with Alex at <a href="https://alexcinovoj.com/">alexcinovoj.com</a> or explore TechTide AI at <a href="https://techtideai.io/">techtideai.io</a>.</p>
     `
   }
 ];

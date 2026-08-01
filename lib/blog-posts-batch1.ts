@@ -1,4 +1,4 @@
-﻿import { BlogPost, authors } from './blog-types';
+import { BlogPost, authors } from './blog-types';
 
 export const batch1: BlogPost[] = [
   {
@@ -265,6 +265,9 @@ export const batch1: BlogPost[] = [
       <p>To overcome the fear of greenhushing, corporate leaders must view transparency not as a vulnerability, but as a shield. In a high-scrutiny environment, detailed, honest reporting-including acknowledging failures, setbacks, and areas for improvement-builds more trust than polished perfection.</p>
       <p>The companies that will dominate the next decade of the sustainable economy are those that master this "radical transparency." They will provide stakeholders with direct access to the same asset intelligence platforms they use internally, turning complex environmental data into a compelling, interactive narrative. Explore how ForestTwin's <a href="/#features">transparent reporting tools</a> empower teams to communicate their impact with absolute confidence.</p>
       <p>Silence is no longer a viable strategy for climate leaders. The market demands accountability, and accountability requires data. It is time for sustainability teams to step out of the shadows and let their empirical results speak for themselves. Discover our commitment to driving data-driven transparency on our <a href="/about">About page</a>.</p>
+      <hr/>
+      <h3>About the Author</h3>
+      <p><strong><a href="https://alexcinovoj.com/">Alex Cinovoj</a></strong> is the founder of <a href="https://techtideai.io/">TechTide AI</a>, where he builds AI-powered tools for sustainability teams and carbon market operators. ForestTwin is TechTide AI's flagship carbon asset intelligence platform, helping organizations turn satellite imagery and IoT sensor data into verifiable, audit-ready environmental impact data. Connect with Alex at <a href="https://alexcinovoj.com/">alexcinovoj.com</a> or explore TechTide AI at <a href="https://techtideai.io/">techtideai.io</a>.</p>
     `
   }
 ];

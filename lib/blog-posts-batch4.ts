@@ -1,4 +1,4 @@
-﻿import { BlogPost, authors } from './blog-types';
+import { BlogPost, authors } from './blog-types';
 
 export const batch4: BlogPost[] = [
   {
@@ -273,6 +273,9 @@ export const batch4: BlogPost[] = [
       
       <h2>Unlock Your Asset Value</h2>
       <p>If you are developing high-quality nature-based projects, your data is your most valuable asset. Do not let outdated measurement techniques limit your access to capital. Discover how <a href="/#features" target="_self">ForestTwin's platform</a> can digitize your operations, prove your impact, and unlock the climate finance you need to scale. <a href="/about" target="_self">Contact us today</a> to schedule a technical demonstration.</p>
+      <hr/>
+      <h3>About the Author</h3>
+      <p><strong><a href="https://alexcinovoj.com/">Alex Cinovoj</a></strong> is the founder of <a href="https://techtideai.io/">TechTide AI</a>, where he builds AI-powered tools for sustainability teams and carbon market operators. ForestTwin is TechTide AI's flagship carbon asset intelligence platform, helping organizations turn satellite imagery and IoT sensor data into verifiable, audit-ready environmental impact data. Connect with Alex at <a href="https://alexcinovoj.com/">alexcinovoj.com</a> or explore TechTide AI at <a href="https://techtideai.io/">techtideai.io</a>.</p>
     `
   }
 ];

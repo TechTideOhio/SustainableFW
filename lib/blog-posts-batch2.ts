@@ -1,4 +1,4 @@
-﻿import { BlogPost, authors } from './blog-types';
+import { BlogPost, authors } from './blog-types';
 
 export const batch2: BlogPost[] = [
   {
@@ -258,6 +258,9 @@ export const batch2: BlogPost[] = [
       <p>Tracking these seven metrics simultaneously is computationally demanding. It requires synthesizing satellite telemetry, drone-based LiDAR, acoustic sensors, and financial data into a single coherent framework.</p>
 
       <p>This convergence of data is exactly what we built the <a href="/#features">ForestTwin platform</a> to handle. By creating a fully integrated 3D digital twin of the forest ecosystem, we allow project developers and credit buyers to visualize and verify not just the carbon tonnage, but the underlying structural and ecological health of the project in real-time. In the modern carbon market, transparency across all these metrics isn't a premium feature-it is the baseline requirement for trust.</p>
+      <hr/>
+      <h3>About the Author</h3>
+      <p><strong><a href="https://alexcinovoj.com/">Alex Cinovoj</a></strong> is the founder of <a href="https://techtideai.io/">TechTide AI</a>, where he builds AI-powered tools for sustainability teams and carbon market operators. ForestTwin is TechTide AI's flagship carbon asset intelligence platform, helping organizations turn satellite imagery and IoT sensor data into verifiable, audit-ready environmental impact data. Connect with Alex at <a href="https://alexcinovoj.com/">alexcinovoj.com</a> or explore TechTide AI at <a href="https://techtideai.io/">techtideai.io</a>.</p>
     `
   }
 ];
