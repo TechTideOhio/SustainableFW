@@ -27,6 +27,37 @@ export function FooterSection() {
       <div className="bg-brand-600 rounded-[3rem] shadow-2xl pt-12 md:pt-16 pb-12 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto">
           
+          {/* Industry Authority Section */}
+          <div className="max-w-5xl mx-auto mb-16">
+            <h3 className="text-sm font-semibold uppercase text-white/60 tracking-wider mb-6 text-center">Referenced by Industry Leaders</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <a href="https://icvcm.org" target="_blank" rel="noopener noreferrer" className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-4 text-center transition-all duration-200 group">
+                <span className="text-white/90 font-semibold text-sm block mb-1 group-hover:text-white">ICVCM</span>
+                <span className="text-white/50 text-xs">Core Carbon Principles 2026</span>
+              </a>
+              <a href="https://destination-earth.eu" target="_blank" rel="noopener noreferrer" className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-4 text-center transition-all duration-200 group">
+                <span className="text-white/90 font-semibold text-sm block mb-1 group-hover:text-white">EU DestinE</span>
+                <span className="text-white/50 text-xs">Forest Digital Twin Consortium</span>
+              </a>
+              <a href="https://ecosystemmarketplace.com" target="_blank" rel="noopener noreferrer" className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-4 text-center transition-all duration-200 group">
+                <span className="text-white/90 font-semibold text-sm block mb-1 group-hover:text-white">Ecosystem Marketplace</span>
+                <span className="text-white/50 text-xs">VCM Market Intelligence 2026</span>
+              </a>
+              <a href="https://carbon-direct.com" target="_blank" rel="noopener noreferrer" className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-4 text-center transition-all duration-200 group">
+                <span className="text-white/90 font-semibold text-sm block mb-1 group-hover:text-white">Carbon Direct</span>
+                <span className="text-white/50 text-xs">State of Digital MRV Report</span>
+              </a>
+              <a href="https://europa.eu/taxation_customs/carbon-border-adjustment-mechanism_en" target="_blank" rel="noopener noreferrer" className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-4 text-center transition-all duration-200 group">
+                <span className="text-white/90 font-semibold text-sm block mb-1 group-hover:text-white">EU CBAM</span>
+                <span className="text-white/50 text-xs">Carbon Border Tax Implementation</span>
+              </a>
+              <a href="https://ww2.arb.ca.gov/" target="_blank" rel="noopener noreferrer" className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-4 text-center transition-all duration-200 group">
+                <span className="text-white/90 font-semibold text-sm block mb-1 group-hover:text-white">California CARB</span>
+                <span className="text-white/50 text-xs">SB 253 Emissions Reporting</span>
+              </a>
+            </div>
+          </div>
+
           {/* CTA Card seamlessly integrated into the top of the footer container */}
           <div className="max-w-5xl mx-auto bg-slate-900 border border-slate-700 rounded-3xl shadow-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 mb-24 text-white">
             <div className="max-w-md text-center md:text-left">
@@ -78,6 +109,7 @@ export function FooterSection() {
                     <li><a href="#pricing" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Pricing</a></li>
                     <li><a href="/integrations" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Integrations</a></li>
                     <li><a href="/help" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Documentation</a></li>
+                    <li><a href="/blog" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Blog</a></li>
                   </ul>
                 </div>
                 <div>
