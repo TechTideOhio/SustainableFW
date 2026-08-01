@@ -22,6 +22,7 @@ export interface PillNavProps {
   pillColor?: string;
   hoveredPillTextColor?: string;
   pillTextColor?: string;
+  hoverBgColor?: string;
   onMobileMenuClick?: () => void;
   initialLoadAnimation?: boolean;
 }
@@ -37,6 +38,7 @@ const PillNav: React.FC<PillNavProps> = ({
   pillColor = '#120F17',
   hoveredPillTextColor = '#120F17',
   pillTextColor,
+  hoverBgColor,
   onMobileMenuClick,
   initialLoadAnimation = true
 }) => {
@@ -240,6 +242,7 @@ const PillNav: React.FC<PillNavProps> = ({
 
   const cssVars = {
     ['--base']: baseColor,
+    ['--hover-bg']: hoverBgColor || baseColor,
     ['--pill-bg']: pillColor,
     ['--hover-text']: hoveredPillTextColor,
     ['--pill-text']: resolvedPillTextColor

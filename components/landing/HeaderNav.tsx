@@ -38,13 +38,15 @@ export function HeaderNav() {
 
   return (
     <header className="fixed top-6 left-0 right-0 z-[99] flex justify-center w-full pointer-events-none">
-      <div className="pointer-events-auto">
+      <div className="pointer-events-auto relative">
+        <div className="absolute top-[-50px] left-1/2 -translate-x-1/2 w-[60%] max-w-2xl h-[120px] bg-brand-600/15 blur-[50px] pointer-events-none rounded-full" />
         <PillNav
           logo="/images/foresttwin-logo.jpg"
           logoAlt="ForestTwin Logo"
           items={links}
           activeHref={pathname}
-          baseColor="var(--color-brand-600)"
+          baseColor="hsl(var(--background))"
+          hoverBgColor="var(--color-brand-600)"
           pillColor="#ffffff"
           hoveredPillTextColor="#ffffff"
           pillTextColor="var(--color-brand-600)"
