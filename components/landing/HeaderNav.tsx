@@ -44,10 +44,10 @@ export function HeaderNav() {
           logoAlt="ForestTwin Logo"
           items={links}
           activeHref={pathname}
-          baseColor="hsl(var(--background))"
-          pillColor="var(--brand-600)"
+          baseColor="var(--color-brand-600)"
+          pillColor="#ffffff"
           hoveredPillTextColor="#ffffff"
-          pillTextColor="hsl(var(--foreground))"
+          pillTextColor="var(--color-brand-600)"
           className="shadow-2xl border border-border rounded-full"
         />
       </div>
