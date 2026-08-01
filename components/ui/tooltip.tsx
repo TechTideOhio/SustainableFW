@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 ﻿import * as React from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
@@ -28,7 +28,7 @@ const Tooltip: React.FC<
     );
   }
 
-  // Uncontrolled — never pass `open` to avoid the warning
+  // Uncontrolled - never pass `open` to avoid the warning
   return (
     <TooltipPrimitive.Root
       defaultOpen={defaultOpen}

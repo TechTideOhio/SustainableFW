@@ -1,4 +1,4 @@
-# SustainableFW — Project Memory
+﻿# SustainableFW - Project Memory
 > Owner: Alex Cinovoj · Created: 2026-07-30
 
 ---
@@ -38,10 +38,10 @@ npm run build
 ## Environment & secrets
 - Env lives in: `.env` (gitignored)
 - **Never paste** raw DSNs, API keys, JWTs, Stripe/Clerk/Supabase service-role
-  keys into chat — produce redacted presence/classification matrices only.
+  keys into chat - produce redacted presence/classification matrices only.
 
 ## Cross-session memory
-- **Axel second brain** at `localhost:4000` — for durable context, call its REST
+- **Axel second brain** at `localhost:4000` - for durable context, call its REST
   API (`POST /api/memory/remember`, `POST /api/memory/recall`,
   `POST /api/memory/search`). See `infrastructure/Axel/CLAUDE.md`.
 - Health check before destructive work: `curl http://localhost:4000/health`.

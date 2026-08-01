@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from 'next';
+﻿import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { ThemeProvider } from 'next-themes';
 
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'ForestTwin — AI-Powered Carbon Asset Intelligence Platform',
+        alt: 'ForestTwin - AI-Powered Carbon Asset Intelligence Platform',
       },
     ],
   },

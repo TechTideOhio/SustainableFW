@@ -1,4 +1,4 @@
-# Pricing — ForestTwin
+﻿# Pricing - ForestTwin
 
 ## Developer / Pilot
 - Price: $0/month
@@ -11,6 +11,6 @@
 - Features: Live Telemetry, Scenario Simulation Engine, Priority Support, PDF Exports
 
 ## Enterprise
-- Price: Custom — contact enterprise@techtideai.io
+- Price: Custom - contact enterprise@techtideai.io
 - Limits: Unlimited Projects, Unlimited Users, Custom API limits
 - Features: Custom 3D Mesh Integration, Dedicated Account Manager, Audit-Ready Ledger Exports, SLA

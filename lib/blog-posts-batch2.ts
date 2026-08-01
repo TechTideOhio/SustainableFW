@@ -1,4 +1,4 @@
-import { BlogPost, authors } from './blog-types';
+﻿import { BlogPost, authors } from './blog-types';
 
 export const batch2: BlogPost[] = [
   {
@@ -12,15 +12,15 @@ export const batch2: BlogPost[] = [
     authors,
     readingTime: '9 min read',
     content: `
-      <p>For the better part of two decades, the voluntary carbon market operated on a surprisingly simple premise: emit a ton of carbon here, pay someone not to emit a ton of carbon over there. This mechanism—known as emissions avoidance or reduction—built the foundation of corporate net-zero pledges. But as we cross the midway point of this critical decade, the math of avoidance is no longer adding up. The market is undergoing a structural paradigm shift toward <strong>Carbon Dioxide Removal (CDR)</strong>.</p>
+      <p>For the better part of two decades, the voluntary carbon market operated on a surprisingly simple premise: emit a ton of carbon here, pay someone not to emit a ton of carbon over there. This mechanism-known as emissions avoidance or reduction-built the foundation of corporate net-zero pledges. But as we cross the midway point of this critical decade, the math of avoidance is no longer adding up. The market is undergoing a structural paradigm shift toward <strong>Carbon Dioxide Removal (CDR)</strong>.</p>
       
       <p>At TechTide AI, we’ve been tracking this transition closely. The shift isn’t just semantic; it’s scientific, economic, and regulatory. Driven by heightened scrutiny from standards bodies and a growing realization that we simply must pull existing carbon out of the atmosphere, the CDR revolution is here.</p>
 
       <h2>The End of the Avoidance Era</h2>
-      <p>Avoidance credits—protecting a forest that <em>might</em> have been cut down, or funding a renewable energy project that <em>might</em> not have been built otherwise—rely on establishing a counterfactual baseline. Unfortunately, proving what would have happened in an alternate timeline is notoriously difficult. Recent investigations have shown that many legacy avoidance projects drastically overestimated their climate impact.</p>
+      <p>Avoidance credits-protecting a forest that <em>might</em> have been cut down, or funding a renewable energy project that <em>might</em> not have been built otherwise-rely on establishing a counterfactual baseline. Unfortunately, proving what would have happened in an alternate timeline is notoriously difficult. Recent investigations have shown that many legacy avoidance projects drastically overestimated their climate impact.</p>
       
       <blockquote>
-        "To achieve global net-zero emissions, we must scale carbon removal at an unprecedented pace. Emission reductions alone are no longer sufficient to meet the goals of the Paris Agreement." — <a href="https://www.ipcc.ch/report/ar6/wg3/">IPCC Sixth Assessment Report</a>
+        "To achieve global net-zero emissions, we must scale carbon removal at an unprecedented pace. Emission reductions alone are no longer sufficient to meet the goals of the Paris Agreement." - <a href="https://www.ipcc.ch/report/ar6/wg3/">IPCC Sixth Assessment Report</a>
       </blockquote>
 
       <p>Corporate buyers are responding to this reality by derisking their portfolios. They are shifting capital away from cheap avoidance credits toward verifiable, durable removals. While avoidance will still play a role in protecting critical ecosystems, the premium is now definitively on removing carbon from the carbon cycle entirely.</p>
@@ -57,9 +57,12 @@ export const batch2: BlogPost[] = [
       <p>For corporate sustainability teams, this means budget recalibration. The strategy of buying millions of cheap credits to claim "carbon neutrality" is obsolete, replaced by a strategic focus on contributing to high-impact removal development.</p>
 
       <h2>How to Evolve Your Carbon Strategy</h2>
-      <p>If your organization is navigating this transition, the path forward requires a phased approach. Start by prioritizing absolute emissions reductions across your value chain—this is non-negotiable. For your residual emissions, transition your offset portfolio toward removals.</p>
+      <p>If your organization is navigating this transition, the path forward requires a phased approach. Start by prioritizing absolute emissions reductions across your value chain-this is non-negotiable. For your residual emissions, transition your offset portfolio toward removals.</p>
       
       <p>Begin by securing high-quality, tech-verified nature-based removals, which offer the best near-term availability and pricing. As engineered CDR technologies mature and costs decline, gradually integrate them into your portfolio. Transparency and data are your best defenses against greenwashing accusations. By leveraging platforms like <a href="/about">ForestTwin</a> to manage and verify your nature-based assets, you ensure your investments are backed by hard, auditable science.</p>
+      <hr/>
+      <h3>About the Author</h3>
+      <p><strong><a href="https://alexcinovoj.com/">Alex Cinovoj</a></strong> is the founder of <a href="https://techtideai.io/">TechTide AI</a>, where he builds AI-powered tools for sustainability teams and carbon market operators. ForestTwin is TechTide AI's flagship carbon asset intelligence platform, helping organizations turn satellite imagery and IoT sensor data into verifiable, audit-ready environmental impact data. Connect with Alex at <a href="https://alexcinovoj.com/">alexcinovoj.com</a> or explore TechTide AI at <a href="https://techtideai.io/">techtideai.io</a>.</p>
     `
   },
   {
@@ -75,7 +78,7 @@ export const batch2: BlogPost[] = [
     content: `
       <p>For years, Article 6 of the Paris Agreement has been the most fiercely debated, intensely technical, and broadly misunderstood component of international climate policy. After nearly a decade of negotiations at successive COP summits, the operational details are finally solidifying. But for corporate sustainability leaders, the dense legalese coming out of the <a href="https://unfccc.int/">UNFCCC</a> can feel disconnected from the day-to-day realities of buying carbon credits.</p>
 
-      <p>It’s time to cut through the jargon. Article 6 is fundamentally about how countries—and by extension, the private sector—can trade emissions reductions across borders without double-counting. Here is what you actually need to know to future-proof your carbon strategy.</p>
+      <p>It’s time to cut through the jargon. Article 6 is fundamentally about how countries-and by extension, the private sector-can trade emissions reductions across borders without double-counting. Here is what you actually need to know to future-proof your carbon strategy.</p>
 
       <h2>The Basics: Article 6.2 vs. Article 6.4</h2>
       <p>Article 6 establishes the framework for international cooperation to achieve climate targets (Nationally Determined Contributions, or NDCs). It introduces two main mechanisms for carbon trading:</p>
@@ -98,7 +101,7 @@ export const batch2: BlogPost[] = [
 
       <ul>
         <li><strong>The Premium on CA-Backed Credits:</strong> Credits that carry a Corresponding Adjustment will become the gold standard. They represent an undisputed, unique claim to an emissions reduction. Consequently, these credits will command a significant price premium in the market.</li>
-        <li><strong>New Claims Guidance:</strong> If you buy a credit <em>without</em> a Corresponding Adjustment, you may no longer be able to use it to claim "carbon neutrality" or use it toward science-based targets. Instead, these non-CA credits may be reclassified as "Contribution Claims"—meaning your company contributed to the host country's climate goals, but you cannot use that ton to offset your own footprint.</li>
+        <li><strong>New Claims Guidance:</strong> If you buy a credit <em>without</em> a Corresponding Adjustment, you may no longer be able to use it to claim "carbon neutrality" or use it toward science-based targets. Instead, these non-CA credits may be reclassified as "Contribution Claims"-meaning your company contributed to the host country's climate goals, but you cannot use that ton to offset your own footprint.</li>
         <li><strong>Host Country Risk:</strong> Projects now require formal authorization from the host country government to export credits with a CA. This introduces a new layer of political risk. Governments may restrict exports if they are struggling to meet their own domestic NDCs.</li>
       </ul>
 
@@ -106,6 +109,9 @@ export const batch2: BlogPost[] = [
       <p>The transition to an Article 6-aligned market will not happen overnight, but the tectonic plates have already shifted. Buyers need to conduct deeper due diligence, not just on project quality, but on the regulatory environment of the host country.</p>
 
       <p>This is where rigorous data provenance becomes your strongest asset. Whether a credit is destined for the voluntary market, an Article 6.4 mechanism, or domestic compliance, the foundational requirement is undisputed proof of impact. At TechTide AI, we designed the <a href="/#features">ForestTwin platform</a> to provide the immutable, sensor-backed data trails required by the most stringent UN and national registries. As the regulatory landscape tightens, having granular, transparent data tied to every credit will be the difference between a viable asset and a stranded one.</p>
+      <hr/>
+      <h3>About the Author</h3>
+      <p><strong><a href="https://alexcinovoj.com/">Alex Cinovoj</a></strong> is the founder of <a href="https://techtideai.io/">TechTide AI</a>, where he builds AI-powered tools for sustainability teams and carbon market operators. ForestTwin is TechTide AI's flagship carbon asset intelligence platform, helping organizations turn satellite imagery and IoT sensor data into verifiable, audit-ready environmental impact data. Connect with Alex at <a href="https://alexcinovoj.com/">alexcinovoj.com</a> or explore TechTide AI at <a href="https://techtideai.io/">techtideai.io</a>.</p>
     `
   },
   {
@@ -119,12 +125,12 @@ export const batch2: BlogPost[] = [
     authors,
     readingTime: '9 min read',
     content: `
-      <p>For decades, climate policy was mostly a domestic affair. If a jurisdiction imposed a carbon price on its manufacturers, those companies faced a competitive disadvantage against rivals in countries with lax environmental laws—a phenomenon known as "carbon leakage." The European Union has finally pulled the lever to stop it. The Carbon Border Adjustment Mechanism (CBAM) is fully live, effectively imposing a carbon tariff on high-emission imports.</p>
+      <p>For decades, climate policy was mostly a domestic affair. If a jurisdiction imposed a carbon price on its manufacturers, those companies faced a competitive disadvantage against rivals in countries with lax environmental laws-a phenomenon known as "carbon leakage." The European Union has finally pulled the lever to stop it. The Carbon Border Adjustment Mechanism (CBAM) is fully live, effectively imposing a carbon tariff on high-emission imports.</p>
 
       <p>This is not just a European issue; it is a fundamental rewiring of global supply chains. If your company exports to the EU, or if you sit anywhere within a value chain that touches the European bloc, CBAM is now a critical compliance and financial variable. Here are the five things every sustainability and procurement team needs to know.</p>
 
       <h2>1. The Scope: Who and What is Affected?</h2>
-      <p>CBAM doesn't apply to everything—yet. The initial phase targets the most carbon-intensive industrial sectors where the risk of carbon leakage is highest. If you are importing any of the following products into the EU, you are covered by the regulation:</p>
+      <p>CBAM doesn't apply to everything-yet. The initial phase targets the most carbon-intensive industrial sectors where the risk of carbon leakage is highest. If you are importing any of the following products into the EU, you are covered by the regulation:</p>
       
       <ul>
         <li>Iron and Steel</li>
@@ -156,6 +162,9 @@ export const batch2: BlogPost[] = [
       <p>Managing CBAM compliance in spreadsheets is a recipe for disaster. The sheer volume of data, combined with the financial risk of inaccurate reporting, requires enterprise-grade carbon accounting infrastructure.</p>
 
       <p>While <a href="/about">ForestTwin</a> is primarily focused on the carbon removal side of the ledger, our underlying philosophy applies perfectly here: immutable, high-fidelity data is the currency of the new climate economy. For organizations looking to offset residual supply chain emissions while navigating complex regulations, deeply integrating your life-cycle assessment (LCA) data with robust carbon asset management is essential. Look to platforms that offer direct data integration capabilities to streamline the pathway from raw operational data to compliance reporting.</p>
+      <hr/>
+      <h3>About the Author</h3>
+      <p><strong><a href="https://alexcinovoj.com/">Alex Cinovoj</a></strong> is the founder of <a href="https://techtideai.io/">TechTide AI</a>, where he builds AI-powered tools for sustainability teams and carbon market operators. ForestTwin is TechTide AI's flagship carbon asset intelligence platform, helping organizations turn satellite imagery and IoT sensor data into verifiable, audit-ready environmental impact data. Connect with Alex at <a href="https://alexcinovoj.com/">alexcinovoj.com</a> or explore TechTide AI at <a href="https://techtideai.io/">techtideai.io</a>.</p>
     `
   },
   {
@@ -204,12 +213,15 @@ export const batch2: BlogPost[] = [
       <p>This is the core architecture we engineered at TechTide AI. The <a href="/#features">ForestTwin carbon ledger</a> automates this entire pipeline. We ingest raw geospatial data, secure it via an immutable ledger, apply transparent verifiable models, and output comprehensive audit reports. When a verifier asks for proof of your carbon asset, you don't send them a PDF summary; you give them access to a dynamic digital twin backed by a flawless data lineage.</p>
 
       <p>Surviving third-party scrutiny isn't about perfectly defending an estimate; it is about providing overwhelming, transparent evidence of reality. By building a rigorous, sensor-to-ledger audit trail, you transform regulatory compliance from a liability into a strategic advantage.</p>
+      <hr/>
+      <h3>About the Author</h3>
+      <p><strong><a href="https://alexcinovoj.com/">Alex Cinovoj</a></strong> is the founder of <a href="https://techtideai.io/">TechTide AI</a>, where he builds AI-powered tools for sustainability teams and carbon market operators. ForestTwin is TechTide AI's flagship carbon asset intelligence platform, helping organizations turn satellite imagery and IoT sensor data into verifiable, audit-ready environmental impact data. Connect with Alex at <a href="https://alexcinovoj.com/">alexcinovoj.com</a> or explore TechTide AI at <a href="https://techtideai.io/">techtideai.io</a>.</p>
     `
   },
   {
     slug: 'forest-carbon-metrics-that-matter',
     title: 'The 7 Metrics That Actually Matter for Forest Carbon Projects in 2026',
-    description: 'Move beyond simple carbon tonnage. Discover the seven advanced metrics—from root-to-shoot ratios to albedo impact—that define high-quality, resilient forest carbon projects today.',
+    description: 'Move beyond simple carbon tonnage. Discover the seven advanced metrics-from root-to-shoot ratios to albedo impact-that define high-quality, resilient forest carbon projects today.',
     category: 'Forest Science',
     tags: ["forest carbon","biomass","carbon metrics","forestry science"],
     publishedAt: '2026-06-04',
@@ -245,7 +257,7 @@ export const batch2: BlogPost[] = [
       <h2>Integrating the Metrics</h2>
       <p>Tracking these seven metrics simultaneously is computationally demanding. It requires synthesizing satellite telemetry, drone-based LiDAR, acoustic sensors, and financial data into a single coherent framework.</p>
 
-      <p>This convergence of data is exactly what we built the <a href="/#features">ForestTwin platform</a> to handle. By creating a fully integrated 3D digital twin of the forest ecosystem, we allow project developers and credit buyers to visualize and verify not just the carbon tonnage, but the underlying structural and ecological health of the project in real-time. In the modern carbon market, transparency across all these metrics isn't a premium feature—it is the baseline requirement for trust.</p>
+      <p>This convergence of data is exactly what we built the <a href="/#features">ForestTwin platform</a> to handle. By creating a fully integrated 3D digital twin of the forest ecosystem, we allow project developers and credit buyers to visualize and verify not just the carbon tonnage, but the underlying structural and ecological health of the project in real-time. In the modern carbon market, transparency across all these metrics isn't a premium feature-it is the baseline requirement for trust.</p>
     `
   }
 ];
