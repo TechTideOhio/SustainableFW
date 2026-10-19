@@ -1,7 +1,0 @@
-{
-  "name": "lenis-snap",
-  "type": "module",
-  "dependencies": {
-    "lenis": "workspace:lenis*"
-  }
-}
