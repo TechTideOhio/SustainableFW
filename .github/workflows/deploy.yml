@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create GitHub Deployment
-        uses: chrnorm/deployment-action@v2
+        uses: chrnorm/deployment-action@500aa6a23c81ffa1acf71072aee3cfa2cc2e556a
         id: deployment
         with:
           token: ${{ github.token }}
