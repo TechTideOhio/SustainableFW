@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useSyncExternalStore, useEffect } from "react";
 import { fontPresets, type FontPreset } from "@/lib/fonts";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,32 +17,33 @@ interface FontPresetSwitcherProps {
   className?: string;
 }
 
+function subscribePreset(onChange: () => void) {
+  window.addEventListener("storage", onChange);
+  window.addEventListener("font-preset-change", onChange);
+  return () => {
+    window.removeEventListener("storage", onChange);
+    window.removeEventListener("font-preset-change", onChange);
+  };
+}
+
+function getPresetKey() {
+  return localStorage.getItem("font-preset") ?? fontPresets[0].key;
+}
+
 export function FontPresetSwitcher({ className }: FontPresetSwitcherProps) {
-  const [activePreset, setActivePreset] = useState<FontPreset>(fontPresets[0]);
+  const presetKey = useSyncExternalStore(subscribePreset, getPresetKey, () => fontPresets[0].key);
+  const activePreset = fontPresets.find((preset) => preset.key === presetKey) ?? fontPresets[0];
 
   useEffect(() => {
-    const saved = localStorage.getItem("font-preset");
-    if (saved) {
-      const preset = fontPresets.find((p) => p.key === saved);
-      if (preset) {
-        applyPreset(preset);
-      }
-    } else {
-      // Default apply first preset to ensure CSS vars are set
-      applyPreset(fontPresets[0]);
-    }
-  }, []);
+    const root = document.documentElement;
+    root.style.setProperty("--font-display", activePreset.displayFont);
+    root.style.setProperty("--font-body", activePreset.bodyFont);
+    if (activePreset.monoFont) root.style.setProperty("--font-mono", activePreset.monoFont);
+  }, [activePreset]);
 
   const applyPreset = (preset: FontPreset) => {
-    setActivePreset(preset);
     localStorage.setItem("font-preset", preset.key);
-
-    const root = document.documentElement;
-    root.style.setProperty("--font-display", preset.displayFont);
-    root.style.setProperty("--font-body", preset.bodyFont);
-    if (preset.monoFont) {
-      root.style.setProperty("--font-mono", preset.monoFont);
-    }
+    window.dispatchEvent(new Event("font-preset-change"));
   };
 
   return (

@@ -4,7 +4,7 @@
   # ForestTwin: Digital Twin Carbon Asset Dashboard
 
   <p>
-    <strong>A high-performance B2B SaaS Digital Twin platform for corporate ESG portfolios.</strong>
+    <strong>An interactive forest and carbon dashboard prototype built with Next.js and mock data.</strong>
   </p>
 
   <p>
@@ -27,19 +27,19 @@
 
 ## 🌲 What is ForestTwin?
 
-ForestTwin transforms standard carbon offset reporting into a live, interactive data experience. Built by [TechTide AI](https://techtideai.io) and [Alex Cinovoj](https://alexcinovoj.com), this platform replaces static PDF reports with a highly accurate 3D digital replica of your specific forest assets.
+ForestTwin is a forest-monitoring interface prototype built by [TechTide AI](https://techtideai.io) and [Alex Cinovoj](https://alexcinovoj.com). It demonstrates 3D visualization, simulated telemetry, scenario controls, and carbon-ledger views. Its API routes return mock data; it does not verify carbon credits, connect real forest sensors, or provide production authentication.
 
 ### Core Capabilities
 
-- **Interactive 3D Digital Twin**: Built with React Three Fiber, featuring dynamic mesh properties that react to live health scores, seasonal changes, and environmental risks.
-- **Real-Time Data Overlays**: A Framer Motion-powered Heads-Up Display (HUD) provides live metrics on carbon sequestration rates, canopy density, and total biomass.
-- **Scenario Simulation Engine**: An interactive control panel allowing stakeholders to model temperature increases, drought severity, and deforestation rates to project carbon yields.
-- **Verifiable Carbon Ledger**: A tabular view representing the verifiable carbon credit ledger to ensure transparent, audit-ready ESG reporting.
-- **Automated Alert Feed**: Real-time environmental alerts for deforestation, fire risks, and drought conditions.
+- **Interactive forest visualization**: React Three Fiber renders trees, seasons, and visual health indicators from demo state.
+- **Telemetry overlays**: Dashboard cards and overlays display simulated carbon, canopy, and biomass metrics.
+- **Scenario controls**: Sliders demonstrate how temperature, drought, and deforestation inputs can change example projections; these are not validated scientific predictions.
+- **Carbon ledger**: A table presents mock ledger records for exploring the interface.
+- **Alert feed**: Example environmental alerts demonstrate the monitoring layout.
 
 ## 🛠 Tech Stack & Architecture
 
-The application is built on a modern **Next.js 16 App Router** architecture with a focus on high-performance 3D rendering and an accessible, reduced-motion-compliant glassmorphism UI.
+The application uses **Next.js 16 App Router**, React Three Fiber, and Tailwind CSS. The 3D canvas supplies a fallback when WebGL is unavailable or reduced motion is requested. Browser checks remain necessary for individual components.
 
 ### Architecture Overview
 
@@ -144,6 +144,6 @@ npm run test:security
 npm run build
 ```
 
-The October 20, 2026 documentation check found existing frontend lint failures; `npm run lint` is a required check, not a claim that the current tree passes.
+The October 20, 2026 maintenance checks pass lint (18 warnings, zero errors), TypeScript, the production build, and the vendored braces regression check. There is no general unit-test suite. The app uses mock data; passing these checks does not establish live integrations or production readiness.
 
 `test:security` verifies the vendored braces security backport; it is not a complete application test suite or security audit. Check the pages and interactions in a browser separately. Follow the [security policy](.github/SECURITY.md) for private vulnerability reports.

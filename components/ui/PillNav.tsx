@@ -259,7 +259,6 @@ const PillNav: React.FC<PillNavProps> = ({
             onMouseEnter={handleLogoEnter}
             role="menuitem"
             ref={el => {
-              // @ts-ignore - Next.js Link ref handling is slightly different
               logoRef.current = el;
             }}
           >
@@ -282,7 +281,7 @@ const PillNav: React.FC<PillNavProps> = ({
         <div className="pill-nav-items desktop-only" ref={navItemsRef}>
           <ul className="pill-list" role="menubar">
             {items.map((item, i) => (
-              <li key={item.href} role="none">
+              <li key={`${item.href}:${item.label}`} role="none">
                 {isRouterLink(item.href) ? (
                   <Link
                     role="menuitem"
@@ -349,7 +348,7 @@ const PillNav: React.FC<PillNavProps> = ({
       <div className="mobile-menu-popover mobile-only" ref={mobileMenuRef} style={cssVars}>
         <ul className="mobile-menu-list">
           {items.map(item => (
-            <li key={item.href}>
+            <li key={`${item.href}:${item.label}`}>
               {isRouterLink(item.href) ? (
                 <Link
                   href={item.href}

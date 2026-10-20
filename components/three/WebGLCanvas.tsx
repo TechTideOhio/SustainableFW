@@ -12,16 +12,22 @@ function isWebGLAvailable(): boolean {
   }
 }
 
+const reducedMotionQuery = '(prefers-reduced-motion: reduce)';
+function subscribeReducedMotion(onChange: () => void) {
+  const media = window.matchMedia(reducedMotionQuery);
+  media.addEventListener('change', onChange);
+  return () => media.removeEventListener('change', onChange);
+}
+
 function useReducedMotion(): boolean {
-  const [reduced, setReduced] = React.useState(false);
-  React.useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReduced(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setReduced(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
-  return reduced;
+  return React.useSyncExternalStore(subscribeReducedMotion, () => window.matchMedia(reducedMotionQuery).matches, () => false);
+}
+
+let webGLAvailable: boolean | undefined;
+const subscribeSupport = () => () => {};
+function getWebGLSupport() {
+  webGLAvailable ??= isWebGLAvailable();
+  return webGLAvailable;
 }
 
 interface WebGLCanvasProps {
@@ -60,12 +66,8 @@ const GradientFallback = ({ className }: { className?: string }) => (
 );
 
 function WebGLCanvas({ children, className, fallback }: WebGLCanvasProps) {
-  const [supported, setSupported] = React.useState(true);
+  const supported = React.useSyncExternalStore(subscribeSupport, getWebGLSupport, () => false);
   const reducedMotion = useReducedMotion();
-
-  React.useEffect(() => {
-    setSupported(isWebGLAvailable());
-  }, []);
 
   const fb = fallback ?? <GradientFallback className={className} />;
 

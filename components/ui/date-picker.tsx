@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 
 import * as React from "react";
@@ -67,7 +66,7 @@ export const DatePicker = React.forwardRef<HTMLButtonElement, DatePickerProps>(
             mode="single"
             selected={date}
             onSelect={onDateChange}
-            initialFocus
+            autoFocus
             className="text-white bg-bg-card"
           />
         </PopoverContent>
@@ -180,7 +179,7 @@ export const DateRangePicker = React.forwardRef<HTMLButtonElement, DateRangePick
               )}
               <div className="p-3">
                 <Calendar
-                  initialFocus
+                  autoFocus
                   mode="range"
                   defaultMonth={date?.from}
                   selected={date}

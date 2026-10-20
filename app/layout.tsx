@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   category: 'technology',
-} as any;
+};
 
 export const viewport: Viewport = {
   themeColor: '#3b5bdb',

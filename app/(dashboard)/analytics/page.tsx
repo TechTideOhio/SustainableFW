@@ -14,7 +14,7 @@ export default function AnalyticsPage() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Analytics Overview</h1>
-          <p className="text-zinc-400">Track your application's performance and user engagement.</p>
+          <p className="text-zinc-400">Track your application&apos;s performance and user engagement.</p>
         </div>
         
         <div className="flex flex-wrap items-center gap-3">
