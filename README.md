@@ -31,12 +31,12 @@
 
 **Who it serves.** Product and engineering teams that need an interactive front end to show stakeholders what a forest-carbon monitoring dashboard could look like before any data pipeline, MRV integration, or authentication exists, and front-end developers who want a reference for 3D canvas fallbacks and reduced-motion handling in Next.js.
 
-**Why Alex built it.** Rationale not recorded in repository history; see Proposed use case below. The history records facts but not the motive: the project was uploaded on 2025-06-09 (`67bdf7c` "Initial commit" followed by a series of "Add files via upload" commits), received an SEO and blog pass on 2026-08-01 (`7224e06` "feat: full SEO overhaul for August 2026"), and on 2026-10-20 its README was rewritten to describe the app as a mock-data prototype rather than a production platform (`d6a0499` "fix: stop claiming unverified Netlify deploy success"; PR #6 "docs: clarify validation and deployment readiness").
+**Why Alex built it.** Rationale not recorded in repository history; see Proposed use case below. The history records facts but not the motive: the project was uploaded on 2025-06-09 (`67bdf7c` "Initial commit" followed by a series of "Add files via upload" commits), received an SEO and blog pass on 2026-08-01 (`7224e06` "feat: full SEO overhaul for August 2026"), and on 2026-10-20 its README was rewritten to describe the app as a mock-data prototype rather than a production platform (`d6a0499` "fix: stop claiming unverified Netlify deploy success", PR #5; `fba2700` "docs: clarify validation and deployment readiness", PR #6).
 
 **Real-world use case (2025-2026 evidence).** **Proposed use case.** A sustainability or forestry team planning a digital-twin monitoring, reporting, and verification (MRV) system uses ForestTwin as the UI prototype to agree on screens (forest state view, carbon ledger, scenario controls, alert feed) before investing in data acquisition. The 2025-2026 literature describes what a real system behind such a UI needs and what this prototype does not implement: a persistent, versioned tree-wise state updated by observations and models, with explicit uncertainty and auditor-facing verification[^1]; a layered architecture from drone and IoT sensing through AI modeling to stakeholder dashboards and milestone verification[^2]; stem-level carbon tracking along the timber chain with data sovereignty and EU Deforestation Regulation alignment[^3]; and continuous coupling of Earth-observation data with ecosystem models through data assimilation, with most forestry twins still at prototype or early operational stage[^4]. ForestTwin is the dashboard shell only.
 
 [^1]: Lopatin, Pitkänen, Sikanen, "From tree-wise monitoring to action: a digital forest carbon twin framework for forest carbon MRV and climate-smart forest management", Environmental Challenges, <https://doi.org/10.1016/j.envc.2026.101634>, published 2026-08-24.
-[^2]: Sasaki, Abe, "A Digital Twin Architecture for Forest Restoration: Integrating AI, IoT, and Blockchain for Smart Ecosystem Management", Future Internet 17(9):421, <https://www.mdpi.com/1999-5903/17/9/421>, published 2025-09-15.
+[^2]: Sasaki, Abe, "A Digital Twin Architecture for Forest Restoration: Integrating AI, IoT, and Blockchain for Smart Ecosystem Management", Future Internet 17(9):421, <https://www.mdpi.com/1999-5903/17/9/421>, published 2025-09-14.
 [^3]: "Digital technologies for precise carbon balancing in timber procurement", European Journal of Forest Research, <https://link.springer.com/article/10.1007/s10342-025-01794-1>, published 2025-05-05.
 [^4]: Das, Andrew, "Digital twin forestry as an informatics framework integrating remote sensing ecosystem modelling and data assimilation", Discover Informatics, <https://doi.org/10.1007/s44564-026-00029-8>, published 2026-10-15.
 
@@ -126,12 +126,6 @@ This repository is pre-configured for seamless deployment on Netlify using nativ
 - **Publish directory**: `.next`
 
 The checked-in [`netlify.toml`](netlify.toml) defines the build command, output directory, Node major version, and Next.js plugin. A connected Netlify site and successful hosted build are still required; a local build does not verify deployment, routing, or domain configuration. Preserve existing hosting settings when updating the code.
-
----
-
-<div align="center">
-  <p>Built with ❤️ by <a href="https://techtideai.io">TechTide AI</a></p>
-</div>
 
 ## Validation and security
 
