@@ -14,9 +14,6 @@
   </p>
 
   <p>
-    <a href="https://app.netlify.com/sites/sustainable-forest-website/deploys">
-      <img src="https://api.netlify.com/api/v1/badges/686b2a57adb0e69328d412ef/deploy-status" alt="Netlify Status" />
-    </a>
     <a href="https://nextjs.org/">
       <img src="https://img.shields.io/badge/Next.js-16.2.12-black?style=flat&logo=next.js" alt="Next.js" />
     </a>
@@ -103,7 +100,7 @@ This repository is optimized for autonomous AI Agents (ChatGPT, Perplexity, Clau
 
 2. **Install dependencies:**
    ```bash
-   npm install
+   npm ci
    ```
 
 3. **Start the development server:**
@@ -117,7 +114,7 @@ This repository is pre-configured for seamless deployment on Netlify using nativ
 - **Build command**: `npm run build`
 - **Publish directory**: `.next`
 
-No manual configuration is required. The `netlify.toml` file acts as the configuration block.
+The checked-in [`netlify.toml`](netlify.toml) defines the build command, output directory, Node major version, and Next.js plugin. A connected Netlify site and successful hosted build are still required; a local build does not verify deployment, routing, or domain configuration. Preserve existing hosting settings when updating the code.
 
 ---
 
@@ -136,3 +133,17 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 <p align="center">Built with 🌲 by <a href="https://techtideai.io">TechTide AI</a></p>
+
+## Validation and security
+
+Run the available repository checks before submitting changes:
+
+```bash
+npm run lint
+npm run test:security
+npm run build
+```
+
+The October 20, 2026 documentation check found existing frontend lint failures; `npm run lint` is a required check, not a claim that the current tree passes.
+
+`test:security` verifies the vendored braces security backport; it is not a complete application test suite or security audit. Check the pages and interactions in a browser separately. Follow the [security policy](.github/SECURITY.md) for private vulnerability reports.
