@@ -8,22 +8,25 @@ export const useLenis = () => {
     const lenisInstance = new Lenis({
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      gestureDirection: 'vertical',
-      smooth: true,
-      smoothTouch: false,
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      syncTouch: false,
       touchMultiplier: 2,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } as any);
+    });
 
+    let frame: number;
     function raf(time: number) {
       lenisInstance.raf(time);
-      requestAnimationFrame(raf);
+      frame = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
-    setLenis(lenisInstance);
+    frame = requestAnimationFrame((time) => {
+      setLenis(lenisInstance);
+      raf(time);
+    });
 
     return () => {
+      cancelAnimationFrame(frame);
       lenisInstance.destroy();
     };
   }, []);

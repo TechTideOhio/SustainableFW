@@ -30,7 +30,7 @@ export default function IntegrationsPage() {
   const [activeTab, setActiveTab] = useState('All');
 
   const filteredIntegrations = allIntegrations.filter((integration) => {
-    const matchesSearch = integration.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    const matchesSearch = integration.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           integration.desc.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = activeTab === 'All' || integration.category === activeTab;
     return matchesSearch && matchesCategory;
@@ -46,8 +46,8 @@ export default function IntegrationsPage() {
         </div>
         <div className="relative w-full md:w-96">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
-          <Input 
-            placeholder="Search integrations..." 
+          <Input
+            placeholder="Search integrations..."
             className="pl-10 bg-surface border-white/10 focus-visible:ring-lime"
             aria-label="Search integrations"
             value={searchQuery}
@@ -62,7 +62,7 @@ export default function IntegrationsPage() {
           <Badge className="bg-lime/20 text-lime hover:bg-lime/30 border-none">Featured</Badge>
           <h2 className="text-2xl font-bold">Code Enterprise Integration</h2>
           <p className="text-zinc-300">
-            Sync your entire organization's repositories, automate CI/CD pipelines, and manage 
+            Sync your entire organization&apos;s repositories, automate CI/CD pipelines, and manage
             access controls directly from our platform.
           </p>
           <Button className="bg-lime text-black hover:bg-lime/90 mt-2">
@@ -77,8 +77,8 @@ export default function IntegrationsPage() {
         <div className="overflow-x-auto pb-2 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-none">
           <TabsList className="bg-surface border border-white/10 p-1 w-max">
             {categories.map(cat => (
-              <TabsTrigger 
-                key={cat} 
+              <TabsTrigger
+                key={cat}
                 value={cat}
                 className="data-[state=active]:bg-card data-[state=active]:text-lime data-[state=active]:shadow-sm"
               >
@@ -119,9 +119,9 @@ export default function IntegrationsPage() {
             </div>
           ) : (
             <div className="text-center py-20 bg-surface/50 rounded-xl border border-white/5 border-dashed">
-              <p className="text-zinc-500">No integrations found matching "{searchQuery}".</p>
-              <Button 
-                variant="link" 
+              <p className="text-zinc-500">No integrations found matching &quot;{searchQuery}&quot;.</p>
+              <Button
+                variant="link"
                 className="text-lime mt-2"
                 onClick={() => { setSearchQuery(''); setActiveTab('All'); }}
               >

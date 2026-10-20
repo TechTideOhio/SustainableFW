@@ -1,7 +1,8 @@
 "use client";
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { ArrowRight, MessageCircle, Code, Link } from 'lucide-react';
+import NextLink from "next/link";
+import { MessageCircle, Code, Link } from 'lucide-react';
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg
@@ -111,7 +112,7 @@ export function FooterSection() {
                     <li><a href="#pricing" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Pricing</a></li>
                     <li><a href="/integrations" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Integrations</a></li>
                     <li><a href="/help" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Documentation</a></li>
-                    <li><a href="/blog" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Blog</a></li>
+                    <li><NextLink href="/blog" className="hover:text-white transition-colors link-underline rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2">Blog</NextLink></li>
                   </ul>
                 </div>
                 <div>

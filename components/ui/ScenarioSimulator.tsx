@@ -4,6 +4,38 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { SageCard, OperateButton, PillTag } from '@/components/ui/OperateUI';
 
+interface SliderProps {
+  label: string;
+  value: number;
+  min: number;
+  max: number;
+  step: number;
+  unit: string;
+  onChange: (value: number) => void;
+}
+
+const Slider = ({ label, value, min, max, step, unit, onChange }: SliderProps) => (
+  <div className="mb-4">
+    <div className="flex justify-between items-end mb-1">
+      <label className="font-muoto text-[12px] font-medium text-forest-ink/70">[{label}]</label>
+      <span className="font-denim text-[14px] text-forest-ink font-medium">
+        {value}{unit}
+      </span>
+    </div>
+    <input
+      type="range"
+      min={min}
+      max={max}
+      step={step}
+      value={value}
+      onChange={(e) => onChange(parseFloat(e.target.value))}
+      className="w-full h-1 bg-lichen rounded-none appearance-none cursor-pointer accent-forest-ink"
+      aria-label={label}
+    />
+  </div>
+);
+
+
 export function ScenarioSimulator() {
   const [tempIncrease, setTempIncrease] = useState(0);
   const [droughtSeverity, setDroughtSeverity] = useState(0);
@@ -40,36 +72,6 @@ export function ScenarioSimulator() {
     }, 800);
   };
 
-  interface SliderProps {
-    label: string;
-    value: number;
-    min: number;
-    max: number;
-    step: number;
-    unit: string;
-    onChange: (value: number) => void;
-  }
-
-  const Slider = ({ label, value, min, max, step, unit, onChange }: SliderProps) => (
-    <div className="mb-4">
-      <div className="flex justify-between items-end mb-1">
-        <label className="font-muoto text-[12px] font-medium text-forest-ink/70">[{label}]</label>
-        <span className="font-denim text-[14px] text-forest-ink font-medium">
-          {value}{unit}
-        </span>
-      </div>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        onChange={(e) => onChange(parseFloat(e.target.value))}
-        className="w-full h-1 bg-lichen rounded-none appearance-none cursor-pointer accent-forest-ink"
-        aria-label={label}
-      />
-    </div>
-  );
 
   return (
     <SageCard padding="md" className="flex flex-col h-full" role="region" aria-label="Scenario Simulator">

@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 import * as React from "react";
 import { cn } from "@/lib/utils";
@@ -15,8 +14,40 @@ export interface TimePickerProps {
   className?: string;
 }
 
+const TimeColumn = ({
+  items,
+  selectedValue,
+  onSelect,
+  formatItem = (item: number) => item.toString().padStart(2, "0")
+}: {
+  items: number[];
+  selectedValue: number;
+  onSelect: (val: number) => void;
+  formatItem?: (val: number) => string;
+}) => (
+  <ScrollArea className="h-48 w-16 sm:w-20">
+    <div className="flex flex-col p-1 gap-1">
+      {items.map((item) => (
+        <Button
+          key={item}
+          variant={selectedValue === item ? "default" : "ghost"}
+          size="sm"
+          className={cn(
+            "w-full rounded-md",
+            selectedValue !== item && "hover:bg-white/5 text-zinc-400"
+          )}
+          onClick={() => onSelect(item)}
+        >
+          {formatItem(item)}
+        </Button>
+      ))}
+    </div>
+  </ScrollArea>
+);
+
+
 export function TimePicker({
-  value = "12:00",
+  value,
   onChange,
   format = "12h",
   showSeconds = false,
@@ -29,7 +60,7 @@ export function TimePicker({
     let h = parseInt(parts[0] || "12", 10);
     const m = parseInt(parts[1] || "0", 10);
     const s = parseInt(parts[2] || "0", 10);
-    
+
     let isPm = false;
     if (format === "12h") {
       if (h >= 12) {
@@ -38,7 +69,7 @@ export function TimePicker({
       }
       if (h === 0) h = 12;
     }
-    
+
     return {
       hour: h,
       minute: m,
@@ -47,27 +78,25 @@ export function TimePicker({
     };
   };
 
-  const [time, setTime] = React.useState(parseTime(value));
-
-  React.useEffect(() => {
-    setTime(parseTime(value));
-  }, [value, format]);
+  const [localValue, setLocalValue] = React.useState("12:00");
+  const currentValue = value ?? localValue;
+  const time = parseTime(currentValue);
 
   const updateTime = (updates: Partial<typeof time>) => {
     const newTime = { ...time, ...updates };
-    setTime(newTime);
-    
+
     let h = newTime.hour;
     if (format === "12h") {
       if (newTime.isPm && h !== 12) h += 12;
       if (!newTime.isPm && h === 12) h = 0;
     }
-    
+
     const hStr = h.toString().padStart(2, "0");
     const mStr = newTime.minute.toString().padStart(2, "0");
     const sStr = newTime.second.toString().padStart(2, "0");
-    
+
     const timeString = showSeconds ? `${hStr}:${mStr}:${sStr}` : `${hStr}:${mStr}`;
+    if (value === undefined) setLocalValue(timeString);
     onChange?.(timeString);
   };
 
@@ -75,36 +104,6 @@ export function TimePicker({
   const minutes = Array.from({ length: 60 }, (_, i) => i);
   const seconds = Array.from({ length: 60 }, (_, i) => i);
 
-  const TimeColumn = ({ 
-    items, 
-    selectedValue, 
-    onSelect, 
-    formatItem = (item: number) => item.toString().padStart(2, "0") 
-  }: { 
-    items: number[]; 
-    selectedValue: number; 
-    onSelect: (val: number) => void;
-    formatItem?: (val: number) => string;
-  }) => (
-    <ScrollArea className="h-48 w-16 sm:w-20">
-      <div className="flex flex-col p-1 gap-1">
-        {items.map((item) => (
-          <Button
-            key={item}
-            variant={selectedValue === item ? "primary" : "ghost"}
-            size="sm"
-            className={cn(
-              "w-full rounded-md",
-              selectedValue !== item && "hover:bg-white/5 text-zinc-400"
-            )}
-            onClick={() => onSelect(item)}
-          >
-            {formatItem(item)}
-          </Button>
-        ))}
-      </div>
-    </ScrollArea>
-  );
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
@@ -117,32 +116,32 @@ export function TimePicker({
           )}
         >
           <Clock className="mr-2 h-4 w-4" />
-          {value} {format === "12h" ? (time.isPm ? "PM" : "AM") : ""}
+          {format === "12h" ? `${time.hour.toString().padStart(2, "0")}:${time.minute.toString().padStart(2, "0")}${showSeconds ? `:${time.second.toString().padStart(2, "0")}` : ""} ${time.isPm ? "PM" : "AM"}` : currentValue}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0 bg-bg-elevated border-white/10">
         <div className="flex divide-x divide-white/10 p-2">
-          <TimeColumn 
-            items={hours} 
-            selectedValue={time.hour} 
-            onSelect={(hour) => updateTime({ hour })} 
+          <TimeColumn
+            items={hours}
+            selectedValue={time.hour}
+            onSelect={(hour) => updateTime({ hour })}
           />
-          <TimeColumn 
-            items={minutes} 
-            selectedValue={time.minute} 
-            onSelect={(minute) => updateTime({ minute })} 
+          <TimeColumn
+            items={minutes}
+            selectedValue={time.minute}
+            onSelect={(minute) => updateTime({ minute })}
           />
           {showSeconds && (
-            <TimeColumn 
-              items={seconds} 
-              selectedValue={time.second} 
-              onSelect={(second) => updateTime({ second })} 
+            <TimeColumn
+              items={seconds}
+              selectedValue={time.second}
+              onSelect={(second) => updateTime({ second })}
             />
           )}
           {format === "12h" && (
             <div className="flex flex-col gap-1 p-1">
               <Button
-                variant={!time.isPm ? "primary" : "ghost"}
+                variant={!time.isPm ? "default" : "ghost"}
                 size="sm"
                 onClick={() => updateTime({ isPm: false })}
                 className={cn(!time.isPm ? "" : "text-zinc-400 hover:bg-white/5")}
@@ -150,7 +149,7 @@ export function TimePicker({
                 AM
               </Button>
               <Button
-                variant={time.isPm ? "primary" : "ghost"}
+                variant={time.isPm ? "default" : "ghost"}
                 size="sm"
                 onClick={() => updateTime({ isPm: true })}
                 className={cn(time.isPm ? "" : "text-zinc-400 hover:bg-white/5")}

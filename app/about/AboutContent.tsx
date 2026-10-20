@@ -1,10 +1,10 @@
 ﻿"use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type HTMLMotionProps } from "framer-motion";
 import { ArrowRight, TreePine, Satellite, BarChart3, Shield, Globe, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const fadeUp: any = {
+const fadeUp: HTMLMotionProps<"div"> = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5, ease: "easeOut" },

@@ -4,6 +4,14 @@ import { useFrame } from '@react-three/fiber';
 import { Float } from '@react-three/drei';
 import * as THREE from 'three';
 
+function seededRandom(seed: number) {
+  let state = seed >>> 0;
+  return () => {
+    state = (Math.imul(state, 1664525) + 1013904223) >>> 0;
+    return state / 4294967296;
+  };
+}
+
 export interface ForestProps {
   healthScore?: number; // 0-100
   season?: 'spring' | 'summer' | 'autumn' | 'winter';
@@ -53,13 +61,14 @@ const Tree = ({ position, scale, rotation, color = '#2d4c25', season = 'summer' 
 
 const Flowers = ({ count = 30 }) => {
   const flowerPositions = useMemo(() => {
+    const random = seededRandom(1);
     return Array.from({ length: count }).map(() => ({
       position: [
-        (Math.random() - 0.5) * 30,
-        Math.random() * 2 + 0.1,
-        (Math.random() - 0.5) * 30
+        (random() - 0.5) * 30,
+        random() * 2 + 0.1,
+        (random() - 0.5) * 30
       ] as [number, number, number],
-      scale: Math.random() * 0.15 + 0.05
+      scale: random() * 0.15 + 0.05
     }));
   }, [count]);
 
@@ -78,13 +87,14 @@ const Flowers = ({ count = 30 }) => {
 const Embers = ({ count = 50, critical = false }) => {
   const group = useRef<THREE.Group>(null);
   const particles = useMemo(() => {
+    const random = seededRandom(2);
     return Array.from({ length: count }).map(() => ({
-      x: (Math.random() - 0.5) * 40,
-      y: Math.random() * 15,
-      z: (Math.random() - 0.5) * 40,
-      speedY: Math.random() * 0.05 + 0.02,
-      speedX: (Math.random() - 0.5) * 0.02,
-      color: critical ? (Math.random() > 0.5 ? '#ff0000' : '#ff4400') : '#ff8800'
+      x: (random() - 0.5) * 40,
+      y: random() * 15,
+      z: (random() - 0.5) * 40,
+      speedY: random() * 0.05 + 0.02,
+      speedX: (random() - 0.5) * 0.02,
+      color: critical ? (random() > 0.5 ? '#ff0000' : '#ff4400') : '#ff8800'
     }));
   }, [count, critical]);
 
@@ -118,6 +128,7 @@ const ForestParticles = ({ count = 100, healthScore = 100, season = 'summer' }: 
   const particles = useRef<THREE.Group>(null);
   
   const particlePositions = useMemo(() => {
+    const random = seededRandom(3);
     const getColors = () => {
       if (season === 'autumn') return ['#ea580c', '#ca8a04', '#dc2626'];
       if (season === 'spring') return ['#4ade80', '#22c55e'];
@@ -131,13 +142,13 @@ const ForestParticles = ({ count = 100, healthScore = 100, season = 'summer' }: 
 
     return Array.from({ length: count }).map(() => ({
       position: [
-        (Math.random() - 0.5) * 30,
-        Math.random() * 15,
-        (Math.random() - 0.5) * 30
+        (random() - 0.5) * 30,
+        random() * 15,
+        (random() - 0.5) * 30
       ] as [number, number, number],
-      scale: Math.random() * 0.5 + 0.1,
-      rotation: [0, Math.random() * Math.PI, 0] as [number, number, number],
-      color: colors[Math.floor(Math.random() * colors.length)]
+      scale: random() * 0.5 + 0.1,
+      rotation: [0, random() * Math.PI, 0] as [number, number, number],
+      color: colors[Math.floor(random() * colors.length)]
     }));
   }, [count, healthScore, season]);
 

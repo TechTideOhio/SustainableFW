@@ -123,7 +123,7 @@ export function TestimonialsSection() {
               className="absolute inset-0 flex flex-col items-center"
             >
               <p className="text-2xl md:text-3xl lg:text-4xl font-display font-medium text-foreground mb-8 leading-snug">
-                "{testimonials[activeIndex].quote}"
+                &quot;{testimonials[activeIndex].quote}&quot;
               </p>
               <div className="flex items-center justify-center gap-2">
                 <span className="font-semibold text-foreground">{testimonials[activeIndex].author}</span>

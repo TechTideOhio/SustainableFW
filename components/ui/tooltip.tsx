@@ -16,9 +16,9 @@ const Tooltip: React.FC<
   React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Root>
 > = (props) => {
   const { open, defaultOpen, onOpenChange, ...rest } = props;
-  const isControlled = React.useRef(open !== undefined && open !== null);
+  const [isControlled] = React.useState(open !== undefined && open !== null);
 
-  if (isControlled.current) {
+  if (isControlled) {
     return (
       <TooltipPrimitive.Root
         open={open}

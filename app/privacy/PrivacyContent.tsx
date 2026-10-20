@@ -26,7 +26,7 @@ export default function PrivacyContent() {
           <section>
             <h2 className="text-2xl font-display font-bold text-white mb-4">1. Information We Collect</h2>
             <p className="text-zinc-300 leading-relaxed mb-4">
-              ForestTwin Inc. ("ForestTwin," "we," "us," or "our") collects information you provide directly when you create an account, use our platform, or contact our support team. This includes your name, email address, organization name, and payment information.
+              ForestTwin Inc. (&quot;ForestTwin,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects information you provide directly when you create an account, use our platform, or contact our support team. This includes your name, email address, organization name, and payment information.
             </p>
             <p className="text-zinc-300 leading-relaxed">
               We also collect usage data automatically, including browser type, device information, IP address, pages visited, and actions taken within the platform. This data helps us improve performance and user experience.
@@ -90,7 +90,7 @@ export default function PrivacyContent() {
           <section>
             <h2 className="text-2xl font-display font-bold text-white mb-4">9. Changes to This Policy</h2>
             <p className="text-zinc-300 leading-relaxed">
-              We may update this privacy policy from time to time. We will notify you of material changes by posting the updated policy on this page and updating the "Last updated" date. Your continued use of ForestTwin after changes take effect constitutes acceptance of the updated policy.
+              We may update this privacy policy from time to time. We will notify you of material changes by posting the updated policy on this page and updating the &quot;Last updated&quot; date. Your continued use of ForestTwin after changes take effect constitutes acceptance of the updated policy.
             </p>
           </section>
 

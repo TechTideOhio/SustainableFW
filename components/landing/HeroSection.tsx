@@ -61,22 +61,27 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
           className="flex flex-col sm:flex-row gap-4 mb-16"
         >
-          <Button variant="default" size="lg" className="group rounded-full px-8 h-12 text-base transition-all duration-200 ease-out active:scale-[0.97] glow-brand">
+          <Button asChild variant="default" size="lg" className="group rounded-full px-8 h-12 text-base transition-all duration-200 ease-out active:scale-[0.97] glow-brand">
+            <a href="#features">
             Explore the Platform
             <svg className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
+            </a>
           </Button>
-          <Button variant="ghost" size="lg" className="group rounded-full px-8 h-12 text-base transition-all duration-200 ease-out active:scale-[0.97]">
+          <Button asChild variant="ghost" size="lg" className="group rounded-full px-8 h-12 text-base text-foreground dark:text-foreground transition-all duration-200 ease-out active:scale-[0.97]">
+            <a href="#dashboard-preview">
             <svg className="mr-2 w-4 h-4 fill-current transition-transform duration-200 group-hover:scale-110" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z" />
             </svg>
-            Watch Demo
+            View Dashboard Preview
+            </a>
           </Button>
         </motion.div>
 
         {/* Mockup Container */}
         <motion.div
+          id="dashboard-preview"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
